@@ -1,7 +1,8 @@
 .signupContainer {
-    width: 50%;
-    background-color: rgba(165, 42, 42, 0.349);
+    width: 70%;
+    background-color: rgb(255, 255, 255);
     height: 50%;
+    margin-top: 10%;
 }
 
 .signUpForm ul li {
@@ -9,10 +10,10 @@
     margin-bottom: 3px;
 }
 
-/* label {
+label {
     display: flex;
     justify-content: flex-start;
-} */
+}
 
 input {
     display: flex;

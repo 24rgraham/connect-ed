@@ -7,7 +7,7 @@ export default function SingleProject() {
     return (
         <div className='projectContainer'>
             <div className='topOfPage'>
-                <h3 className='title'></h3>
+                <h3 className='title'>Testing</h3>
                 <div className='mediaContainer'>
                     <img></img>
                 </div>
@@ -19,7 +19,7 @@ export default function SingleProject() {
             </div>
             <div className='bottomOfPage'>
                 <div className='directionsContainer'>
-                        <p></p>
+                        <p>testing</p>
                 </div>
                 <div className='materialsContainer'>
                     <p></p>

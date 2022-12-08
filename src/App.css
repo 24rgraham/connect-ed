@@ -1,8 +1,7 @@
 .app {
     display: flex;
     background-color: rgb(158, 213, 224);
-    width:max-content;
-   
+    width:100rem;
 }
 
 body {
