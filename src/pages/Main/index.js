@@ -3,6 +3,7 @@ import React from 'react';
 import Signup from '../Signup';
 import SingleProject from '../../components/SingleProject'
 import Landing from '../Landing'
+import ProjectCard from "../../components/ProjectCard";
 import './style.css'
 
 function Main() {

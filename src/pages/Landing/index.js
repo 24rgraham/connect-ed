@@ -1,6 +1,8 @@
 import React from 'react'
 import './style.css'
 
+import ProjectCard from '../../components/ProjectCard'
+
 // Make a project card component that will be .map() placed in each associated container
 export default function Landing() {
     return(
@@ -10,6 +12,7 @@ export default function Landing() {
             </div>
             <div className='completed'>
                 <h4>Completed Projects:</h4>
+                <div><ProjectCard/></div>
             </div>
             <div className='starred'>
                 <h4>Starred Projects:</h4>
