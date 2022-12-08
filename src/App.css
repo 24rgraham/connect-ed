@@ -1,0 +1,11 @@
+.app {
+    display: flex;
+    background-color: rgb(158, 213, 224);
+    width:max-content;
+   
+}
+
+body {
+    display: grid;
+    grid-template-columns:  1fr 3fr;
+}

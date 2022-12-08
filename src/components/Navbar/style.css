@@ -1,0 +1,36 @@
+/* Navbar */
+
+.Navbar {
+    display: flex;
+    height: 60rem;
+    width: 10rem;
+    border: 2px;
+    border-color: rgb(194, 191, 191);
+    border-style:groove;
+    border-radius: 5px;
+    background-color: rgb(197, 204, 202);
+    margin-left: 2%;
+
+}
+
+.navContents {
+    display: flex;
+    justify-content: center;
+}
+
+ul li {
+    list-style: none;
+    text-decoration: none;
+    width:80%;
+}
+
+.navBtn {
+    padding-left: 25px;
+    padding-right: 25px;    
+    border-radius: 25px;
+    background-color: rgba(98, 134, 66, 0.514);
+}
+
+link {
+    text-decoration: none;
+}
