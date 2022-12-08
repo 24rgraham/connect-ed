@@ -5,7 +5,7 @@ function Signup() {
     return (
         <div className="signupContainer">
             <h4>Create A New Account</h4>
-            <form>
+            <form className="signUpForm">
                 <ul>
                 <li><label>First Name
                     <input type="text" ></input>
@@ -27,12 +27,12 @@ function Signup() {
                 <li><label>City
                     <input type="text"></input>
                 </label></li>
-                <label>State
+                <li><label>State
                     <input type="text"></input>
-                </label>
-                <label>Language
+                </label></li>
+                <li><label>Language
                     <input type="text"></input>
-                </label>
+                </label></li>
                 <input type="submit"></input>
             
         </ul>
