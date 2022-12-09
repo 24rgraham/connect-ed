@@ -4,6 +4,8 @@ import Signup from '../Signup';
 import SingleProject from '../../components/SingleProject'
 import Landing from '../Landing'
 import NewProject from "../NewProject";
+import Search from "../Search"
+import SearchResults from "../SearchResults"
 
 import './style.css'
 
@@ -16,6 +18,8 @@ function Main() {
                 <Route path="/project" element={<SingleProject/>}/>
                 <Route path="/mypage" element={<Landing/>}/>
                 <Route path="/create" element={<NewProject/>}/>
+                <Route path="/search" element={<Search/>}/>
+                <Route path="/results" element={<SearchResults/>}/>
               </Routes>
         </div>
     )
