@@ -12,6 +12,7 @@ export default function Navbar() {
           <li><button className='navBtn'><Link to="/login">Login</Link></button></li>  
           <li><button className='navBtn'><Link to="/mypage">Projects</Link></button></li>
           <li><button className='navBtn'><Link to="/create">New Project</Link></button></li>
+          <li><button className='navBtn'><Link to="/search">Search</Link></button></li>
 
         </ul>
       </div>
