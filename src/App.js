@@ -1,7 +1,6 @@
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
 import Navbar from "./components/Navbar";
 import React from 'react';
-import Signup from './pages/Signup/index.js';
 import Header from './components/Header/'
 import Main from './pages/Main'
 import './App.css'

@@ -16,3 +16,8 @@ export default function ProjectCard(){
         </Link>
     )
 }
+
+// import {data} from ...Completed.apply.API
+// {data.map(project => (
+//     <Project key={project.id} project={project}/>
+// ))}
