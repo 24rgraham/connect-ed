@@ -1,7 +1,10 @@
 import React from 'react';
 import GradeOptions from '../../components/NewProjectComponents/GradeOptions';
 import TimeToComplete from '../../components/NewProjectComponents/TimeToComplete';
+import CurriculumOptions from '../../components/NewProjectComponents/CurriculumOptions';
+import SubjectOptions from '../../components/NewProjectComponents/SubjectOptions';
 
+// will need to import the cloudinary widget 
 import './style.css'
 
 
@@ -17,6 +20,9 @@ function NewProject(){
             <div className='topRight'>
                <label>Recommended Grade Level:<GradeOptions/></label>
                 <label>Time to Completion:<TimeToComplete/></label>
+                <label>Subject(s): <SubjectOptions/></label>
+                <label>Curriculum Style:<CurriculumOptions/></label>
+                
             </div>
             <div className='midPage'>
                 <label>Overview<input type="text" placeholder='Write a brief summary of your project here'></input></label>
