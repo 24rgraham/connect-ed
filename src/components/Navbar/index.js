@@ -9,6 +9,7 @@ export default function Navbar() {
       <div className='navContents'>
         <ul>
           <li><button className='navBtn'><Link to="/">Home</Link></button></li>  
+          <li><button className='navBtn'><Link to="/login">Login</Link></button></li>  
           <li><button className='navBtn'><Link to="/mypage">Projects</Link></button></li>
           <li><button className='navBtn'><Link to="/create">New Project</Link></button></li>
 

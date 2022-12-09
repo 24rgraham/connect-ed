@@ -1,6 +1,7 @@
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
 import React from 'react';
 import Signup from '../Signup';
+import Login from '../Login';
 import SingleProject from '../../components/SingleProject'
 import Landing from '../Landing'
 import NewProject from "../NewProject";
@@ -15,6 +16,7 @@ function Main() {
             <Routes>
             
                 <Route path="/" element={<Signup/>}/>
+                <Route path="/login" element={<Login/>}/>
                 <Route path="/project" element={<SingleProject/>}/>
                 <Route path="/mypage" element={<Landing/>}/>
                 <Route path="/create" element={<NewProject/>}/>
