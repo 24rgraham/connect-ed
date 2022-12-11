@@ -1,6 +1,6 @@
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
 import React from 'react';
-import Signup from '../Signup';
+import Signupbootstrap from '../Signupbootstrap';
 import Login from '../Login';
 import SingleProject from '../../components/SingleProject'
 import Landing from '../Landing'
@@ -12,10 +12,10 @@ import './style.css'
 
 function Main() {
     return(
-        <div className='mainContainer'>
+        <main className='mainContainer container'>
             <Routes>
             
-                <Route path="/" element={<Signup/>}/>
+                <Route path="/" element={<Signupbootstrap/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/project" element={<SingleProject/>}/>
                 <Route path="/mypage" element={<Landing/>}/>
@@ -24,7 +24,7 @@ function Main() {
                 <Route path="/results" element={<SearchResults/>}/>
             
               </Routes>
-        </div>
+        </main>
     )
 }
 
