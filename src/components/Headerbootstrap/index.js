@@ -12,7 +12,7 @@ export default function Headerbootstrap() {
         <div className="position-sticky">
           <div className="list-group list-group-flush mx-3 mt-4">
             <a
-              href="/home"
+              href="/connect-ed/home"
               className="list-group-item list-group-item-action py-2 "
               aria-current="true"
             >
@@ -20,7 +20,7 @@ export default function Headerbootstrap() {
               <span>My Feed</span>
             </a>
             <a
-              href="/mypage"
+              href="/connect-ed/mypage"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-project-diagram fa-fw me-3"></i>

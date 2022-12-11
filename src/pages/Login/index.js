@@ -1,10 +1,12 @@
 import React from "react";
+import "./style.css"
 
 export default function Login() {
   return (
-    <form>
-      <div className="">
-        <label for="InputEmail" className="form-label">
+    <form className="loginContainer">
+      <h4>Login</h4>
+      <div className="col-6">
+        <label className="form-label">
           Email address
         </label>
         <input
@@ -13,8 +15,8 @@ export default function Login() {
           aria-describedby="emailHelp"
         ></input>
       </div>
-      <div className="">
-        <label for="InputPassword" className="form-label">
+      <div className="col-6 mb-4">
+        <label className="form-label">
           Password
         </label>
         <input className="form-control" id="InputPassword"></input>
