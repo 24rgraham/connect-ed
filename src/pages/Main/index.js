@@ -8,6 +8,8 @@ import NewProject from "../NewProject";
 import Search from "../Search"
 import SearchResults from "../SearchResults"
 
+import API from '../../utils/API'
+
 import './style.css'
 
 function Main() {

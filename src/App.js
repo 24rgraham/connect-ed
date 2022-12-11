@@ -3,8 +3,10 @@ import Navbar from "./components/Navbar";
 import React from "react";
 import Header from "./components/Header/";
 import Main from "./pages/Main";
-import Login from "./pages/Login";
+
 import "./App.css";
+
+import API from './utils/API'
 
 function App() {
   return (
