@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import API from "../../utils/API"
+import "./style.css"
 
 export default function Login(props) {
   const navigate = useNavigate();
@@ -22,11 +23,14 @@ export default function Login(props) {
     })
   }
 
+
+
   return (
-    <form onSubmit={handleLoginSubmit}>
-      <div className="">
-        <label for="InputEmail" value={loginEmail} className="form-label">
-          Email Address
+    <form className="loginContainer">
+      <h4>Login</h4>
+      <div className="col-6">
+        <label className="form-label">
+          Email address
         </label>
         <input
           className="form-control"
@@ -35,8 +39,8 @@ export default function Login(props) {
           aria-describedby="emailHelp"
         ></input>
       </div>
-      <div className="">
-        <label for="InputPassword"  className="form-label">
+      <div className="col-6 mb-4">
+        <label className="form-label">
           Password
         </label>
         <input className="form-control" value={loginPassword} onChange={e => setPassword(e.target.value)} id="InputPassword"></input>
