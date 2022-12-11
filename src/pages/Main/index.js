@@ -22,6 +22,7 @@ function Main() {
                 <Route path="/create" element={<NewProject/>}/>
                 <Route path="/search" element={<Search/>}/>
                 <Route path="/results" element={<SearchResults/>}/>
+            
               </Routes>
         </main>
     )

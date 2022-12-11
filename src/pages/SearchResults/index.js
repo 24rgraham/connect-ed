@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from 'react'
+import ProjectCard from '../../components/ProjectCard'
 
 export default function SearchResults() {
     return(
-        <h1>Search results here</h1>
+
+        <div className='ResultsContainer'>
+            <ProjectCard></ProjectCard>
+        </div>
     )
 }
