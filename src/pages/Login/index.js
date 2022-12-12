@@ -26,8 +26,9 @@ console.log(props)
 
   return (
     <form className='loginContainer' onSubmit={loginHandle}>
-      <div>
-        <label for="InputEmail" className="form-label" >
+      <div className=" col-6">
+        <h1>Login</h1>
+        <label className="form-label" >
           Email Address 
         </label>
         <input
@@ -40,8 +41,8 @@ console.log(props)
           onChange={e=>setLoginEmail(e.target.value)}
         ></input>
       </div>
-      <div className="">
-        <label for="InputPassword" className="form-label">
+      <div className=" col-6 mb-4">
+        <label className="form-label">
           Password
         </label>
         <input type="password"
