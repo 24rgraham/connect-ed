@@ -1,9 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 
 
 export default function Headerbootstrap(props) {
+
+  const navigate=useNavigate()
+
+  const logout = () =>{
+    props.handleLogout()
+    navigate("/login")
+  }
   return (
     <header>
       {/* <!-- Sidebar --> */}
@@ -13,60 +21,60 @@ export default function Headerbootstrap(props) {
       >
         <div className="position-sticky">
           <div className="list-group list-group-flush mx-3 mt-4">
-          {props.isLoggedIn?<Link
+          <Link
               to="/search"
               className="list-group-item list-group-item-action py-2 "
               aria-current="true"
             >
               <i className="fas fa-newspaper fa-fw me-3"></i>
               <span>Search</span>
-            </Link>:null}
-            {props.isLoggedIn?<Link
+            </Link>
+            <Link
               to="/"
               className="list-group-item list-group-item-action py-2 "
               aria-current="true"
             >
               <i className="fas fa-newspaper fa-fw me-3"></i>
               <span>My Feed</span>
-            </Link>:null}
-            {props.isLoggedIn?<Link
+            </Link>
+            <Link
               to="/mypage"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-project-diagram fa-fw me-3"></i>
               <span>Projects</span>
-            </Link>:null}
-            {props.isLoggedIn?<Link
+            </Link>
+            <Link
               to="/create"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-project-diagram fa-fw me-3"></i>
               <span>New Project</span>
-            </Link>:null}
-            {props.isLoggedIn?<Link
+            </Link>
+            {/* <Link
               to="/calendar"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-calendar-alt fa-fw me-3"></i>
               <span>Calendar</span>
-            </Link>:null}
-            {props.isLoggedIn?<Link
+            </Link> */}
+            <Link
               to="/community"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-people-carry fa-fw me-3"></i>
               <span>Community</span>
-            </Link>:null}
-            {props.isLoggedIn?<Link
+            </Link>
+            <Link
               to="/curriculum"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-book fa-fw me-3"></i>
               <span>Curriculum</span>
-              </Link>:null}
-            {props.isLoggedIn?
-            <button onClick={logoutFunc}><span>Logout</span>
-            </button>:null}
+              </Link>
+            
+            <button onClick={logout}><span>Logout</span>
+            </button>
           </div>
         </div>
       </nav>
@@ -260,7 +268,7 @@ export default function Headerbootstrap(props) {
               >
                 <img
                 // link to cloudinary so profile pic renders as "src"
-                  src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
+                  src=""
                   className="rounded-circle"
                   height="22"
                   alt=""

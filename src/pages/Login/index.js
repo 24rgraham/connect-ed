@@ -11,7 +11,7 @@ console.log(props)
       if(props.isLoggedIn){
         navigate("/mypage")
       }
-    },[props.isLoggedIn])
+    },[])
 
   const [loginEmail, setLoginEmail] = useState("")
   const [loginPassword, setLoginPassword] = useState("")
@@ -23,6 +23,7 @@ console.log(props)
       email:loginEmail, 
       password:loginPassword
     })
+    navigate("/mypage")
   }
 
   return (
