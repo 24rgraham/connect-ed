@@ -1,43 +1,40 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Navbar from "./components/Navbar";
-import Navbarbootstrap from "./components/Navbarbootstrap";
-import React from "react";
-import Headerbootstrap from "./components/Headerbootstrap/";
-// import Header from "./components/Header/";
-import Main from "./pages/Main";
-import "./App.css";
-
+import React, {useEffect,useState} from "react";
 import API from './utils/API'
 
-function App() {
-  return (
-    <div className="App">
-      <Router>
-      <Headerbootstrap />
-      <Routes>
-        <Route path="/connect-ed/*" element={<Main />}></Route>
-      </Routes>
-      </Router>
+import Navbar from "./components/Navbar";
+import Header from "./components/Header/";
+import Main from "./pages/Main";
 
+import "./App.css";
+
+function App() {
+  const [userId, setUserId] = useState(0)
+  const [userEmail, setUserEmail] = useState("")
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [token, setToken] = useState("")
+
+  
+  return (
+    <div className="app">
+      <Router basename="/connect-ed">
+        <div className="pageContainer">
+          <div className="header">
+            <Header />
+          </div>
+          <body>
+            <div className="nav">
+              <Navbar />
+            </div>
+
+            <div className="main">
+              <Main />
+            </div>
+          </body>
+          <h1>Footer</h1>
+        </div>
+      </Router>
     </div>
-    // <div className="app">
-    //   <Router basename="/connect-ed">
-    //     <div className="pageContainer">
-    //       <div className="header">
-    //         {/* <Header /> */}
-    //       </div>
-    //         <div className="nav">
-    //           <Navbarbootstrap />
-    //         </div>
-    //       <div className="body">
-    //         <div className="main">
-    //           <Main />
-    //         </div>
-    //       </div>
-    //       <h1>Footer</h1>
-    //     </div>
-    //   </Router>
-    // </div>
   );
 }
 
