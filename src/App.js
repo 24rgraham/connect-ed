@@ -7,6 +7,7 @@ import Headerbootstrap from './components/Headerbootstrap'
 import Main from "./pages/Main";
 import Login from './pages/Login';
 
+import ProjectCard from "./components/ProjectCard";
 
 
 

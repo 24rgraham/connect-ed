@@ -2,7 +2,7 @@ import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
 import React from 'react';
 import Signup from '../Signup';
 import Login from '../Login';
-import SingleProject from '../../components/SingleProject'
+import SingleProject from '../SingleProject'
 import Landing from '../Landing'
 import NewProject from "../NewProject";
 import Search from "../Search"
