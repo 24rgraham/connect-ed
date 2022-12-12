@@ -12,6 +12,7 @@ const API = {
       },
     }).then((res) => res.json());
   },
+  
   signup: (userObj) => {
     return fetch(`${URL_PREFIX}/api/users`, {
       method: "POST",

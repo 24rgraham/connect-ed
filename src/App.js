@@ -50,6 +50,20 @@ function App() {
     })
   }
 
+  const getUsers = userObj =>{
+    useEffect(()=> {
+      fetch(`https://localhost:3001/api/users`, {
+
+        method: "GET",
+        body: JSON.stringify(userObj),
+        headers: {
+          "Content-Type": "application/json",
+        }, 
+      }).then((res) => {res.JSON()}).then(JSON => console.log(JSON));
+      console.log(res)
+    },[])
+  }
+
   
   return (
     
