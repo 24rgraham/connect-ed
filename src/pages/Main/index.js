@@ -13,7 +13,7 @@ import './style.css'
 
 function Main(props) {
     return(
-        
+        <main className='mainContainer'>
             <Routes>
             
                 <Route path="/" element={<Signup/>}/>
@@ -27,7 +27,7 @@ function Main(props) {
                 <Route path="/results" element={<SearchResults/>}/>
             
               </Routes>
-        
+        </main>
     )
 }
 
