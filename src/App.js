@@ -52,13 +52,13 @@ function App() {
 
   
   return (
-    <div>
+    
       <Router basename="/connect-ed">
         <Headerbootstrap />
         <Main userId={userId}
         token={token}/>
       </Router>
-    </div>
+    
   );
 }
 
