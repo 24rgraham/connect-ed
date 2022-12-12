@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 
 
-export default function Headerbootstrap() {
+export default function Headerbootstrap(props) {
   return (
     <header>
       {/* <!-- Sidebar --> */}
@@ -13,64 +13,60 @@ export default function Headerbootstrap() {
       >
         <div className="position-sticky">
           <div className="list-group list-group-flush mx-3 mt-4">
-            <Link
+          {props.isLoggedIn?<Link
               to="/search"
               className="list-group-item list-group-item-action py-2 "
               aria-current="true"
             >
               <i className="fas fa-newspaper fa-fw me-3"></i>
               <span>Search</span>
-            </Link>
-            <Link
+            </Link>:null}
+            {props.isLoggedIn?<Link
               to="/"
               className="list-group-item list-group-item-action py-2 "
               aria-current="true"
             >
               <i className="fas fa-newspaper fa-fw me-3"></i>
               <span>My Feed</span>
-            </Link>
-            <Link
+            </Link>:null}
+            {props.isLoggedIn?<Link
               to="/mypage"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-project-diagram fa-fw me-3"></i>
               <span>Projects</span>
-            </Link>
-            <Link
+            </Link>:null}
+            {props.isLoggedIn?<Link
               to="/create"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-project-diagram fa-fw me-3"></i>
               <span>New Project</span>
-            </Link>
-            <Link
+            </Link>:null}
+            {props.isLoggedIn?<Link
               to="/calendar"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-calendar-alt fa-fw me-3"></i>
               <span>Calendar</span>
-            </Link>
-            <Link
+            </Link>:null}
+            {props.isLoggedIn?<Link
               to="/community"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-people-carry fa-fw me-3"></i>
               <span>Community</span>
-            </Link>
-            <Link
+            </Link>:null}
+            {props.isLoggedIn?<Link
               to="/curriculum"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-book fa-fw me-3"></i>
               <span>Curriculum</span>
-            </Link>
-            <Link
-              to="/login"
-              className="list-group-item list-group-item-action py-2 "
-            >
-              <i className="fas fa-book fa-fw me-3"></i>
-              <span>Login</span>
-            </Link>
+              </Link>:null}
+            {props.isLoggedIn?
+            <button onClick={logoutFunc}><span>Logout</span>
+            </button>:null}
           </div>
         </div>
       </nav>
