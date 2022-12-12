@@ -1,8 +1,10 @@
 import React, {useState,useEffect} from "react";
 import {useNavigate} from 'react-router-dom'
 
-export default function Login(props) {
+import './style.css'
 
+export default function Login(props) {
+console.log(props)
   const navigate = useNavigate();
     useEffect(()=>{
       if(props.isLoggedIn){
@@ -15,6 +17,7 @@ export default function Login(props) {
  
   const loginHandle=e=>{
     e.preventDefault();
+    console.log(props)
     props.handleLoginSubmit({
       email:loginEmail, 
       password:loginPassword
@@ -22,7 +25,7 @@ export default function Login(props) {
   }
 
   return (
-    <form onSubmit={loginHandle}>
+    <form className='loginContainer' onSubmit={loginHandle}>
       <div>
         <label for="InputEmail" className="form-label" >
           Email Address 

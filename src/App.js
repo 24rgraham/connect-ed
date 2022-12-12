@@ -5,6 +5,8 @@ import './App.css'
 
 import Headerbootstrap from './components/Headerbootstrap'
 import Main from "./pages/Main";
+import Login from './pages/Login';
+
 
 
 
@@ -33,7 +35,10 @@ function App() {
   },[])
 
   const handleLoginSubmit = userObj=>{
-    API.login(userObj).then(data=>{
+    API.login({
+      email:userObj.email,
+      password:userObj.password
+    }).then(data=>{
       console.log(data);
       if(data.token){
         setUserId(data.user.id)
@@ -50,7 +55,8 @@ function App() {
     <div>
       <Router basename="/connect-ed">
         <Headerbootstrap />
-        <Main />
+        <Main userId={userId}
+        token={token}/>
       </Router>
     </div>
   );

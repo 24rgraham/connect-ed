@@ -8,15 +8,18 @@ import NewProject from "../NewProject";
 import Search from "../Search"
 import SearchResults from "../SearchResults"
 
+import App from '../../App'
 import './style.css'
 
-function Main() {
+function Main(props) {
     return(
         <div className='mainContainer'>
             <Routes>
             
                 <Route path="/" element={<Signup/>}/>
-                <Route path="/login" element={<Login/>}/>
+                <Route path="/login" element={<Login
+                    userId={props.userId}
+                    token={props.token}/>}/>
                 <Route path="/project" element={<SingleProject/>}/>
                 <Route path="/mypage" element={<Landing/>}/>
                 <Route path="/create" element={<NewProject/>}/>
