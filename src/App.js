@@ -16,23 +16,10 @@ function App() {
 
   
   return (
-    <div className="app">
+    <div>
       <Router basename="/connect-ed">
-        <div className="pageContainer">
-          <div className="header">
-            <Header />
-          </div>
-          <body>
-            <div className="nav">
-              <Navbar />
-            </div>
-
-            <div className="main">
-              <Main />
-            </div>
-          </body>
-          <h1>Footer</h1>
-        </div>
+        <Headerbootstrap />
+        <Main />
       </Router>
     </div>
   );
