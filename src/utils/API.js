@@ -3,6 +3,8 @@ const URL_PREFIX = "http://localhost:3001";
 
 const API = {
   // user routes
+
+  //login
   login: (userObj) => {
     return fetch(`${URL_PREFIX}/api/users/login`, {
       method: "POST",
@@ -12,6 +14,8 @@ const API = {
       },
     }).then((res) => res.json());
   },
+
+  //signup
   signup: (userObj) => {
     return fetch(`${URL_PREFIX}/api/users`, {
       method: "POST",
@@ -21,6 +25,8 @@ const API = {
       },
     }).then((res) => res.json());
   }, 
+
+  
   getUserFromToken: (token) => {
     return fetch(`${URL_PREFIX}/api/users/getuserfromtoken`, {
       method: "GET",

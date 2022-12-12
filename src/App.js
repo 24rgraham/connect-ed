@@ -53,11 +53,18 @@ function App() {
   
   return (
     <div>
+    {isLoggedIn?(
       <Router basename="/connect-ed">
         <Headerbootstrap />
         <Main userId={userId}
         token={token}/>
-      </Router>
+        </Router>
+        ):(
+          <Router>
+            <Login isLoggedIn={isLoggedIn}
+            handleLoginSubmit={handleLoginSubmit}/>
+          </Router>
+          )}
     </div>
   );
 }
