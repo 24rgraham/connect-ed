@@ -1,114 +1,95 @@
-/* .app {
-  display: flex;
-    background-color: rgb(158, 213, 224);
-    width:100rem;
-} */
-
-/* .body {
-    display: grid;
-    grid-template-columns:  1fr 4fr;
-} */
 main {
-padding-top: 85px;
-height: 100%;
+    padding-top: 85px;
+    height: 100%;
 }
-
-body {
-  background-color: #fbfbfb;
-}
-
-@media (min-width: 1400px) {
-    main {
-        max-width:100% !important;
+    body {
+      background-color: #FBFBFB;
     }
-}
-@media (min-width: 991.98px) {
-    main {
-        margin-left: 240px !important;
+    
+    @media (min-width: 1400px) {
+        main {
+            max-width:100% !important;
+        }
     }
-}
-
-@media (max-width: 991.98px) {
-  .sidebar {
-    width: 100%;
-  }
-  main {
-    margin-left: 0 !important;
-    max-width: 100% !important;
-  }
-}
-
-@media (max-width: 408px) {
-    #sidebarMenu {
-        padding-top: 95px !important;
+    @media (min-width: 991.98px) {
+        main {
+            margin-left: 240px !important;
+        }
     }
-}
-
-.header-title {
-    font-family: 'Gloria Hallelujah', cursive;
-    text-shadow: -1px 1px 2px #000,
-				  1px 1px 2px #000,
-				  1px -1px 0 #000,
-				  -1px -1px 0 #000;
-}
-
-.letter1 {
-    color: red;
-}
-.letter2 {
-    color: orange;
-}
-.letter3 {
-    color: yellow;
-}
-.letter4 {
-    color: yellowgreen;
-}
-.letter5 {
-    color: green;
-}
-.letter6 {
-    color: blue;
-}
-.letter7 {
-    color: blueviolet;
-}
-.letter8 {
-    color: black;
-}
-.letter9 {
-    color: violet;
-}
-.letter10 {
-    color: red;
-}
-
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  padding: 58px 0 0; /* Height of navbar */
-  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
-  width: 240px;
-  z-index: 600;
-}
-
-#search-form {
-  min-width: 225px;
-}
-
-.sidebar .active {
-  border-radius: 5px;
-  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-}
-
-.sidebar-sticky {
-  position: relative;
-  top: 0;
-  height: calc(100vh - 48px);
-  padding-top: 0.5rem;
-  overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-}
+    @media (max-width: 991.98px) {
+      .sidebar {
+        width: 100%;
+      }
+      main {
+        margin-left: 0 !important;
+        max-width: 100% !important;
+      }
+    }
+    @media (max-width: 408px) {
+        #sidebarMenu {
+            padding-top: 95px !important;
+        }
+    }
+    .header-title {
+        font-family: 'Gloria Hallelujah', cursive;
+        text-shadow: -1px 1px 2px #000,
+              1px 1px 2px #000,
+              1px -1px 0 #000,
+              -1px -1px 0 #000;
+    }
+    .letter1 {
+        color: red;
+    }
+    .letter2 {
+        color: orange;
+    }
+    .letter3 {
+        color: yellow;
+    }
+    .letter4 {
+        color: yellowgreen;
+    }
+    .letter5 {
+        color: green;
+    }
+    .letter6 {
+        color: blue;
+    }
+    .letter7 {
+        color: blueviolet;
+    }
+    .letter8 {
+        color: black;
+    }
+    .letter9 {
+        color: violet;
+    }
+    .letter10 {
+        color: red;
+    }
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      padding: 58px 0 0; /* Height of navbar */
+      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+      width: 240px;
+      z-index: 600;
+    }
+    #search-form {
+      min-width: 225px;
+    }
+    .sidebar .active {
+      border-radius: 5px;
+      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    }
+    .sidebar-sticky {
+      position: relative;
+      top: 0;
+      height: calc(100vh - 48px);
+      padding-top: 0.5rem;
+      overflow-x: hidden;
+      overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    }

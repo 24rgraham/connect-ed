@@ -1,4 +1,5 @@
-const URL_PREFIX = "https://gentle-beyond-41129.herokuapp.com/";
+// const URL_PREFIX = "https://gentle-beyond-41129.herokuapp.com/";
+const URL_PREFIX = "http://localhost:3001";
 
 const API = {
   // user routes
@@ -19,6 +20,14 @@ const API = {
         "Content-Type": "application/json",
       },
     }).then((res) => res.json());
+  }, 
+  getUserFromToken: (token) => {
+    return fetch(`${URL_PREFIX}/api/users/getuserfromtoken`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((res) => res.json());
   },
   logout: (userId) => {
     return fetch(`${URL_PREFIX}/api/users/logout`).then((res) => res.json());
@@ -36,14 +45,7 @@ const API = {
       },
     }).then((res) => res.json());
   },
-  getUserFromToken: (token) => {
-    return fetch(`${URL_PREFIX}/api/users/getuserfromtoken`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }).then((res) => res.json());
-  },
+ 
   // project routes
   getAllProjects: () => {
     return fetch(`${URL_PREFIX}/api/projects`).then((res) => res.json());
