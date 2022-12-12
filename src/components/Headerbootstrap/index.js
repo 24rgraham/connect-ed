@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+
 import "./style.css";
 
 export default function Headerbootstrap() {
@@ -11,42 +14,64 @@ export default function Headerbootstrap() {
       >
         <div className="position-sticky">
           <div className="list-group list-group-flush mx-3 mt-4">
-            <a
-              href="/connect-ed/home"
+            <Link
+              to="/search"
+              className="list-group-item list-group-item-action py-2 "
+              aria-current="true"
+            >
+              <i className="fas fa-newspaper fa-fw me-3"></i>
+              <span>Search</span>
+            </Link>
+            <Link
+              to="/"
               className="list-group-item list-group-item-action py-2 "
               aria-current="true"
             >
               <i className="fas fa-newspaper fa-fw me-3"></i>
               <span>My Feed</span>
-            </a>
-            <a
-              href="/connect-ed/mypage"
+            </Link>
+            <Link
+              to="/mypage"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-project-diagram fa-fw me-3"></i>
               <span>Projects</span>
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/create"
+              className="list-group-item list-group-item-action py-2 "
+            >
+              <i className="fas fa-project-diagram fa-fw me-3"></i>
+              <span>New Project</span>
+            </Link>
+            <Link
+              to="/calendar"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-calendar-alt fa-fw me-3"></i>
               <span>Calendar</span>
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/community"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-people-carry fa-fw me-3"></i>
               <span>Community</span>
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/curriculum"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-book fa-fw me-3"></i>
               <span>Curriculum</span>
-            </a>
+            </Link>
+            <Link
+              to="/login"
+              className="list-group-item list-group-item-action py-2 "
+            >
+              <i className="fas fa-book fa-fw me-3"></i>
+              <span>Login</span>
+            </Link>
           </div>
         </div>
       </nav>
