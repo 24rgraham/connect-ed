@@ -56,8 +56,14 @@ function App() {
     {isLoggedIn?(
       <Router basename="/connect-ed">
         <Headerbootstrap />
-        <Main userId={userId}
-        token={token}/>
+        <Main 
+        userId={userId}
+        token={token}
+        setToken={setToken}
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
+        setUserId={setUserId}
+        userEmail={userEmail}/>
         </Router>
         ):(
           <Router>
