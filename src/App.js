@@ -7,6 +7,7 @@ import Headerbootstrap from './components/Headerbootstrap'
 import Main from "./pages/Main";
 import Login from './pages/Login';
 
+import ProjectCard from "./components/ProjectCard";
 
 
 
@@ -48,20 +49,6 @@ function App() {
         localStorage.setItem("token",data.token)
       }
     })
-  }
-
-  const getUsers = userObj =>{
-    useEffect(()=> {
-      fetch(`https://localhost:3001/api/users`, {
-
-        method: "GET",
-        body: JSON.stringify(userObj),
-        headers: {
-          "Content-Type": "application/json",
-        }, 
-      }).then((res) => {res.JSON()}).then(JSON => console.log(JSON));
-      console.log(res)
-    },[])
   }
 
   

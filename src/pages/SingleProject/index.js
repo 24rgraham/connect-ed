@@ -1,8 +1,17 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
+import API from '../../utils/API'
 
-export default function SingleProject() {
-    const {id} = useParams()
+export default function SingleProject(props) {
+
+    useEffect(() =>{
+        API.get
+    })
+    
+
+    //will eventually want edit functionality 
+    //we are going to want to map over this to have a page for each project
+    //
+    
 
     return (
         <div className='projectContainer'>
