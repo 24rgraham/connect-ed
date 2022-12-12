@@ -24,9 +24,8 @@ const API = {
         "Content-Type": "application/json",
       },
     }).then((res) => res.json());
-  }, 
+  },
 
-  
   getUserFromToken: (token) => {
     return fetch(`${URL_PREFIX}/api/users/getuserfromtoken`, {
       method: "GET",
@@ -51,15 +50,18 @@ const API = {
       },
     }).then((res) => res.json());
   },
- 
+
   // project routes
   getAllProjects: () => {
     return fetch(`${URL_PREFIX}/api/projects`).then((res) => res.json());
   },
-  getProject: (projectId) => {
-    return fetch(`${URL_PREFIX}/api/projects/${projectId}`).then((res) =>
-      res.json()
-    );
+  getProject: (projectId, token) => {
+    return fetch(`${URL_PREFIX}/api/projects/${projectId}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((res) => res.json());
   },
   createProject: (projectObj, token) => {
     return fetch(`${URL_PREFIX}/api/projects`, {
