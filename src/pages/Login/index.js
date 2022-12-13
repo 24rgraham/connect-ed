@@ -9,7 +9,7 @@ console.log(props)
   const navigate = useNavigate();
     useEffect(()=>{
       if(props.isLoggedIn){
-        navigate("/mypage")
+        navigate("/projects")
       }
     },[])
 
@@ -23,7 +23,7 @@ console.log(props)
       email:loginEmail, 
       password:loginPassword
     })
-    navigate("/mypage")
+    navigate("/projects")
   }
 
   return (
