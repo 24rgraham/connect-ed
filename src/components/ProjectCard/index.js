@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react';
 import './style.css'
 import { Link } from 'react-router-dom'
 
+// const [project, setProject] = useState([
+
+// ])
+
+// useEffect(() => {
+//       setProject(props.currentProject)
+//   }, [props.userId]);
+//   console.log(project);
+
 export default function ProjectCard(){
   
 

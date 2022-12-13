@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import API from "./utils/API";
 import Signup from "./pages/Signup";
@@ -8,6 +13,7 @@ import Projects from "./pages/Projects";
 import NewProject from "./pages/NewProject";
 import Search from "./pages/Search";
 import SearchResults from "./pages/SearchResults";
+
 import "./App.css";
 import Headerbootstrap from "./components/Headerbootstrap";
 
@@ -16,7 +22,6 @@ function App() {
   const [userEmail, setUserEmail] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [token, setToken] = useState("");
-
 
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
@@ -48,7 +53,6 @@ function App() {
         setIsLoggedIn(true);
         setUserEmail(data.user.email);
         localStorage.setItem("token", data.token);
-
       }
     });
   };
@@ -98,7 +102,8 @@ function App() {
                   isLoggedIn={isLoggedIn}
                   handleLoginSubmit={handleLoginSubmit}/>
               }/>
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects" element={<Projects
+                token={token}/>} />
             <Route path="/login" element={
               <Login
                 isLoggedIn={isLoggedIn}
