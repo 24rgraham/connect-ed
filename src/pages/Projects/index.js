@@ -9,7 +9,9 @@ import SavedForLater from '../../components/LandingComponents/SavedForLater'
 import OriginalProjects from '../../components/LandingComponents/OriginalProjects'
 
 // Make a project card component that will be .map() placed in each associated container
-export default function Landing() {
+export default function Projects() {
+
+    
     return(
         <div className='landingContainer'>
             <InProgress/>
