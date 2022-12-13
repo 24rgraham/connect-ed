@@ -23,7 +23,7 @@ export default function SingleProject(props) {
         <div className="topOfPage">
           <h3 className="title"> {project.title}</h3>
           <div className="mediaContainer">
-            <img></img>
+           <img width='178px' src={project.image}></img>
             <p className="grade">Recommended Grade Level: {project.grade_lvl}</p>
             <p className="time">Estimated Time to Complete: {project.est_time}</p>
             {project.Curriculums && <p className="subject">Curriculum(s): {project.Curriculums.map(curriculum => (
