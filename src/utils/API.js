@@ -199,6 +199,15 @@ const API = {
       },
     }).then((res) => res.json());
   },
+  getOgProjects: (token) => {
+    return fetch(`${URL_PREFIX}/api/projects/getprojectsfromtoken`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((res) => res.json());
+  },  
+
   //   search route
   advancedSearch: (searchObj, token) => {
     return fetch(`${URL_PREFIX}/api/search`, {
