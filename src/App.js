@@ -8,6 +8,7 @@ import Projects from "./pages/Projects";
 import NewProject from "./pages/NewProject";
 import Search from "./pages/Search";
 import SearchResults from "./pages/SearchResults";
+
 import "./App.css";
 import Headerbootstrap from "./components/Headerbootstrap";
 
@@ -95,7 +96,6 @@ function App() {
                 <SingleProject projectId={match.params.id} />
               )}
             /> */}
-            <Route path="/mypage" element={<Landing />} />
             <Route path="/create" element={<NewProject />} />
             <Route path="/search" element={<Search />} />
             <Route path="/results" element={<SearchResults />} />
