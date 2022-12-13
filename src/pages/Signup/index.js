@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom"
 import "./style.css";
 
+import API from "../../utils/API"
+
+
 function Signup() {
-  // event.preventDefault();
-  // const data = new FormData(event.currentTarget)
-  // const newUser = {
-  //     firstName: data.get('newFirstName'),
-  //     lastName: data.get('newLastName'),
-  //     email: data.get('newLastName'),
-  //     password: data.get('newPassword'),
-  //     school: data.get('newSchool'),
-  //     city: data.get('newCity'),
-  //     state: data.get('newState'),
-  //     language: data.get('newLanguage'),
-  // This will be for the cloudinary upload widget
-  // }
+
+  const navigate = useNavigate();
+  const [signUp, setSignUp] = useState(false)
+ 
+  
+  
+
+
   return (
     <form className="g-3 signupContainer">
       <h4>Signup</h4>

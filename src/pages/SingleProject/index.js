@@ -5,9 +5,7 @@ import SubjectSearch from "../../components/SearchComponents/SubjectSearch";
 
 export default function SingleProject(props) {
 
-  const [project, setProject] = useState([
-
-  ])
+  const [project, setProject] = useState([])
 
   useEffect(() => {
     API.getProject(props.projectId).then((data) => {
