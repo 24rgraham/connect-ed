@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom"
 import "./style.css";
 import ImageUpload from "../../components/ImageUpload";
 
@@ -31,6 +32,17 @@ export default function SignUp(props) {
     };
     navigate("/mypage");
   };
+
+
+
+function Signup() {
+
+  const navigate = useNavigate();
+  const [signUp, setSignUp] = useState(false)
+ 
+  
+  
+
 
   return (
     <form className="g-3 signupContainer">
@@ -219,4 +231,5 @@ export default function SignUp(props) {
       </div>
     </form>
   );
+}
 }

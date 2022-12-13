@@ -57,6 +57,27 @@ function App() {
     });
   };
 
+  const handleSignupSubmit = userObj=>{
+    API.signup(userObj).then(data=>{
+      console.log(data);
+      if(data.token){
+        setUserId(data.user.id);
+        setToken(data.token);
+        setIsLoggedIn(true);
+        setSignupEmail(data.user.email);
+        setSignupFirstName(data.user.first_name);
+        setSignupLastName(data.user.last_name);
+        setSignupPassword(data.user.password);
+        setSignupSchool(data.user.school);
+        setSignupCity(data.user.city);
+        setSignupState(data.user.state);
+        setSignupLanguage(data.user.language);
+        setSignupPicture(data.user.profile_picture);
+        localStorage.setItem("token",data.token)
+      }
+    })
+  }
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     setIsLoggedIn(false);
@@ -81,8 +102,7 @@ function App() {
                   isLoggedIn={isLoggedIn}
                   handleLoginSubmit={handleLoginSubmit}/>
               }/>
-            <Route path="/projects" element={<Projects
-                token={token}/>} />
+            <Route path="/projects" element={<Projects/>} />
             <Route path="/login" element={
               <Login
                 isLoggedIn={isLoggedIn}
@@ -91,19 +111,12 @@ function App() {
               />
             }
             />
-            <Route path="/project/:id" element={<SingleProject
-            //hardocoded project 1 for example
-              projectId={1} />} />
-            {/* <Route
-              path="/project/:id"
-              render={({ match }) => (
-                <SingleProject projectId={match.params.id} />
-              )}
-            /> */}
+            <Route path="/project/:id" element={<SingleProject />} />
             <Route path="/create" element={<NewProject 
             token={token}/>} />
             <Route path="/search" element={<Search />} />
             <Route path="/results" element={<SearchResults />} />
+        
           </Routes>
         </main>
       </Router>
