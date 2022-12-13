@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import API from "./utils/API";
 import Signup from "./pages/Signup";
@@ -16,7 +21,6 @@ function App() {
   const [userEmail, setUserEmail] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [token, setToken] = useState("");
-
 
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
@@ -48,7 +52,6 @@ function App() {
         setIsLoggedIn(true);
         setUserEmail(data.user.email);
         localStorage.setItem("token", data.token);
-
       }
     });
   };
@@ -59,7 +62,6 @@ function App() {
     setToken("");
     setUserId(0);
     setUserEmail("");
-    
   };
 
   return (
@@ -73,10 +75,15 @@ function App() {
         <main className="mainContainer">
           <Routes>
             <Route path="/" element={<Signup />} />
-            <Route path="/login" element={ <Login
+            <Route
+              path="/login"
+              element={
+                <Login
                   isLoggedIn={isLoggedIn}
-                  handleLoginSubmit={handleLoginSubmit}/>
-              }/>
+                  handleLoginSubmit={handleLoginSubmit}
+                />
+              }
+            />
             <Route path="/project/:id" element={<SingleProject />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/create" element={<NewProject />} />
