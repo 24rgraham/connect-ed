@@ -57,9 +57,12 @@ export default function Login(props) {
           onChange={(e) => setLoginPassword(e.target.value)}
         ></input>
       </div>
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="m-3 btn btn-primary">
         Submit
       </button>
+      <a href="/signup" className="m-3 btn btn-primary">
+        Signup Instead
+      </a>
     </form>
   );
 }

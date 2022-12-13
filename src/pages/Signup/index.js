@@ -130,6 +130,7 @@ function Signup() {
         <label htmlFor="inputState" className="form-label">
           State
         </label>
+        {/* select state */}
         <select
           id="inputState"
           className="form-select"
@@ -196,6 +197,7 @@ function Signup() {
         <label htmlFor="inputLanguage" className="form-label">
           Language
         </label>
+        {/* select language */}
         <select
           id="inputLanguage"
           className="form-select"
@@ -213,11 +215,11 @@ function Signup() {
           <option value="FR">French</option>
         </select>
       </div>
-      <div>
-        <label>Profile Picture</label>
+      <div className="col-12 mb-3">
+        <label className="form-label">
+          Profile Picture</label>
         <ImageUpload imageData={imageData} />
       </div>
-      <div className="col-12"></div>
       <div className="col-12">
         <button
           type="submit"

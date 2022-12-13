@@ -29,14 +29,14 @@ export default function Headerbootstrap(props) {
               <i className="fas fa-newspaper fa-fw me-3"></i>
               <span>Search</span>
             </Link>
-            <Link
+            {/* <Link
               to="/"
               className="list-group-item list-group-item-action py-2 "
               aria-current="true"
             >
               <i className="fas fa-newspaper fa-fw me-3"></i>
               <span>My Feed</span>
-            </Link>
+            </Link> */}
             <Link
               to="/projects"
               className="list-group-item list-group-item-action py-2 "
