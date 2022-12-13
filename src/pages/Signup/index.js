@@ -1,20 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
+import ImageUpload from "../../components/ImageUpload";
 
-function Signup() {
-  // event.preventDefault();
-  // const data = new FormData(event.currentTarget)
-  // const newUser = {
-  //     firstName: data.get('newFirstName'),
-  //     lastName: data.get('newLastName'),
-  //     email: data.get('newLastName'),
-  //     password: data.get('newPassword'),
-  //     school: data.get('newSchool'),
-  //     city: data.get('newCity'),
-  //     state: data.get('newState'),
-  //     language: data.get('newLanguage'),
-  // This will be for the cloudinary upload widget
-  // }
+export default function SignUp(props) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [school, setSchool] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [language, setLanguage] = useState("");
+  const [imageData, setImageData] = useState("");
+
+  const signUpHandler = (e) => {
+    e.preventDefault();
+    props.handleSignUpSubmit({
+      email: email,
+      password: password,
+      firstName: firstName,
+      lastName: lastName,
+      school: school,
+      city: city,
+      state: state,
+      language: language,
+      image: `https://res.cloudinary.com/dqv6cj4bc/image/upload/v1668535173/${imageData.public_id}`,
+    });
+    const handleResponse = (res) => {
+      setImageData(res.data);
+    };
+    navigate("/mypage");
+  };
+
   return (
     <form className="g-3 signupContainer">
       <h4>Signup</h4>
@@ -22,19 +39,40 @@ function Signup() {
         <label htmlFor="inputFirstName" className="form-label">
           First Name
         </label>
-        <input type="text" className="form-control" id="inputFirstName"></input>
+        <input
+          type="text"
+          className="form-control"
+          id="inputFirstName"
+          name="firstName"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+        ></input>
       </div>
       <div className="col-md-6">
         <label htmlFor="inputLastName" className="form-label">
           Last Name
         </label>
-        <input type="text" className="form-control" id="inputLastName"></input>
+        <input
+          type="text"
+          className="form-control"
+          id="inputLastName"
+          name="lastName"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        ></input>
       </div>
       <div className="col-md-6">
         <label htmlFor="inputEmail" className="form-label">
           Email
         </label>
-        <input type="email" className="form-control" id="inputEmail"></input>
+        <input
+          type="email"
+          className="form-control"
+          id="inputEmail"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        ></input>
       </div>
       <div className="col-md-6">
         <label htmlFor="inputPassword" className="form-label">
@@ -44,6 +82,9 @@ function Signup() {
           type="password"
           className="form-control"
           id="inputPassword"
+          name="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         ></input>
       </div>
       <div className="col-6">
@@ -55,13 +96,23 @@ function Signup() {
           className="form-control"
           id="inputAddress"
           placeholder=""
+          name="school"
+          value={school}
+          onChange={(e) => setSchool(e.target.value)}
         ></input>
       </div>
       <div className="col-md-6">
         <label htmlFor="inputCity" className="form-label">
           City
         </label>
-        <input type="text" className="form-control" id="inputCity"></input>
+        <input
+          type="text"
+          className="form-control"
+          id="inputCity"
+          name="city"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+        ></input>
       </div>
       <div className="col-md-4">
         <label htmlFor="inputState" className="form-label">
@@ -71,6 +122,9 @@ function Signup() {
           id="inputState"
           className="form-select"
           defaultValue={"Choose..."}
+          name="state"
+          value={state}
+          onChange={(e) => setState(e.target.value)}
         >
           <option value="...">Choose...</option>
           <option value="AL">Alabama</option>
@@ -134,6 +188,9 @@ function Signup() {
           id="inputLanguage"
           className="form-select"
           defaultValue={"Choose..."}
+          name="language"
+          value={language}
+          onChange={(e) => setLanguage(e.target.value)}
         >
           <option value="...">Choose...</option>
           <option value="EN">English</option>
@@ -144,14 +201,20 @@ function Signup() {
           <option value="FR">French</option>
         </select>
       </div>
+      <div>
+        <label>Profile Picture</label>
+        <ImageUpload imageData={imageData} />
+      </div>
       <div className="col-12"></div>
       <div className="col-12">
-        <button type="submit" className="btn btn-primary">
+        <button
+          type="submit"
+          className="btn btn-primary"
+          onSubmit={signUpHandler}
+        >
           Create Account
         </button>
       </div>
     </form>
   );
 }
-
-export default Signup;

@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import API from "./utils/API";
 import Signup from "./pages/Signup";
@@ -17,7 +22,6 @@ function App() {
   const [userEmail, setUserEmail] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [token, setToken] = useState("");
-
 
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
@@ -49,7 +53,6 @@ function App() {
         setIsLoggedIn(true);
         setUserEmail(data.user.email);
         localStorage.setItem("token", data.token);
-
       }
     });
   };
