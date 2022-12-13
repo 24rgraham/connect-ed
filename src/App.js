@@ -59,7 +59,7 @@ function App() {
     setToken("");
     setUserId(0);
     setUserEmail("");
-    
+
   };
 
   return (
@@ -73,12 +73,29 @@ function App() {
         <main className="mainContainer">
           <Routes>
             <Route path="/" element={<Signup />} />
-            <Route path="/login" element={ <Login
+          <Route path="/login" element={ <Login
                   isLoggedIn={isLoggedIn}
                   handleLoginSubmit={handleLoginSubmit}/>
               }/>
-            <Route path="/project/:id" element={<SingleProject />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/login" element={
+              <Login
+                isLoggedIn={isLoggedIn}
+                handleLoginSubmit={handleLoginSubmit}
+              // handleLogout={handleLogout}
+              />
+            }
+            />
+            <Route path="/project/:id" element={<SingleProject
+            //hardocoded project 1 for example
+              projectId={1} />} />
+            {/* <Route
+              path="/project/:id"
+              render={({ match }) => (
+                <SingleProject projectId={match.params.id} />
+              )}
+            /> */}
+            <Route path="/mypage" element={<Landing />} />
             <Route path="/create" element={<NewProject />} />
             <Route path="/search" element={<Search />} />
             <Route path="/results" element={<SearchResults />} />
