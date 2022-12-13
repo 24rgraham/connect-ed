@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
+
+import { useParams } from "react-router-dom";
 import Subject from '../../components/SingleProjectComponents/Subject'
 import SubjectSearch from "../../components/SearchComponents/SubjectSearch";
 
 export default function SingleProject(props) {
+    const params = useParams()
 
   const [project, setProject] = useState([])
 
   useEffect(() => {
-    API.getProject(props.projectId).then((data) => {
+    API.getProject(params.id).then((data) => {
       setProject(data)
     });
-  }, [props.userId]);
+  }, []);
   console.log(project);
 
   return (

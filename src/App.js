@@ -113,6 +113,7 @@ function App() {
             }
             />
             <Route path="/project/:id" element={<SingleProject
+            
             //hardocoded project 1 for example
               projectId={1} />} />
             {/* <Route
@@ -124,6 +125,7 @@ function App() {
             <Route path="/create" element={<NewProject />} />
             <Route path="/search" element={<Search />} />
             <Route path="/results" element={<SearchResults />} />
+        
           </Routes>
         </main>
       </Router>

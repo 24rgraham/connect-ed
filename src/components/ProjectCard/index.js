@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './style.css'
-import { Link } from 'react-router-dom'
 
+import { useNavigate } from "react-router-dom";
+import API from "../../utils/API"
 // const [project, setProject] = useState([
 
 // ])
@@ -10,28 +11,46 @@ import { Link } from 'react-router-dom'
 //       setProject(props.currentProject)
 //   }, [props.userId]);
 //   console.log(project);
+//
 
-export default function ProjectCard(){
+export default function ProjectCard(props){
+
+   
+    const navigate = useNavigate();
+
+    const navigateProject = () => {
+        navigate(`/project/${props.projectInfo.id}`);
+    }
+    
+    // useEffect(() => {
+    //     API.getProject(props.projectId).then((data) => {
+    //     setCard(data);
+    //     });
+    //   }, [props.userId]);
+    //   console.log(project);
   
 
     return(
         <>
-   <div className='cardContainer'>
-        <Link to="/project/:id">
-        
+         <div className='cardContainer'>
+       
+        <button onClick={navigateProject} >
             <div className='imageContainer'>
                 <img width='100px' src={require('../../utils/pelican.png')}></img>
                 
             </div>
-            <div className='cardTitle'>Title</div>
-                <div className='gradeCard'>Grade Level</div>
-                <div className='timeCard'>Time Description</div>
+            <div className='cardTitle'>{card.title}</div>
+                <div className='gradeCard'>Grade Level:{card.grade_lvl}</div>
+                <div className='timeCard'>Time Description:{card.est_time}</div>
                 
-        
-        </Link>
+         
+        </button>
        </div>
+       
+
         </>
     )
+
 }
 
 // import {data} from ...Completed.apply.API

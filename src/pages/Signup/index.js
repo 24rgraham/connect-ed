@@ -33,7 +33,6 @@ export default function SignUp(props) {
     navigate("/mypage");
   };
 
-import API from "../../utils/API"
 
 
 function Signup() {
