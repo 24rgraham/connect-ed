@@ -11,7 +11,9 @@ import { Link } from 'react-router-dom'
 //   }, [props.userId]);
 //   console.log(project);
 
-export default function ProjectCard(){
+export default function ProjectCard(props){
+    console.log(props);
+    
 
 
     
