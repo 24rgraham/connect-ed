@@ -1,8 +1,10 @@
 main {
-    padding-top: 85px;
     height: 100%;
+    padding-top: 85px;
     padding-left: 5% !important;
     padding-bottom: 10%!important;
+    margin-right: 0 !important;
+    background-color: beige;
 }
     body {
       background-color: #FBFBFB;

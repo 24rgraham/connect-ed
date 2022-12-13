@@ -4,7 +4,7 @@ import API from "./utils/API";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import SingleProject from "./pages/SingleProject";
-import Landing from "./pages/Landing";
+import Projects from "./pages/Projects";
 import NewProject from "./pages/NewProject";
 import Search from "./pages/Search";
 import SearchResults from "./pages/SearchResults";
@@ -21,10 +21,10 @@ function App() {
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
     if (storedToken) {
-      console.log(storedToken);
+      console.log("storedtoken:" + storedToken);
       API.getUserFromToken(storedToken).then((data) => {
         if (data.user) {
-          console.log(data);
+          console.log("data:" + data);
           setToken(storedToken);
           setIsLoggedIn(true);
           setUserId(data.user.id);
@@ -73,16 +73,12 @@ function App() {
         <main className="mainContainer">
           <Routes>
             <Route path="/" element={<Signup />} />
-            <Route path="/login" element={
-                <Login
+            <Route path="/login" element={ <Login
                   isLoggedIn={isLoggedIn}
-                  handleLoginSubmit={handleLoginSubmit}
-                  // handleLogout={handleLogout}
-                />
-              }
-            />
+                  handleLoginSubmit={handleLoginSubmit}/>
+              }/>
             <Route path="/project/:id" element={<SingleProject />} />
-            <Route path="/mypage" element={<Landing />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/create" element={<NewProject />} />
             <Route path="/search" element={<Search />} />
             <Route path="/results" element={<SearchResults />} />
