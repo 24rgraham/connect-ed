@@ -7,48 +7,32 @@ import API from "../../utils/API"
 
 // ])
 
-// useEffect(() => {
-//       setProject(props.currentProject)
-//   }, [props.userId]);
-//   console.log(project);
-//
-
-export default function ProjectCard(props){
-    console.log(props);
 
 
-   
+
+export default function ProjectCard({projectInfo}) {
+    console.log(projectInfo);
     const navigate = useNavigate();
-
     const navigateProject = () => {
-        navigate(`/project/${props.projectInfo.id}`);
+        navigate(`/project/${projectInfo.id}`);
     }
-    
-    // useEffect(() => {
-    //     API.getProject(props.projectId).then((data) => {
-    //     setCard(data);
-    //     });
-    //   }, [props.userId]);
-    //   console.log(project);
-  
 
-    return(
+    return (
         <>
-         <div className='cardContainer'>
-       
-        <button onClick={navigateProject} >
-            <div className='imageContainer'>
-                <img width='100px' src={require('../../utils/pelican.png')}></img>
-                
+            <div className='cardContainer'>
+
+                <button onClick={navigateProject} >
+                    <div className='imageContainer'>
+                        <img width='178px' src={projectInfo.image}></img>
+                    </div>
+                    <div className='cardTitle'>{projectInfo.title}</div>
+                <div className='gradeCard'>Grade Level: {projectInfo.grade_lvl}</div>
+                <div className='timeCard'>Time Description: {projectInfo.est_time}</div>
+
+
+                </button>
             </div>
-            <div className='cardTitle'>{card.title}</div>
-                <div className='gradeCard'>Grade Level:{card.grade_lvl}</div>
-                <div className='timeCard'>Time Description:{card.est_time}</div>
-                
-         
-        </button>
-       </div>
-       
+
 
         </>
     )

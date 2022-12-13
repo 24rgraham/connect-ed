@@ -167,26 +167,32 @@ const API = {
     }).then((res) => res.json());
   },
   //   status routes
-  getInProgress: () => {
-    return fetch(`${URL_PREFIX}/api/status/in_progress`).then((res) =>
-      res.json()
-    );
-  },
-  getSavedForLater: () => {
-    return fetch(`${URL_PREFIX}/api/status/saved_for_later`).then((res) =>
-      res.json()
-    );
-  },
-  getStarred: () => {
-    return fetch(`${URL_PREFIX}/api/status/starred`).then((res) => res.json());
-  },
-  getCompleted: () => {
-    return fetch(`${URL_PREFIX}/api/status/completed`).then((res) =>
-      res.json()
-    );
-  },
   getCompletedProjects: (token) => {
+    return fetch(`${URL_PREFIX}/api/status/completed`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((res) => res.json());
+  },
+  getInProgressProjects: (token) => {
+    return fetch(`${URL_PREFIX}/api/status/in_progress`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((res) => res.json());
+  },
+  getSavedForLaterProjects: (token) => {
     return fetch(`${URL_PREFIX}/api/status/saved_for_later`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((res) => res.json());
+  },
+  getStarredProjects: (token) => {
+    return fetch(`${URL_PREFIX}/api/status/starred`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
