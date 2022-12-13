@@ -13,7 +13,7 @@ export default function InProgress(props) {
     },[] )
     return(
         <>
-            {inProgressProjects && <div className='inProgress'>
+            {inProgressProjects[0] && <div className='inProgress'>
                 <h4>In Progress Projects:</h4>
                 {inProgressProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
             </div>}
