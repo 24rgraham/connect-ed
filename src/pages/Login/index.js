@@ -7,6 +7,11 @@ import "../../App";
 export default function Login(props) {
   console.log(props);
   const navigate = useNavigate();
+    useEffect(()=>{
+      if(props.isLoggedIn){
+        navigate("/projects")
+      }
+    },[])
   useEffect(() => {
     if (props.isLoggedIn) {
       navigate("/projects");
@@ -20,11 +25,11 @@ export default function Login(props) {
     e.preventDefault();
     console.log(props);
     props.handleLoginSubmit({
-      email: loginEmail,
-      password: loginPassword,
-    });
-    navigate("/mypage");
-  };
+      email:loginEmail, 
+      password:loginPassword
+    })
+    navigate("/projects")
+  }
 
   return (
     <form className="loginContainer" onSubmit={loginHandle}>

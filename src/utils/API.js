@@ -185,6 +185,14 @@ const API = {
       res.json()
     );
   },
+  getCompletedProjects: (token) => {
+    return fetch(`${URL_PREFIX}/api/status/saved_for_later`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((res) => res.json());
+  },
   //   search route
   advancedSearch: (searchObj, token) => {
     return fetch(`${URL_PREFIX}/api/search`, {
