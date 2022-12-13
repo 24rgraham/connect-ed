@@ -33,7 +33,7 @@ export default function Login(props) {
 
   return (
     <form className="loginContainer" onSubmit={loginHandle}>
-      <div className=" col-6">
+      <div className=" col-4">
         <h1>Login</h1>
         <label className="form-label">Email Address</label>
         <input
@@ -46,7 +46,7 @@ export default function Login(props) {
           onChange={(e) => setLoginEmail(e.target.value)}
         ></input>
       </div>
-      <div className=" col-6 mb-4">
+      <div className=" col-4 mb-4">
         <label className="form-label">Password</label>
         <input
           type="password"
