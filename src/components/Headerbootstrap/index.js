@@ -38,7 +38,7 @@ export default function Headerbootstrap(props) {
               <span>My Feed</span>
             </Link>
             <Link
-              to="/mypage"
+              to="/projects"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-project-diagram fa-fw me-3"></i>
