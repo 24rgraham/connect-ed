@@ -7,9 +7,9 @@ export default function ProjectCard(){
 
     return(
         <>
-   
+   <div className='cardContainer'>
         <Link to="/project/:id">
-        <div className='cardContainer'>
+        
             <div className='imageContainer'>
                 <img width='100px' src={require('../../utils/pelican.png')}></img>
                 
@@ -18,9 +18,9 @@ export default function ProjectCard(){
                 <div className='gradeCard'>Grade Level</div>
                 <div className='timeCard'>Time Description</div>
                 
-        </div>
+        
         </Link>
-       
+       </div>
         </>
     )
 }
