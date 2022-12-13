@@ -102,8 +102,7 @@ function App() {
                   isLoggedIn={isLoggedIn}
                   handleLoginSubmit={handleLoginSubmit}/>
               }/>
-            <Route path="/projects" element={<Projects
-                token={token}/>} />
+            <Route path="/projects" element={<Projects/>} />
             <Route path="/login" element={
               <Login
                 isLoggedIn={isLoggedIn}
@@ -112,16 +111,7 @@ function App() {
               />
             }
             />
-            <Route path="/project/:id" element={<SingleProject
-            
-            //hardocoded project 1 for example
-              projectId={1} />} />
-            {/* <Route
-              path="/project/:id"
-              render={({ match }) => (
-                <SingleProject projectId={match.params.id} />
-              )}
-            /> */}
+            <Route path="/project/:id" element={<SingleProject />} />
             <Route path="/create" element={<NewProject />} />
             <Route path="/search" element={<Search />} />
             <Route path="/results" element={<SearchResults />} />

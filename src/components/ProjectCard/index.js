@@ -14,6 +14,8 @@ import API from "../../utils/API"
 //
 
 export default function ProjectCard(props){
+    console.log(props);
+
 
    
     const navigate = useNavigate();

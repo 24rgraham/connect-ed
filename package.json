@@ -1,6 +1,5 @@
 {
   "name": "connect-ed",
-  "homepage": "/connect-ed/projects",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
