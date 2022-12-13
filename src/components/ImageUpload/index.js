@@ -26,7 +26,7 @@ export default function ImageUpload({ imageData, handleResponse }) {
           setImage(e.target.files[0]);
         }}
       />
-      <button type="button" onClick={uploadImage}>
+      <button className="btn btn-secondary" type="button" onClick={uploadImage}>
         Upload Image
       </button>
       <div>

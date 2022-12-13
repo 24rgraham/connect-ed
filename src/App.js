@@ -26,10 +26,10 @@ function App() {
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
     if (storedToken) {
-      console.log("storedtoken:" + storedToken);
+      // console.log("storedtoken:" + storedToken);
       API.getUserFromToken(storedToken).then((data) => {
         if (data.user) {
-          console.log("data:" + data);
+          // console.log("data:" + data);
           setToken(storedToken);
           setIsLoggedIn(true);
           setUserId(data.user.id);
@@ -76,7 +76,7 @@ function App() {
         />
         <main className="mainContainer">
           <Routes>
-            <Route path="/" element={<Signup />} />
+            <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={ <Login
                   isLoggedIn={isLoggedIn}
                   handleLoginSubmit={handleLoginSubmit}/>
@@ -100,7 +100,8 @@ function App() {
                 <SingleProject projectId={match.params.id} />
               )}
             /> */}
-            <Route path="/create" element={<NewProject />} />
+            <Route path="/create" element={<NewProject 
+            token={token}/>} />
             <Route path="/search" element={<Search />} />
             <Route path="/results" element={<SearchResults />} />
           </Routes>
