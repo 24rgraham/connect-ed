@@ -78,7 +78,8 @@ function App() {
                   isLoggedIn={isLoggedIn}
                   handleLoginSubmit={handleLoginSubmit}/>
               }/>
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects" element={<Projects
+                token={token}/>} />
             <Route path="/login" element={
               <Login
                 isLoggedIn={isLoggedIn}

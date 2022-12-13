@@ -10,7 +10,7 @@ export default function Navbar() {
         <ul>
           <li><button className='navBtn'><Link to="/">Home</Link></button></li>  
           <li><button className='navBtn'><Link to="/login">Login</Link></button></li>  
-          <li><button className='navBtn'><Link to="/mypage">Projects</Link></button></li>
+          <li><button className='navBtn'><Link to="/projects">Projects</Link></button></li>
           <li><button className='navBtn'><Link to="/create">New Project</Link></button></li>
           <li><button className='navBtn'><Link to="/search">Search</Link></button></li>
 
