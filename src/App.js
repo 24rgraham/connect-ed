@@ -57,10 +57,10 @@ function App() {
     });
   };
 
-  const handleSignupSubmit = userObj=>{
-    API.signup(userObj).then(data=>{
+  const handleSignupSubmit = (userObj) => {
+    API.signup(userObj).then((data) => {
       console.log(data);
-      if(data.token){
+      if (data.token) {
         setUserId(data.user.id);
         setToken(data.token);
         setIsLoggedIn(true);
@@ -73,10 +73,10 @@ function App() {
         // setSignupState(data.user.state);
         // setSignupLanguage(data.user.language);
         // setSignupPicture(data.user.profile_picture);
-        localStorage.setItem("token",data.token)
+        localStorage.setItem("token", data.token);
       }
-    })
-  }
+    });
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -84,7 +84,6 @@ function App() {
     setToken("");
     setUserId(0);
     setUserEmail("");
-
   };
 
   return (
@@ -97,29 +96,43 @@ function App() {
         />
         <main className="mainContainer">
           <Routes>
-            <Route path="/signup" element={<Signup 
-            isLoggedIn={isLoggedIn}
-            handleSignupSubmit={handleSignupSubmit}
-            handleLoginSubmit={handleLoginSubmit}/>} />
-          <Route path="/login" element={ <Login
+            <Route
+              path="/signup"
+              element={
+                <Signup
                   isLoggedIn={isLoggedIn}
-                  handleLoginSubmit={handleLoginSubmit}/>
-              }/>
-            <Route path="/projects" element={<Projects/>} />
-            <Route path="/login" element={
-              <Login
-                isLoggedIn={isLoggedIn}
-                handleLoginSubmit={handleLoginSubmit}
-              // handleLogout={handleLogout}
-              />
-            }
+                  handleSignupSubmit={handleSignupSubmit}
+                  handleLoginSubmit={handleLoginSubmit}
+                />
+              }
             />
-            <Route path="/project/:id" element={<SingleProject token={token} />} />
-            <Route path="/create" element={<NewProject 
-             token={token}/>} />
+            <Route
+              path="/login"
+              element={
+                <Login
+                  isLoggedIn={isLoggedIn}
+                  handleLoginSubmit={handleLoginSubmit}
+                />
+              }
+            />
+            <Route path="/projects" element={<Projects />} />
+            <Route
+              path="/login"
+              element={
+                <Login
+                  isLoggedIn={isLoggedIn}
+                  handleLoginSubmit={handleLoginSubmit}
+                  // handleLogout={handleLogout}
+                />
+              }
+            />
+            <Route
+              path="/project/:id"
+              element={<SingleProject token={token} />}
+            />
+            <Route path="/create" element={<NewProject token={token} />} />
             <Route path="/search" element={<Search />} />
             <Route path="/results" element={<SearchResults />} />
-        
           </Routes>
         </main>
       </Router>
