@@ -3,11 +3,6 @@ import './style.css'
 
 import { useNavigate } from "react-router-dom";
 import API from "../../utils/API"
-// const [project, setProject] = useState([
-
-// ])
-
-
 
 
 export default function ProjectCard({projectInfo}) {
