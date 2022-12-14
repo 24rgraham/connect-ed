@@ -111,9 +111,9 @@ function App() {
               />
             }
             />
-            <Route path="/project/:id" element={<SingleProject />} />
+            <Route path="/project/:id" element={<SingleProject token={token} />} />
             <Route path="/create" element={<NewProject 
-            token={token}/>} />
+             token={token}/>} />
             <Route path="/search" element={<Search />} />
             <Route path="/results" element={<SearchResults />} />
         
