@@ -6,7 +6,7 @@ import API from "../../utils/API"
 
 
 export default function ProjectCard({projectInfo}) {
-    console.log(projectInfo);
+    // console.log(projectInfo);
     const navigate = useNavigate();
     const navigateProject = () => {
         navigate(`/project/${projectInfo.id}`);

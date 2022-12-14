@@ -13,7 +13,7 @@ export default function Completed(props) {
     },[] )
     return(
         <>
-            {completedProjects && <div className='completed'>
+            {completedProjects[0] && <div className='completed'>
                 <h4>Completed Projects:</h4>
                 {completedProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
             </div>}
