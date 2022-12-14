@@ -6,9 +6,9 @@ export default function InProgress(props) {
     const [inProgressProjects,setInProgressProjects] = useState([])
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
-        API.getCompletedProjects(storedToken).then((data) => {
+        API.getInProgressProjects(storedToken).then((data) => {
               console.log(data);
-              setCompletedProjects(data)
+              setInProgressProjects(data)
           });
     },[] )
     //     const fetchData = async () =>{
