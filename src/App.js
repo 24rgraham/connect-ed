@@ -135,13 +135,14 @@ function App() {
                 />
               }
             />
-            <Route path="/project/:id" element={<SingleProject token={token} />} />
-            <Route path="/create" element={<NewProject 
-             token={token}/>} />
+            <Route
+              path="/project/:id"
+              element={<SingleProject token={token} />}
+            />
+            <Route path="/create" element={<NewProject token={token} />} />
             <Route path="/search" element={<Search />} />
             <Route path="/results" element={<SearchResults />} />
             <Route path="/community-projects" element={<AllProjects />} />
-        
           </Routes>
         </main>
       </Router>

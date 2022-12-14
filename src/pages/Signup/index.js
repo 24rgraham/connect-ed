@@ -7,7 +7,6 @@ import Row from "react-bootstrap/Row";
 import Badge from "react-bootstrap/Badge";
 import API from "../../utils/API";
 import "./style.css";
-import ImageUpload from "../../components/ImageUpload";
 
 export default function SignUp(props) {
   // const [userId, setUserId] = useState(0);
@@ -31,7 +30,7 @@ export default function SignUp(props) {
       // profile_picture: `https://res.cloudinary.com/dqv6cj4bc/image/upload/v1668535173/${imageData.public_id}`,
     };
     props.handleSignupSubmit(newUser);
-    navigate("/projects");
+    navigate("/community-projects");
   };
 
   // const handleResponse = (res) => {
@@ -213,7 +212,7 @@ export default function SignUp(props) {
       </Row>
       <Row className="col-12 mb-3">
         <label className="form-label">Profile Picture</label>
-        {/* <ImageUpload imageData={imageData} handleResponse={handleResponse} /> */}
+        {/* <ImageUpload /> */}
       </Row>
       <Row xs="auto">
         <Button variant="primary" type="submit" className="btn btn-primary">

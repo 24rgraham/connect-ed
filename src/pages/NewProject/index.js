@@ -12,13 +12,31 @@ import "./style.css";
 
 export default function NewProject({ token }) {
   const navigate = useNavigate();
+  const [image, setImage] = useState("");
+  const [url, setUrl] = useState("");
+
+  const uploadImage = () => {
+    const data = new FormData();
+    data.append("file", image);
+    data.append("upload_preset", "connect_ed");
+    data.append("cloud_name", "dqv6cj4bc");
+    fetch("https://api.cloudinary.com/v1_1/dqv6cj4bc/image/upload", {
+      method: "post",
+      body: data,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setUrl(data.url);
+      })
+      .catch((err) => console.log(err));
+  };
 
   const handleProjectCreate = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const newProject = {
       title: data.get("newTitle"),
-      image: "image",
+      image: `${url}`,
       grade_lvl: data.get("newGradeLevel"),
       est_time: data.get("newEstTime"),
       overview_desc: data.get("newDesc"),
@@ -60,7 +78,23 @@ export default function NewProject({ token }) {
         <Col sm={4} className="my-1">
           <Form.Group>
             <Form.Label>Project Image</Form.Label>
-            <Form.Control type="file" name="newImage" />
+            <div>
+              <input
+                type="file"
+                name="file"
+                onChange={(e) => setImage(e.target.files[0])}
+              ></input>
+              <button
+                className="btn btn-secondary"
+                type="button"
+                onClick={uploadImage}
+              >
+                Upload Image
+              </button>
+              <div>
+                <img src={url} />
+              </div>
+            </div>
           </Form.Group>
         </Col>
       </Row>
