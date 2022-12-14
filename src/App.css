@@ -6,6 +6,14 @@ main {
     margin-right: 0 !important;
     background-color: rgba(247, 202, 79, 0.87);
 }
+
+.card-body {
+    padding-top: 2% !important;
+}
+
+.card-text {
+    margin-bottom: 0.5rem !important;
+}
     /* body {
       background-color: #FBFBFB;
     } */

@@ -65,9 +65,13 @@ export default function Headerbootstrap(props) {
               <i className="fas fa-book fa-fw me-3"></i>
               <span>Curriculum</span>
               </Link>
-            
-            <button onClick={logout}><span>Logout</span>
-            </button>
+              <Link onClick={logout}
+              to="/login"
+              className="list-group-item list-group-item-action py-2 "
+            >
+              <i className="fas fa-sign-out-alt fa-fw me-3"></i>
+              <span>Logout</span>
+              </Link>
           </div>
         </div>
       </nav>
