@@ -28,7 +28,7 @@ export default function Login(props) {
       email:loginEmail, 
       password:loginPassword
     })
-    navigate("/projects")
+    navigate("/community-projects")
   }
 
   return (
