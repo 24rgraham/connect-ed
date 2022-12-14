@@ -1,7 +1,10 @@
-const URL_PREFIX = "https://gentle-beyond-41129.herokuapp.com/";
+// const URL_PREFIX = "https://gentle-beyond-41129.herokuapp.com/";
+const URL_PREFIX = "http://localhost:3001";
 
 const API = {
   // user routes
+
+  //login
   login: (userObj) => {
     return fetch(`${URL_PREFIX}/api/users/login`, {
       method: "POST",
@@ -11,12 +14,23 @@ const API = {
       },
     }).then((res) => res.json());
   },
+
+  //signup
   signup: (userObj) => {
     return fetch(`${URL_PREFIX}/api/users`, {
       method: "POST",
       body: JSON.stringify(userObj),
       headers: {
         "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
+  },
+
+  getUserFromToken: (token) => {
+    return fetch(`${URL_PREFIX}/api/users/getuserfromtoken`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
       },
     }).then((res) => res.json());
   },
@@ -36,22 +50,18 @@ const API = {
       },
     }).then((res) => res.json());
   },
-  getUserFromToken: (token) => {
-    return fetch(`${URL_PREFIX}/api/users/getuserfromtoken`, {
+
+  // project routes
+  getAllProjects: () => {
+    return fetch(`${URL_PREFIX}/api/projects`).then((res) => res.json());
+  },
+  getProject: (projectId, token) => {
+    return fetch(`${URL_PREFIX}/api/projects/${projectId}`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
       },
     }).then((res) => res.json());
-  },
-  // project routes
-  getAllProjects: () => {
-    return fetch(`${URL_PREFIX}/api/projects`).then((res) => res.json());
-  },
-  getProject: (projectId) => {
-    return fetch(`${URL_PREFIX}/api/projects/${projectId}`).then((res) =>
-      res.json()
-    );
   },
   createProject: (projectObj, token) => {
     return fetch(`${URL_PREFIX}/api/projects`, {
@@ -157,33 +167,76 @@ const API = {
     }).then((res) => res.json());
   },
   //   status routes
-  getInProgress: () => {
-    return fetch(`${URL_PREFIX}/api/status/in_progress`).then((res) =>
-      res.json()
-    );
+  getCompletedProjects: async (token) => {
+    const res = await fetch(`${URL_PREFIX}/api/status/completed`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return await res.json();
   },
-  getSavedForLater: () => {
-    return fetch(`${URL_PREFIX}/api/status/saved_for_later`).then((res) =>
-      res.json()
-    );
+  getInProgressProjects: async (token) => {
+    const res = await fetch(`${URL_PREFIX}/api/status/in_progress`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return await res.json();
   },
-  getStarred: () => {
-    return fetch(`${URL_PREFIX}/api/status/starred`).then((res) => res.json());
+  getSavedForLaterProjects: async (token) => {
+    const res = await fetch(`${URL_PREFIX}/api/status/saved_for_later`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return await res.json();
   },
-  getCompleted: () => {
-    return fetch(`${URL_PREFIX}/api/status/completed`).then((res) =>
-      res.json()
-    );
+
+  getStarredProjects: async (token) => {
+    const res = await fetch(`${URL_PREFIX}/api/status/starred`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return await res.json();
   },
+
+  changeStatus: async (projectId, statusObj, token) => {
+    const res = await fetch(`${URL_PREFIX}/api/status/${projectId}`, {
+      method: "PUT",
+      body: JSON.stringify(statusObj),
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
+    return await res.json();
+  },
+
+
+  getOgProjects: async (token) => {
+    const res = await fetch(`${URL_PREFIX}/api/projects/getprojectsfromtoken`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return await res.json();
+  },
+
   //   search route
-  advancedSearch: (searchObj, token) => {
+  advancedSearch: (searchObj) => {
     return fetch(`${URL_PREFIX}/api/search`, {
       method: "PUT",
       body: JSON.stringify(searchObj),
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
       },
+      
     }).then((res) => res.json());
   },
 };

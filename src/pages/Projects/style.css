@@ -1,0 +1,25 @@
+/* Projects by Status */
+
+.landingContainer{
+  display:flex;
+  width: 85%;
+  padding-top: 3%;
+}
+
+
+/* .inProgress, .completed, .starred, .savedForLater, .ogProj {
+    
+    width: 100%;
+    background-color: rgb(255, 255, 254);
+    margin-top: 3px;
+    margin-bottom: 4px;
+    border-radius: 3px;
+    border-color: rgba(0, 0, 0, 0.547);
+    border-width: 2px;
+    border-style: solid;
+} */
+
+.inProgress h6, .completed h6, .starred h6, .savedForLater h6, .ogProj h6 {
+
+  font-size: 36px;
+}

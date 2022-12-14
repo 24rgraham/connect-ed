@@ -1,0 +1,13 @@
+/* in progress component */
+
+.inProgress h6{
+    color:rgba(0, 0, 0, 0.825);
+    margin:8px;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight:bolder;
+}
+
+.statusCards{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+  }

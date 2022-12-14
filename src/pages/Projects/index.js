@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './style.css'
 
 import ProjectCard from '../../components/ProjectCard'
@@ -9,14 +9,18 @@ import SavedForLater from '../../components/LandingComponents/SavedForLater'
 import OriginalProjects from '../../components/LandingComponents/OriginalProjects'
 
 // Make a project card component that will be .map() placed in each associated container
-export default function Landing() {
+export default function Projects() {
+
+    
     return(
         <div className='landingContainer'>
+            <div>
             <InProgress/>
             <Completed/>
             <Starred/>
             <SavedForLater/>
             <OriginalProjects/>
+            </div>
         </div>
     )
 }

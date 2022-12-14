@@ -1,30 +1,150 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import React from "react";
-import Header from "./components/Header/";
-import Main from "./pages/Main";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import API from "./utils/API";
+import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import SingleProject from "./pages/SingleProject";
+import Projects from "./pages/Projects";
+import NewProject from "./pages/NewProject";
+import Search from "./pages/Search";
+import SearchResults from "./pages/SearchResults";
+import AllProjects from "./pages/AllProjects";
+
 import "./App.css";
+import Headerbootstrap from "./components/Headerbootstrap";
 
 function App() {
-  return (
-    <div className="app">
-      <Router basename="/connect-ed">
-        <div className="pageContainer">
-          <div className="header">
-            <Header />
-          </div>
-          <body>
-            <div className="nav">
-              <Navbar />
-            </div>
+  const [userId, setUserId] = useState(0);
+  const [userEmail, setUserEmail] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [token, setToken] = useState("");
+  const [first_name, setFirstName] = useState("")
+  const [last_name, setLastName] = useState("")
+  const [password, setPassword] = useState("")
+  const [school, setSchool] = useState("")
+  const [city, setCity] = useState("")
+  const [state, setState] = useState("")
+  const [language, setLanguage] = useState("")
+  const [picture, setPicture] = useState("")
 
-            <div className="main">
-              <Main />
-            </div>
-          </body>
-          <h1>Footer</h1>
-        </div>
+  useEffect(() => {
+    const storedToken = localStorage.getItem("token");
+    if (storedToken) {
+      // console.log("storedtoken:" + storedToken);
+      API.getUserFromToken(storedToken).then((data) => {
+        if (data.user) {
+          // console.log("data:" + data);
+          setToken(storedToken);
+          setIsLoggedIn(true);
+          setUserId(data.user.id);
+          setUserEmail(data.user.email);
+        }
+      });
+    } else {
+      console.log("no stored token");
+    }
+  }, []);
+
+  const handleLoginSubmit = (userObj) => {
+    API.login({
+      email: userObj.email,
+      password: userObj.password,
+    }).then((data) => {
+      console.log(data);
+      if (data.token) {
+        setUserId(data.user.id);
+        setToken(data.token);
+        setIsLoggedIn(true);
+        setUserEmail(data.user.email);
+        localStorage.setItem("token", data.token);
+      }
+    });
+  };
+
+  const handleSignupSubmit = (userObj) => {
+    API.signup(userObj).then((data) => {
+      console.log(data);
+      if (data.token) {
+        setUserId(data.user.id);
+        setToken(data.token);
+        setIsLoggedIn(true);
+        setUserEmail(data.user.email);
+        setFirstName(data.user.first_name);
+        setLastName(data.user.last_name);
+        setPassword(data.user.password);
+        setSchool(data.user.school);
+        setCity(data.user.city);
+        setState(data.user.state);
+        setLanguage(data.user.language);
+        setPicture(data.user.profile_picture);
+        localStorage.setItem("token", data.token);
+      }
+    });
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    setToken("");
+    setUserId(0);
+    setUserEmail("");
+  };
+
+  return (
+    <div>
+      <Router>
+        <Headerbootstrap
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+          handleLogout={handleLogout}
+        />
+        <main className="mainContainer">
+          <Routes>
+            <Route
+              path="/signup"
+              element={
+                <Signup
+                  isLoggedIn={isLoggedIn}
+                  handleSignupSubmit={handleSignupSubmit}
+                  handleLoginSubmit={handleLoginSubmit}
+                />
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <Login
+                  isLoggedIn={isLoggedIn}
+                  handleLoginSubmit={handleLoginSubmit}
+                />
+              }
+            />
+            <Route path="/projects" element={<Projects />} />
+            <Route
+              path="/login"
+              element={
+                <Login
+                  isLoggedIn={isLoggedIn}
+                  handleLoginSubmit={handleLoginSubmit}
+                  // handleLogout={handleLogout}
+                />
+              }
+            />
+            <Route
+              path="/project/:id"
+              element={<SingleProject token={token} />}
+            />
+            <Route path="/create" element={<NewProject token={token} />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/results" element={<SearchResults />} />
+            <Route path="/community-projects" element={<AllProjects />} />
+          </Routes>
+        </main>
       </Router>
     </div>
   );

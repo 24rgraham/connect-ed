@@ -1,27 +1,71 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+import "./style.css";
+import "../../App";
+
+export default function Login(props) {
+  console.log(props);
+  const navigate = useNavigate();
+    useEffect(()=>{
+      if(props.isLoggedIn){
+        navigate("/community-projects")
+      }
+    },[])
+  useEffect(() => {
+    if (props.isLoggedIn) {
+      navigate("/community-projects");
+    }
+  }, []);
+
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+
+  const loginHandle = (e) => {
+    e.preventDefault();
+    console.log(props);
+    props.handleLoginSubmit({
+      email:loginEmail, 
+      password:loginPassword
+    })
+    navigate("/community-projects")
+  }
+
   return (
-    <form>
-      <div className="">
-        <label for="InputEmail" className="form-label">
-          Email Address
-        </label>
+    <form className="loginContainer" onSubmit={loginHandle}>
+      <div className=" col-4">
+        <div className="loginContents">
+        <h1>Login</h1>
+        <label className="form-label">Email Address</label>
         <input
           className="form-control"
+          type="text"
           id="InputEmail"
           aria-describedby="emailHelp"
+          name="email"
+          value={loginEmail}
+          onChange={(e) => setLoginEmail(e.target.value)}
+        ></input>
+      
+      <div className=" col-4 mb-4">
+        <label className="form-label">Password</label>
+        <input
+          type="password"
+          className="form-control"
+          id="InputPassword"
+          name="password"
+          value={loginPassword}
+          onChange={(e) => setLoginPassword(e.target.value)}
         ></input>
       </div>
-      <div className="">
-        <label for="InputPassword" className="form-label">
-          Password
-        </label>
-        <input className="form-control" id="InputPassword"></input>
       </div>
-      <button type="submit" className="btn btn-primary">
+      </div>
+      <button type="submit" className="m-3 btn btn-primary">
         Submit
       </button>
+      <a href="/signup" className="m-3 btn btn-primary">
+        Signup Instead
+      </a>
     </form>
   );
 }

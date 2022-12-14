@@ -1,10 +1,26 @@
-import React, { useState } from 'react'
-import ProjectCard from '../../ProjectCard'
+import React, { useEffect, useState } from 'react'
+import API from '../../../utils/API';
+import ProjectCard from '../../ProjectCard';
 
-export default function SavedForLater() {
+import './style.css'
+
+export default function SavedForLater(props) {
+    const [savedForLaterProjects,setSavedForLaterProjects] = useState([])
+    useEffect(() => {
+      const storedToken = localStorage.getItem("token");
+        API.getSavedForLaterProjects(storedToken).then((data) => {
+            //   console.log(data[0].Project);
+              setSavedForLaterProjects(data)
+          });
+    },[] )
     return(
-            <div className='saved4Later'>
-                <h4>Saved For Later:</h4>
-            </div>
+        <>
+            {savedForLaterProjects[0] && <div className='savedForLater'>
+                <h6 className='headerForLater'>Saved For Later Projects:</h6>
+                <div className='statusCards'>
+                    {savedForLaterProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
+                </div>
+            </div>}
+            </>
     )
 }
