@@ -15,7 +15,9 @@ export default function SavedForLater(props) {
         <>
             {savedForLaterProjects[0] && <div className='inProgress'>
                 <h6>Saved For Later Projects:</h6>
-                {savedForLaterProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
+                <div className='statusCards'>
+                    {savedForLaterProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
+                </div>
             </div>}
             </>
     )

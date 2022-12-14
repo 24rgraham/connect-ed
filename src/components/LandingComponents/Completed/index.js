@@ -16,7 +16,9 @@ export default function Completed(props) {
         <>
             {completedProjects[0] && <div className='completed'>
                 <h6>Completed Projects:</h6>
-                {completedProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
+                <div className='statusCards'>
+                    {completedProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
+                </div>
             </div>}
             </>
     )

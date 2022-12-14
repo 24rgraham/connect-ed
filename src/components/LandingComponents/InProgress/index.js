@@ -28,7 +28,9 @@ export default function InProgress(props) {
         <>
             {inProgressProjects[0] && <div className='inProgress'>
                 <h6>In Progress Projects:</h6>
-                {inProgressProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
+                <div className='statusCards'>
+                    {inProgressProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
+                </div>
             </div>}
             </>
     )

@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import API from '../../utils/API';
 import './style.css'
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import ProjectCard from '../../components/ProjectCard'
 
 export default function AllProjects() {
@@ -19,12 +24,16 @@ export default function AllProjects() {
     }, [])
     return (
         <>
-            {allProjects[0] && <div className='inProgress'>
-                <div className='landingContainer'>
-                    <h4>Community Projects:</h4>
+            {allProjects[0] && 
+                <div className='containerForAll'>
+                    <h5>Community Projects:</h5>
+                    <div className="containerAllProj">
+
+                    
                     {allProjects.map((projectInfo) => (<ProjectCard key={projectInfo.id} projectInfo={projectInfo} />))}
                 </div>
-            </div>}
+                </div>
+            }
         </>
     )
 }
