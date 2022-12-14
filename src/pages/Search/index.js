@@ -15,21 +15,268 @@ export default function Search() {
   const handleSearch = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // const grades = []
+    
+    const grades = []
+    if (data.get('pre-k')){
+      grades.push('Pre-K')
+    }
+    if (data.get('k')){
+      grades.push('K')
+    }
+    if (data.get('1')){
+      grades.push('1')
+    }
+    if (data.get('2')){
+      grades.push('2')
+    }
+    if (data.get('3')){
+      grades.push('3')
+    }
+    if (data.get('4')){
+      grades.push('4')
+    }
+    if (data.get('5')){
+      grades.push('5')
+    }
+    if (data.get('6')){
+      grades.push('6')
+    }
+    if (data.get('7')){
+      grades.push('7')
+    }
+    if (data.get('8')){
+      grades.push('8')
+    }
+    if (data.get('9')){
+      grades.push('9')
+    }
+    if (data.get('10')){
+      grades.push('10')
+    }
+    if (data.get('11')){
+      grades.push('11')
+    }
+    if (data.get('12')){
+      grades.push('12')
+    }
+    console.log(grades);
 
-    const searchCriteria = {
-      grade_lvl: data.get("newGradeLevel"),
-      est_time: data.get("newEstTime"),
-      subjects: data.get("newSubjects"),
-      curriculums: data.get("newCurriculums"),
-    };
-    //  console.log(searchCriteria)
+    const subjects = []
+    if (data.get('Art')){
+      subjects.push('Art')
+    }
+    if (data.get('Maths')){
+      subjects.push('Maths')
+    }
+    if (data.get('History')){
+      subjects.push('History')
+    }
+    if (data.get('SEL')){
+      subjects.push('SEL')
+    }
+    if (data.get('Woodworking')){
+      subjects.push('Woodworking')
+    }
+    if (data.get('Anthropologie')){
+      subjects.push('Anthropologie')
+    }
+    if (data.get('Science')){
+      subjects.push('Science')
+    }
+    if (data.get('English')){
+      subjects.push('English')
+    }
+    if (data.get('Writing')){
+      subjects.push('Writing')
+    }
+    if (data.get('Spanish')){
+      subjects.push('Spanish')
+    }
+    if (data.get('French')){
+      subjects.push('French')
+    }
+    if (data.get('Outdoor')){
+      subjects.push('Outdoor')
+    }
+    if (data.get('Physical Education')){
+      subjects.push('Physical Education')
+    }
+    if (data.get('Culture')){
+      subjects.push('Culture')
+    }
+    console.log(subjects);
 
-    API.advancedSearch(searchCriteria).then((res) => {
-      console.log(res);
-      setResults(res);
-      return results;
-    });
+    const time = []
+    if (data.get('t0')){
+      time.push('0')
+    }
+    if (data.get('t1')){
+      time.push('1')
+    }
+    if (data.get('t2')){
+      time.push('2')
+    }
+    if (data.get('t3')){
+      time.push('3')
+    }
+    if (data.get('t4')){
+      time.push('4')
+    }
+    if (data.get('t5')){
+      time.push('5')
+    }
+    if (data.get('t6')){
+      time.push('6')
+    }
+    if (data.get('t7')){
+      time.push('7')
+    }
+    if (data.get('t8')){
+      time.push('8')
+    }
+    if (data.get('t9')){
+      time.push('9')
+    }
+    if (data.get('t10')){
+      time.push('10')
+    }
+    if (data.get('t11')){
+      time.push('11')
+    }
+    console.log(time);
+
+    const curriculum = []
+    if (data.get('Montessori')){
+      curriculum.push('Montessori')
+    }
+    if (data.get('Waldorf')){
+      curriculum.push('Waldorf')
+    }
+    if (data.get('Standard')){
+      curriculum.push('Standard')
+    }
+    if (data.get('PBL')){
+      curriculum.push('PBL')
+    }
+    if (data.get('Reggio Emilia')){
+      curriculum.push('Reggio Emilia')
+    }
+    if (data.get('B.E.E.T.L.E.S (Outdoor Ed.)')){
+      curriculum.push('B.E.E.T.L.E.S (Outdoor Ed.)')
+    }
+    console.log(curriculum);
+
+    if (grades[0]&&time[0]&&subjects[0]&&curriculum[0]){
+      console.log('1');
+      
+      const searchCriteria = {grade_lvl: grades, est_time: time, subject: subjects, curriculum: curriculum}
+      console.log(searchCriteria);
+      
+      API.advancedSearch(searchCriteria).then((res) => {
+        console.log(res);
+        setResults(res);
+      })
+    } else if (grades[0]&&time[0]&&subjects[0]){
+      console.log('2');
+      
+      const searchCriteria = {grade_lvl: grades, est_time: time, subject: subjects}
+      API.advancedSearch(searchCriteria).then((res) => {
+        console.log(res);
+        setResults(res);
+      })
+    } else if (grades[0]&&time[0]&&curriculum[0]){
+      console.log('3');
+      
+      const searchCriteria = {grade_lvl: grades, est_time: time, curriculum: curriculum}
+      API.advancedSearch(searchCriteria).then((res) => {
+        console.log(res);
+        setResults(res);
+      })
+    } else if (grades[0]&&subjects[0]&&curriculum[0]){
+      console.log('4');
+      
+      const searchCriteria = {grade_lvl: grades, subject: subjects, curriculum: curriculum}
+      API.advancedSearch(searchCriteria).then((res) => {
+        console.log(res);
+        setResults(res);
+      })
+    } else if (time[0]&&subjects[0]&&curriculum[0]){
+      console.log('5');
+      
+      const searchCriteria = {est_time: time, subject: subjects, curriculum: curriculum}
+      API.advancedSearch(searchCriteria).then((res) => {
+        console.log(res);
+        setResults(res);
+      })
+    } else if (grades[0]&&time[0]){
+      console.log('6');
+      
+      const searchCriteria = {grade_lvl: grades, est_time: time}
+      API.advancedSearch(searchCriteria).then((res) => {
+        console.log(res);
+        setResults(res);
+      })
+    } if (grades[0]&&curriculum[0]){
+      const searchCriteria = {grade_lvl: grades, curriculum: curriculum}
+      API.advancedSearch(searchCriteria).then((res) => {
+        console.log(res);
+        setResults(res);
+      })
+    } else if (subjects[0]&&curriculum[0]){
+      const searchCriteria = {subject: subjects, curriculum: curriculum}
+      API.advancedSearch(searchCriteria).then((res) => {
+        console.log(res);
+        setResults(res);
+      })
+    } else if (grades[0]&&subjects[0]){
+      const searchCriteria = {grade_lvl: grades, subject: subjects}
+      API.advancedSearch(searchCriteria).then((res) => {
+        console.log(res);
+        setResults(res);
+      })
+    } else if (time[0]&&subjects[0]){
+      const searchCriteria = {est_time: time, subject: subjects}
+      API.advancedSearch(searchCriteria).then((res) => {
+        console.log(res);
+        setResults(res);
+      })
+    } else if (time[0]&&curriculum[0]){
+      const searchCriteria = {est_time: time, curriculum: curriculum}
+      API.advancedSearch(searchCriteria).then((res) => {
+        console.log(res);
+        setResults(res);
+      })
+    } else if (grades[0]){
+      const searchCriteria = {grade_lvl: grades}
+      API.advancedSearch(searchCriteria).then((res) => {
+        console.log(res);
+        setResults(res);
+      })
+    } else if (time[0]){
+      const searchCriteria = {est_time: time}
+      API.advancedSearch(searchCriteria).then((res) => {
+        console.log(res);
+        setResults(res);
+      })
+    } else if (subjects[0]){
+      const searchCriteria = {subject: subjects}
+      API.advancedSearch(searchCriteria).then((res) => {
+        console.log(res);
+        setResults(res);
+      })
+    } else if (curriculum[0]){
+      const searchCriteria = {curriculum: curriculum}
+      API.advancedSearch(searchCriteria).then((res) => {
+        console.log(res);
+        setResults(res);
+      })
+    } else {
+      const searchCriteria = {}
+      API.advancedSearch(searchCriteria).then((res) => {
+        console.log(res);
+        setResults(res);
+      })
+    }
   };
 
   console.log(results);
@@ -45,27 +292,110 @@ export default function Search() {
           <Col xs="auto">
             <Form.Group className="mb-3">
               <Form.Label>Grade Level</Form.Label>
-              <Form.Select
-                className="mb-3"
-                defaultValue="Choose..."
-                name="newGradeLevel"
-              >
-                <option value="">Choose...</option>
-                <option value={13}>Pre-K</option>
-                <option value={0}>K</option>
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={4}>4</option>
-                <option value={5}>5</option>
-                <option value={6}>6</option>
-                <option value={7}>7</option>
-                <option value={8}>8</option>
-                <option value={9}>9</option>
-                <option value={10}>10</option>
-                <option value={11}>11</option>
-                <option value={12}>12</option>
-              </Form.Select>
+              {["checkbox"].map((type) => (
+                <Row>
+                  <div key={`inline-${type}`} className="mb-3">
+                    <Form.Check
+                      inline
+                      label="Pre-K"
+                      name="pre-k"
+                      type={type}
+                      id={`inline-${type}-1`}
+                    />
+                    <Form.Check
+                      inline
+                      label="K"
+                      name="k"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="1"
+                      name="1"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="2"
+                      name="2"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="3"
+                      name="3"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="4"
+                      name="4"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="5"
+                      name="5"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="6"
+                      name="6"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="7"
+                      name="7"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="8"
+                      name="8"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="9"
+                      name="9"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="10"
+                      name="10"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="11"
+                      name="11"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="12"
+                      name="12"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                  </div>
+                </Row>
+              ))}
               <div>
                 <Badge pill bg="subject">
                   {/* eventual badges for selected subjects */}
@@ -73,24 +403,110 @@ export default function Search() {
               </div>
 
               <Form.Label>Subjects</Form.Label>
-              <Form.Select defaultValue="Choose..." name="newSubjects">
-                <option value="">Choose...</option>
-                <option value={1}>Art</option>
-                <option value="Maths">Maths</option>
-                <option value={3}>History</option>
-                <option value={4}>SEL</option>
-                <option value={5}>Woodworking</option>
-                <option value={6}>Anthropologie</option>
-                <option value={7}>Science</option>
-                <option value={8}>English</option>
-                <option value={9}>Writing</option>
-                <option value={10}>Spanish</option>
-                <option value={11}>French</option>
-                <option value={12}>Outdoor</option>
-                <option value={13}>Physical Education</option>
-                <option value={14}>Cultural Holidays</option>
-                <option value={15}>Culture</option>
-              </Form.Select>
+              {["checkbox"].map((type) => (
+                <Row>
+                  <div key={`inline-${type}`} className="mb-3">
+                    <Form.Check
+                      inline
+                      label="Art"
+                      name="Art"
+                      type={type}
+                      id={`inline-${type}-1`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Maths"
+                      name="Maths"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="History"
+                      name="History"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="SEL"
+                      name="SEL"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Woodworking"
+                      name="Woodworking"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Anthropologie"
+                      name="Anthropologie"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Science"
+                      name="Science"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="English"
+                      name="English"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Writing"
+                      name="Writing"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Spanish"
+                      name="Spanish"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="French"
+                      name="French"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Outdoor"
+                      name="Outdoor"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Physical Education"
+                      name="Physical Education"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Culture"
+                      name="Culture"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                  </div>
+                </Row>
+              ))}
               <div>
                 <Badge pill bg="curriculum">
                   {/* eventual badges for selected curriculums */}
@@ -98,19 +514,150 @@ export default function Search() {
               </div>
 
               <Form.Label>Curriculum</Form.Label>
-              <Form.Select defaultValue="Choose..." name="newCurriculums">
-                <option value="">Choose...</option>
-                <option value={1}>Montessori</option>
-                <option value={2}>Waldorf</option>
-                <option value={3}>Standard</option>
-                <option value="PBL">PBL</option>
-                <option value={5}>Reggio Emilia</option>
-                <option value={6}>B.E.E.T.L.E.S (Outdoor Ed.) </option>
-              </Form.Select>
+              {["checkbox"].map((type) => (
+                <Row>
+                  <div key={`inline-${type}`} className="mb-3">
+                    <Form.Check
+                      inline
+                      label="Montessori"
+                      name="Montessori"
+                      type={type}
+                      id={`inline-${type}-1`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Waldorf"
+                      name="Waldorf"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Reggio Emilia"
+                      name="Reggio Emilia"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Standard"
+                      name="Standard"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="PBL"
+                      name="PBL"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="B.E.E.T.L.E.S (Outdoor Ed.)"
+                      name="B.E.E.T.L.E.S (Outdoor Ed.)"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                  </div>
+                </Row>
+              ))}
+
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Time to Complete</Form.Label>
-              <Form.Select defaultValue="Choose..." name="newEstTime">
+              {["checkbox"].map((type) => (
+                <Row>
+                  <div key={`inline-${type}`} className="mb-3">
+                    <Form.Check
+                      inline
+                      label="30 min or less"
+                      name="t0"
+                      type={type}
+                      id={`inline-${type}-1`}
+                    />
+                    <Form.Check
+                      inline
+                      label="30-60 min"
+                      name="t1"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="1-2 hours"
+                      name="t2"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Half a Day"
+                      name="t3"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="1 Day"
+                      name="t4"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="2 Days"
+                      name="t5"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="3 Days"
+                      name="t6"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="4 Days"
+                      name="t7"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="1 Week"
+                      name="t8"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="2 Weeks"
+                      name="t9"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="3 Weeks"
+                      name="t10"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                    <Form.Check
+                      inline
+                      label="1 Month"
+                      name="t11"
+                      type={type}
+                      id={`inline-${type}-2`}
+                    />
+                  </div>
+                </Row>
+              ))}
+
+              {/* <Form.Select defaultValue="Choose..." name="newEstTime">
                 <option value="">Choose...</option>
                 <option value={0}>30 min or less</option>
                 <option value={1}>30-60 min</option>
@@ -124,7 +671,7 @@ export default function Search() {
                 <option value={9}>2 weeks</option>
                 <option value={10}>3 weeks</option>
                 <option value={11}>1 month</option>
-              </Form.Select>
+              </Form.Select> */}
             </Form.Group>
           </Col>
         </Row>
