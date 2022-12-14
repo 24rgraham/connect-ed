@@ -167,62 +167,54 @@ const API = {
     }).then((res) => res.json());
   },
   //   status routes
-  getCompletedProjects: (token) => {
-    return fetch(`${URL_PREFIX}/api/status/completed`, {
+  getCompletedProjects: async (token) => {
+    const res = await fetch(`${URL_PREFIX}/api/status/completed`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    }).then((res) => res.json());
+    });
+    return await res.json();
   },
-  getInProgressProjects: (token) => {
-    return fetch(`${URL_PREFIX}/api/status/in_progress`, {
+  getInProgressProjects: async (token) => {
+    const res = await fetch(`${URL_PREFIX}/api/status/in_progress`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    }).then((res) => res.json());
+    });
+    return await res.json();
   },
-  getSavedForLaterProjects: (token) => {
-    return fetch(`${URL_PREFIX}/api/status/saved_for_later`, {
+  getSavedForLaterProjects: async (token) => {
+    const res = await fetch(`${URL_PREFIX}/api/status/saved_for_later`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    }).then((res) => res.json());
+    });
+    return await res.json();
+  },
+  getStarredProjects: async (token) => {
+    const res = await fetch(`${URL_PREFIX}/api/status/starred`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return await res.json();
   },
 
-  getStarredProjects: (token) => {
-    return fetch(`${URL_PREFIX}/api/status/starred`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }).then((res) => res.json());
-  },
 
-<<<<<<< HEAD
-  createStarredProjects: (starredObj, token) => {
-    return fetch(`${URL_PREFIX}/api/status/starred`, {
-      method: "PUT",
-      body: JSON.stringify(starredObj),
-=======
-  // createStarredProjects: (staObj, token) => {
-  //   return fetch(`${URL_PREFIX}/api/status/${projectId}`, {
-  //     method: "PUT",
-  //     body: JSON.stringify(statusObj),
-  // }).then((res) => res.json());
-  // },
+
   
-  getOgProjects: (token) => {
-    return fetch(`${URL_PREFIX}/api/projects/getprojectsfromtoken`, {
+  getOgProjects: async (token) => {
+    const res = await fetch(`${URL_PREFIX}/api/projects/getprojectsfromtoken`, {
       method: "GET",
-
->>>>>>> 4e2d946b30ad2683e7573ae204fc6ff168381adf
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    }).then((res) => res.json());
+    });
+    return await res.json();
   },
 
   
