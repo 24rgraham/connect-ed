@@ -1,4 +1,4 @@
-const URL_PREFIX = process.env.URL_PREFIX;
+const URL_PREFIX = "https://gentle-beyond-41129.herokuapp.com"
 
 const API = {
   // user routes
