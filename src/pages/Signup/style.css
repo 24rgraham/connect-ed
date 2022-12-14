@@ -7,18 +7,15 @@
     padding:5%
 }
 
-/* .signUpForm ul li {
-    list-style: none;
-    margin-bottom: 3px;
-} */
 
 label {
     margin-top: 5px;
-    /* display: flex;
-    justify-content: flex-start; */
+   
 }
-/* 
-input {
-    display: flex;
-    justify-content:right;
-} */
+
+
+@media (max-width: 768px) {
+    .signupContainer{
+        margin-left: 11%;
+  }
+}

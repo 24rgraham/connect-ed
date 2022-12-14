@@ -87,16 +87,18 @@ h3{
 }
 
 
-@media (max-width: 930px) {
+@media (max-width: 1024px) {
     .gradeGrid{
         display:grid;
         grid-template-columns: repeat(1, 1fr);
     }
     .midPageCard{
         width: 77.5%;
+        
     }
     .midPage{
-        width:60%;
+        width:70%;
+        margin-top: 35px;
     }
     .bottomOfPage{
         margin-top: 25px;
@@ -109,13 +111,18 @@ h3{
         grid-template-columns: repeat(1, 1fr);
     }
     .midPageCard{
-        width: 91.5%;
+        width: 91.5%; 
+        padding-bottom: 12px;
     }
     .midPage{
         width:60%;
+       
     }
     .bottomOfPage{
-        margin-top: 55px;
+        margin-top: 5px;
         width: 60%;
+    }
+    .btmRightTxt{
+       width: 179px;
     }
 }
