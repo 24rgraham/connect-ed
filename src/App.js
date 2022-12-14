@@ -64,15 +64,15 @@ function App() {
         setUserId(data.user.id);
         setToken(data.token);
         setIsLoggedIn(true);
-        setSignupEmail(data.user.email);
-        setSignupFirstName(data.user.first_name);
-        setSignupLastName(data.user.last_name);
-        setSignupPassword(data.user.password);
-        setSignupSchool(data.user.school);
-        setSignupCity(data.user.city);
-        setSignupState(data.user.state);
-        setSignupLanguage(data.user.language);
-        setSignupPicture(data.user.profile_picture);
+        setUserEmail(data.user.email);
+        // setSignupFirstName(data.user.first_name);
+        // setSignupLastName(data.user.last_name);
+        // setSignupPassword(data.user.password);
+        // setSignupSchool(data.user.school);
+        // setSignupCity(data.user.city);
+        // setSignupState(data.user.state);
+        // setSignupLanguage(data.user.language);
+        // setSignupPicture(data.user.profile_picture);
         localStorage.setItem("token",data.token)
       }
     })
@@ -97,7 +97,10 @@ function App() {
         />
         <main className="mainContainer">
           <Routes>
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/signup" element={<Signup 
+            isLoggedIn={isLoggedIn}
+            handleSignupSubmit={handleSignupSubmit}
+            handleLoginSubmit={handleLoginSubmit}/>} />
           <Route path="/login" element={ <Login
                   isLoggedIn={isLoggedIn}
                   handleLoginSubmit={handleLoginSubmit}/>

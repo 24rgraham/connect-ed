@@ -6,9 +6,9 @@ export default function InProgress(props) {
     const [inProgressProjects,setInProgressProjects] = useState([])
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
-        API.getCompletedProjects(storedToken).then((data) => {
+        API.getInProgressProjects(storedToken).then((data) => {
               console.log(data);
-              setCompletedProjects(data)
+              setInProgressProjects(data)
           });
     },[] )
     //     const fetchData = async () =>{
@@ -26,7 +26,7 @@ export default function InProgress(props) {
     // },[] )
     return(
         <>
-            {inProgressProjects && <div className='inProgress'>
+            {inProgressProjects[0] && <div className='inProgress'>
                 <h4>In Progress Projects:</h4>
                 {inProgressProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
             </div>}

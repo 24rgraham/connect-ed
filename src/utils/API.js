@@ -201,15 +201,32 @@ const API = {
     }).then((res) => res.json());
   },
 
+<<<<<<< HEAD
   createStarredProjects: (starredObj, token) => {
     return fetch(`${URL_PREFIX}/api/status/starred`, {
       method: "PUT",
       body: JSON.stringify(starredObj),
+=======
+  // createStarredProjects: (staObj, token) => {
+  //   return fetch(`${URL_PREFIX}/api/status/${projectId}`, {
+  //     method: "PUT",
+  //     body: JSON.stringify(statusObj),
+  // }).then((res) => res.json());
+  // },
+  
+  getOgProjects: (token) => {
+    return fetch(`${URL_PREFIX}/api/projects/getprojectsfromtoken`, {
+      method: "GET",
+
+>>>>>>> 4e2d946b30ad2683e7573ae204fc6ff168381adf
       headers: {
         Authorization: `Bearer ${token}`,
       },
     }).then((res) => res.json());
   },
+
+  
+
   //   search route
   advancedSearch: (searchObj, token) => {
     return fetch(`${URL_PREFIX}/api/search`, {

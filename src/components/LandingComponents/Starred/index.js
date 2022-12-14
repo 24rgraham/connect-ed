@@ -7,13 +7,13 @@ export default function Starred(props) {
     useEffect(() => {
       const storedToken = localStorage.getItem("token");
         API.getStarredProjects(storedToken).then((data) => {
-            //   console.log(data[0].Project);
+              console.log(data);
               setStarredProjects(data)
           });
     },[] )
     return(
         <>
-            {starredProjects && <div className='inProgress'>
+            {starredProjects[0] && <div className='starred'>
                 <h4>Starred Projects:</h4>
                 {starredProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
             </div>}
