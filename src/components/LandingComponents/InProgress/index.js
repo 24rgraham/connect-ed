@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import API from '../../../utils/API';
 import ProjectCard from '../../ProjectCard';
 
+import './style.css'
+
 export default function InProgress(props) {
     const [inProgressProjects,setInProgressProjects] = useState([])
     useEffect(() => {

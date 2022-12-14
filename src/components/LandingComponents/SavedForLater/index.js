@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import API from '../../../utils/API';
 import ProjectCard from '../../ProjectCard';
 
+import './style.css'
+
 export default function SavedForLater(props) {
     const [savedForLaterProjects,setSavedForLaterProjects] = useState([])
     useEffect(() => {
@@ -13,8 +15,8 @@ export default function SavedForLater(props) {
     },[] )
     return(
         <>
-            {savedForLaterProjects[0] && <div className='inProgress'>
-                <h6>Saved For Later Projects:</h6>
+            {savedForLaterProjects[0] && <div className='savedForLater'>
+                <h6 className='headerForLater'>Saved For Later Projects:</h6>
                 <div className='statusCards'>
                     {savedForLaterProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
                 </div>
