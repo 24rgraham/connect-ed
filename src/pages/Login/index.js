@@ -9,12 +9,12 @@ export default function Login(props) {
   const navigate = useNavigate();
     useEffect(()=>{
       if(props.isLoggedIn){
-        navigate("/projects")
+        navigate("/community-projects")
       }
     },[])
   useEffect(() => {
     if (props.isLoggedIn) {
-      navigate("/projects");
+      navigate("/community-projects");
     }
   }, []);
 

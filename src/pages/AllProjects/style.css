@@ -7,6 +7,7 @@ h5{
 }
 
 .containerForAll {
+  height: 70rem;
   width: 98%;
   background-color: rgb(255, 255, 255);
   margin-top: 3px;
@@ -21,6 +22,16 @@ h5{
   margin-top:15px;
   display:grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 75px);
+  grid-template-rows: auto;
   width: 95%;
+}
+
+@media (max-width: 991.98px) {
+  .containerAllProj{
+    margin-top:15px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    width: 95%;
+  }
 }
