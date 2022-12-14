@@ -14,6 +14,24 @@ export default function SignUp(props) {
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
   // const [token, setToken] = useState("");
   const navigate = useNavigate();
+  const [image, setImage] = useState("");
+  const [url, setUrl] = useState("");
+  
+  const uploadAvatar = () => {
+    const data = new FormData();
+    data.append("file", image);
+    data.append("upload_preset", "connect_ed");
+    data.append("cloud_name", "dqv6cj4bc");
+    fetch("https://api.cloudinary.com/dqv6cj4bc/image/upload", {
+      method: "post",
+      body: data,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setUrl(data.url);
+      })
+      .catch((err) => console.log(err));
+  };
 
   const signUpHandler = (event) => {
     event.preventDefault();
@@ -27,7 +45,7 @@ export default function SignUp(props) {
       city: data.get("city"),
       state: data.get("state"),
       language: data.get("language"),
-      // profile_picture: `https://res.cloudinary.com/dqv6cj4bc/image/upload/v1668535173/${imageData.public_id}`,
+      profile_picture: `${url}`
     };
     props.handleSignupSubmit(newUser);
     navigate("/community-projects");
@@ -212,7 +230,23 @@ export default function SignUp(props) {
       </Row>
       <Row className="col-12 mb-3">
         <label className="form-label">Profile Picture</label>
-        {/* <ImageUpload /> */}
+        <div>
+              <input
+                type="file"
+                name="file"
+                onChange={(e) => setImage(e.target.files[0])}
+              ></input>
+              <button
+                className="btn btn-secondary"
+                type="button"
+                onClick={uploadAvatar}
+              >
+                Upload Image
+              </button>
+              <div>
+                <img src={url} />
+              </div>
+            </div>
       </Row>
       <Row xs="auto">
         <Button variant="primary" type="submit" className="btn btn-primary">
