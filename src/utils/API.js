@@ -191,6 +191,7 @@ const API = {
       },
     }).then((res) => res.json());
   },
+
   getStarredProjects: (token) => {
     return fetch(`${URL_PREFIX}/api/status/starred`, {
       method: "GET",
@@ -199,9 +200,10 @@ const API = {
       },
     }).then((res) => res.json());
   },
+
   createStarredProjects: (starredObj, token) => {
     return fetch(`${URL_PREFIX}/api/status/starred`, {
-      method: "POST",
+      method: "PUT",
       body: JSON.stringify(starredObj),
       headers: {
         Authorization: `Bearer ${token}`,
