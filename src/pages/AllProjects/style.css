@@ -11,11 +11,11 @@
 } 
 
 
-h5{
-  /* color:White; */
-  /* padding-top: 4px; */
-  /* margin:8px; */
-  /* margin-left: 18px; */
+.allProjectsHFive{
+  color:White;
+  padding-top: 4px;
+  margin:8px;
+  margin-left: 18px;
   font-family: 'Gloria Hallelujah', cursive;
   font-weight:bolder;
 }
@@ -27,30 +27,30 @@ h5{
 .containerAllProj{
   margin-top:15px;
   display:grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   width: 95%;
   height: auto; 
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
   margin-top: 3px;
   margin-bottom: 3px;
-  border-radius: 3px;
-  border-color: rgba(1, 1, 1, 0.433);
-  border-style:solid;
-  border-width: 2px;
+  /* border-radius: 3px; */
+  /* border-color: rgba(1, 1, 1, 0.433); */
+  /* border-style:solid;
+  border-width: 2px; */
 }
 
 @media (max-width: 1190px) {
   .containerAllProj{
     margin-top:15px;
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     width: 95%;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .containerAllProj{
     margin-top:15px;
     display:grid;

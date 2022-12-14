@@ -7,6 +7,8 @@ header{
     padding-bottom: 3px;
     margin-bottom: 5px;
     border-radius: 5px;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
   
 } 
 
@@ -17,6 +19,20 @@ h3{
     margin-bottom:15px;
     margin-left: 10px;
     color:white;
+}
+
+.starBtn{
+    margin-top:15px;
+    margin-left: 250px;
+}
+
+.starBtnBtn{
+    background-color: rgb(101, 207, 219);
+    border-radius: 50px;
+    border-style: dotted;
+    border-color: aliceblue;
+    margin: 2px;
+    
 }
 
 .contLabel{

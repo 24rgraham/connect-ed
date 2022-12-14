@@ -76,18 +76,26 @@ export default function SingleProject() {
 
   return (
     <>
-      
+
       <button onClick={starProject}>Star This Project</button>
       <button onClick={inProgressProject}>Begin This Project</button>
       <button onClick={completeProject}>Move to Completed Projects</button>
       <button onClick={saveProject}>Save This Project For Later</button>
       <button onClick={unSaveProject}>Unsave This Project</button>
 
+
       {project && (
         <div className="projectContainer">
           <div className="topOfPage">
             <header>
+              
               <h3 className="title"> {project.title}</h3>
+              <p className="starBtn">
+              <button className="starBtnBtn" onClick={starProject}>Star</button>
+              <button className="starBtnBtn" onClick={unstarProject}>unStar</button>
+              </p>
+              
+             
             </header>
 
             <div className="topTwo">

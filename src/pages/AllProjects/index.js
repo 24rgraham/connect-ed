@@ -27,7 +27,7 @@ export default function AllProjects() {
             {allProjects[0] && 
                 <div className='containerForAll'>
                     <header className='communityHeader'>
-                    <h5>Community Projects:</h5>
+                    <h5 className='allProjectsHFive'>Community Projects:</h5>
                     </header>
                     <div className="containerAllProj">
 
