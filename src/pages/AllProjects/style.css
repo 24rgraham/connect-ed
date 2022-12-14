@@ -7,7 +7,7 @@ h5{
 }
 
 .containerForAll {
-  height: 70rem;
+  height: auto;
   width: 98%;
   background-color: rgb(255, 255, 255);
   margin-top: 3px;

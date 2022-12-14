@@ -17,12 +17,12 @@ export default function Search() {
     const data = new FormData(event.currentTarget);
     // const grades = []
 
-    const searchCriteria = {
-      grade_lvl: data.get("newGradeLevel"),
-      est_time: data.get("newEstTime"),
-      subjects: data.get("newSubjects"),
-      curriculums: data.get("newCurriculums"),
-    };
+    // const searchCriteria = {
+    //   grade_lvl: data.get("newGradeLevel"),
+    //   est_time: data.get("newEstTime"),
+    //   subjects: data.get("newSubjects"),
+    //   curriculums: data.get("newCurriculums"),
+    // };
     //  console.log(searchCriteria)
 
     API.advancedSearch(searchCriteria).then((res) => {
@@ -40,6 +40,7 @@ export default function Search() {
 
   return (
     <>
+    <div className="searchContainer">
       <Form className="new-project-form" onSubmit={handleSearch}>
         <Row>
           <Col xs="auto">
@@ -133,7 +134,7 @@ export default function Search() {
           Submit
         </Button>
       </Form>
-
+</div>
       {results[0] && (
         <div>
           <h3>
