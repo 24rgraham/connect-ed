@@ -14,11 +14,13 @@ export default function Projects() {
     
     return(
         <div className='landingContainer'>
+            <div>
             <InProgress/>
             <Completed/>
             <Starred/>
             <SavedForLater/>
             <OriginalProjects/>
+            </div>
         </div>
     )
 }

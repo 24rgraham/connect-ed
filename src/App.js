@@ -13,6 +13,7 @@ import Projects from "./pages/Projects";
 import NewProject from "./pages/NewProject";
 import Search from "./pages/Search";
 import SearchResults from "./pages/SearchResults";
+import AllProjects from "./pages/AllProjects";
 
 import "./App.css";
 import Headerbootstrap from "./components/Headerbootstrap";
@@ -22,6 +23,14 @@ function App() {
   const [userEmail, setUserEmail] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [token, setToken] = useState("");
+  const [first_name, setFirstName] = useState("")
+  const [last_name, setLastName] = useState("")
+  const [password, setPassword] = useState("")
+  const [school, setSchool] = useState("")
+  const [city, setCity] = useState("")
+  const [state, setState] = useState("")
+  const [language, setLanguage] = useState("")
+  const [picture, setPicture] = useState("")
 
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
@@ -65,14 +74,14 @@ function App() {
         setToken(data.token);
         setIsLoggedIn(true);
         setUserEmail(data.user.email);
-        // setSignupFirstName(data.user.first_name);
-        // setSignupLastName(data.user.last_name);
-        // setSignupPassword(data.user.password);
-        // setSignupSchool(data.user.school);
-        // setSignupCity(data.user.city);
-        // setSignupState(data.user.state);
-        // setSignupLanguage(data.user.language);
-        // setSignupPicture(data.user.profile_picture);
+        setFirstName(data.user.first_name);
+        setLastName(data.user.last_name);
+        setPassword(data.user.password);
+        setSchool(data.user.school);
+        setCity(data.user.city);
+        setState(data.user.state);
+        setLanguage(data.user.language);
+        setPicture(data.user.profile_picture);
         localStorage.setItem("token", data.token);
       }
     });
@@ -133,6 +142,7 @@ function App() {
             <Route path="/create" element={<NewProject token={token} />} />
             <Route path="/search" element={<Search />} />
             <Route path="/results" element={<SearchResults />} />
+            <Route path="/community-projects" element={<AllProjects />} />
           </Routes>
         </main>
       </Router>

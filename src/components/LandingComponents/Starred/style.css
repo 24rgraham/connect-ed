@@ -1,0 +1,14 @@
+/* starred component */
+
+
+.starred h6{
+    color:black;
+    margin:8px;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight:bolder;
+}
+
+.statusCards{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+  }

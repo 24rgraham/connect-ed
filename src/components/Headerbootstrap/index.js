@@ -22,6 +22,13 @@ export default function Headerbootstrap(props) {
         <div className="position-sticky">
           <div className="list-group list-group-flush mx-3 mt-4">
           <Link
+              to="/community-projects"
+              className="list-group-item list-group-item-action py-2 "
+            >
+              <i className="fas fa-people-carry fa-fw me-3"></i>
+              <span>All Projects</span>
+            </Link>
+          <Link
               to="/search"
               className="list-group-item list-group-item-action py-2 "
               aria-current="true"
@@ -29,14 +36,7 @@ export default function Headerbootstrap(props) {
               <i className="fas fa-newspaper fa-fw me-3"></i>
               <span>Search</span>
             </Link>
-            {/* <Link
-              to="/"
-              className="list-group-item list-group-item-action py-2 "
-              aria-current="true"
-            >
-              <i className="fas fa-newspaper fa-fw me-3"></i>
-              <span>My Feed</span>
-            </Link> */}
+        
             <Link
               to="/projects"
               className="list-group-item list-group-item-action py-2 "
@@ -58,13 +58,6 @@ export default function Headerbootstrap(props) {
               <i className="fas fa-calendar-alt fa-fw me-3"></i>
               <span>Calendar</span>
             </Link> */}
-            <Link
-              to="/community"
-              className="list-group-item list-group-item-action py-2 "
-            >
-              <i className="fas fa-people-carry fa-fw me-3"></i>
-              <span>Community</span>
-            </Link>
             <Link
               to="/curriculum"
               className="list-group-item list-group-item-action py-2 "
@@ -122,7 +115,7 @@ export default function Headerbootstrap(props) {
              /> */}
           </a>
           {/* <!-- Search form --> */}
-          <form className="d-none d-md-flex input-group w-auto my-auto">
+          {/* <form className="d-none d-md-flex input-group w-auto my-auto">
             <input
               autoComplete="off"
               type="search"
@@ -134,7 +127,7 @@ export default function Headerbootstrap(props) {
             <span className="input-group-text border-0">
               <i className="fas fa-search"></i>
             </span>
-          </form>
+          </form> */}
 
           {/* <!-- Right links --> */}
           <ul className="navbar-nav ms-auto d-flex flex-row">

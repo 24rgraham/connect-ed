@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
-
 import { useParams } from "react-router-dom";
+
 import Subject from '../../components/SingleProjectComponents/Subject'
 import SubjectSearch from "../../components/SearchComponents/SubjectSearch";
+import Card from 'react-bootstrap/Card';
+import  ListGroup  from 'react-bootstrap/ListGroup';
+
+import './style.css'
+
+import Image from 'react-bootstrap/Image'
 
 export default function SingleProject(props) {
     const params = useParams()
@@ -32,39 +38,67 @@ export default function SingleProject(props) {
 
   return (
     <>
-    <button onClick={starredProject}>Star</button>
+    {/* <button onClick={starredProject}>Star</button> */}
       {project && <div className="projectContainer">
         <div className="topOfPage">
-          <h3 className="title"> {project.title}</h3>
-          <div className="mediaContainer">
-           <img width='178px' src={project.image}></img>
-            <p className="grade">Recommended Grade Level: {project.grade_lvl}</p>
-            <p className="time">Estimated Time to Complete: {project.est_time}</p>
-            {project.Curriculums && <p className="subject">Curriculum(s): {project.Curriculums.map(curriculum => (
-              <span>{curriculum.name}</span>))}
-            </p>}
-           {project.Subjects && <p className="subject">Subject(s): {project.Subjects.map(subject => (
+
+          <header>
+            <h3 className="title"> {project.title}</h3>
+          </header>
+
+          <div className="topTwo">
+
+            <div className="mediaContainer">
+            <Image className="projImg" style={{ width: '25rem' }} src={project.image}></Image>
+            </div>
+
+            <div className="topRight">
+            
+            <div className="topRTxt">
+              <div className="recGradeBox">
+                <p className="grade"><label>Recommended Grade Level: </label>
+                <p className="answers"> {project.grade_lvl}</p></p>
+              </div>
+              <div className="timeDiv">
+                <p className="time"><label>Estimated Time to Complete:</label> {project.est_time}</p>
+              </div>
+
+                {project.Curriculums && <p className="subject">Curriculum Style: {project.Curriculums.map(curriculum => (
+                <span>{curriculum.name}</span>))}
+              </p>}
+
+
+                {project.Subjects && <p className="subject">Subjects: {project.Subjects.map(subject => (
               <span>{subject.name}</span>))}
-            </p>}
-          </div>
+                </p>}
+            </div>  
+            </div>
+            </div>
         </div>
+
         <div className="midPage">
           <div className="overviewContainer">
-            <div className="overview"> Overview: {project.overview_desc}
-              <p></p>
+            <div className="overview"> Overview: 
+                <p>{project.overview_desc}</p>
             </div>
           </div>
         </div>
+
         <div className="bottomOfPage">
-          <div className="directionsContainer">
+          <div className="btmLeft">
+          <div className="directionsContainer" scrolling="auto">
             <p>{project.directions}</p>
           </div>
+          </div>
+
+          <div className="btmRightTxt">       
           <div className="materialsContainer">
             <p>{project.materials}</p>
           </div>
           <div className="resourcesContainer">
             <p>{project.resources}</p>
           </div>
+          </div> 
         </div>
       </div>}
     </>

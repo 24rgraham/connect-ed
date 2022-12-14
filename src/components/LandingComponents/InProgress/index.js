@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react'
 import API from '../../../utils/API';
 import ProjectCard from '../../ProjectCard';
 
+import './style.css'
+
 export default function InProgress(props) {
     const [inProgressProjects,setInProgressProjects] = useState([])
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
         API.getInProgressProjects(storedToken).then((data) => {
-              console.log(data);
+            //   console.log(data);
               setInProgressProjects(data)
           });
     },[] )
@@ -27,8 +29,10 @@ export default function InProgress(props) {
     return(
         <>
             {inProgressProjects[0] && <div className='inProgress'>
-                <h4>In Progress Projects:</h4>
-                {inProgressProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
+                <h6>In Progress Projects:</h6>
+                <div className='statusCards'>
+                    {inProgressProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
+                </div>
             </div>}
             </>
     )

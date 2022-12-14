@@ -1,0 +1,26 @@
+/* All Projects */
+h5{
+  color:rgba(0, 0, 0, 0.825);
+  margin:8px;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-weight:bolder;
+}
+
+.containerForAll {
+  width: 98%;
+  background-color: rgb(255, 255, 255);
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-radius: 3px;
+  border-color: rgba(1, 1, 1, 0.433);
+  border-style:solid;
+  border-width: 2px;
+}
+
+.containerAllProj{
+  margin-top:15px;
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 75px);
+  width: 95%;
+}
