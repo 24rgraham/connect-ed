@@ -10,6 +10,8 @@ import ListGroup from "react-bootstrap/ListGroup";
 import "./style.css";
 
 import Image from "react-bootstrap/Image";
+const storedToken = localStorage.getItem("token");
+
 
 export default function SingleProject(props) {
   const params = useParams();
@@ -22,23 +24,32 @@ export default function SingleProject(props) {
       setProject(data);
     });
   }, []);
-  console.log(project);
 
-  function starredProject() {
+  function starProject() {
     setStar(true);
-
     const starredItem = {
-      starred: star,
+      starred: true,
     };
-    API.createStarredProjects(starredItem, props.token);
-    //call the api
-    //send back project id, userId
-    //need to grab token
+    API.changeStatus(params.id, starredItem, storedToken).then((data) => {
+      console.log(data);
+    })
+  }
+  
+  function unstarProject() {
+    setStar(false);
+    const starredItem = {
+      starred: false,
+    };
+    API.changeStatus(params.id, starredItem, storedToken).then((data) => {
+      console.log(data);
+    })
   }
 
   return (
     <>
-      {/* <button onClick={starredProject}>Star</button> */}
+      <button onClick={starProject}>Star</button>
+      <button onClick={unstarProject}>unStar</button>
+
       {project && (
         <div className="projectContainer">
           <div className="topOfPage">
