@@ -8,7 +8,7 @@ export default function Completed(props) {
     useEffect(() => {
       const storedToken = localStorage.getItem("token");
         API.getCompletedProjects(storedToken).then((data) => {
-              console.log(data);
+            //   console.log(data);
               setCompletedProjects(data)
           });
     },[] )

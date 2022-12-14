@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import API from '../../../utils/API';
-import ProjectCard from '../../ProjectCard';
+import React, { useEffect, useState } from "react";
+import API from "../../../utils/API";
+import ProjectCard from "../../ProjectCard";
+
 
 import './style.css'
 
@@ -8,16 +9,17 @@ export default function OgProjects(props) {
     const [ogProjects,setOgProjects] = useState([])
     useEffect(() => {
       const storedToken = localStorage.getItem("token");
-        // API.getOgProjects(storedToken).then((data) => {
-        //       console.log(data);
-        //       setOgProjects(data)
-        //   });
+         API.getOgProjects(storedToken).then((data) => {
+               console.log(data);
+               setOgProjects(data)
+           });
     },[] )
     return(
         <>
-            {ogProjects[0] && <div className='inProgress'>
+            {ogProjects && <div className='inProgress'>
                 <h6>MY Projects:</h6>
                 <div className='statusCards'>
+
                 {ogProjects.map((projectInfo) => (<ProjectCard key={projectInfo.id} projectInfo={projectInfo}/>))}
                 </div>
             </div>}

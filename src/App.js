@@ -23,6 +23,14 @@ function App() {
   const [userEmail, setUserEmail] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [token, setToken] = useState("");
+  const [first_name, setFirstName] = useState("")
+  const [last_name, setLastName] = useState("")
+  const [password, setPassword] = useState("")
+  const [school, setSchool] = useState("")
+  const [city, setCity] = useState("")
+  const [state, setState] = useState("")
+  const [language, setLanguage] = useState("")
+  const [picture, setPicture] = useState("")
 
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
@@ -58,26 +66,26 @@ function App() {
     });
   };
 
-  const handleSignupSubmit = userObj=>{
-    API.signup(userObj).then(data=>{
+  const handleSignupSubmit = (userObj) => {
+    API.signup(userObj).then((data) => {
       console.log(data);
-      if(data.token){
+      if (data.token) {
         setUserId(data.user.id);
         setToken(data.token);
         setIsLoggedIn(true);
         setUserEmail(data.user.email);
-        // setSignupFirstName(data.user.first_name);
-        // setSignupLastName(data.user.last_name);
-        // setSignupPassword(data.user.password);
-        // setSignupSchool(data.user.school);
-        // setSignupCity(data.user.city);
-        // setSignupState(data.user.state);
-        // setSignupLanguage(data.user.language);
-        // setSignupPicture(data.user.profile_picture);
-        localStorage.setItem("token",data.token)
+        setFirstName(data.user.first_name);
+        setLastName(data.user.last_name);
+        setPassword(data.user.password);
+        setSchool(data.user.school);
+        setCity(data.user.city);
+        setState(data.user.state);
+        setLanguage(data.user.language);
+        setPicture(data.user.profile_picture);
+        localStorage.setItem("token", data.token);
       }
-    })
-  }
+    });
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -85,7 +93,6 @@ function App() {
     setToken("");
     setUserId(0);
     setUserEmail("");
-
   };
 
   return (
@@ -98,22 +105,35 @@ function App() {
         />
         <main className="mainContainer">
           <Routes>
-            <Route path="/signup" element={<Signup 
-            isLoggedIn={isLoggedIn}
-            handleSignupSubmit={handleSignupSubmit}
-            handleLoginSubmit={handleLoginSubmit}/>} />
-          <Route path="/login" element={ <Login
+            <Route
+              path="/signup"
+              element={
+                <Signup
                   isLoggedIn={isLoggedIn}
-                  handleLoginSubmit={handleLoginSubmit}/>
-              }/>
-            <Route path="/projects" element={<Projects/>} />
-            <Route path="/login" element={
-              <Login
-                isLoggedIn={isLoggedIn}
-                handleLoginSubmit={handleLoginSubmit}
-              // handleLogout={handleLogout}
-              />
-            }
+                  handleSignupSubmit={handleSignupSubmit}
+                  handleLoginSubmit={handleLoginSubmit}
+                />
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <Login
+                  isLoggedIn={isLoggedIn}
+                  handleLoginSubmit={handleLoginSubmit}
+                />
+              }
+            />
+            <Route path="/projects" element={<Projects />} />
+            <Route
+              path="/login"
+              element={
+                <Login
+                  isLoggedIn={isLoggedIn}
+                  handleLoginSubmit={handleLoginSubmit}
+                  // handleLogout={handleLogout}
+                />
+              }
             />
             <Route path="/project/:id" element={<SingleProject token={token} />} />
             <Route path="/create" element={<NewProject 
