@@ -4,6 +4,9 @@ import { useParams } from "react-router-dom";
 
 import Subject from '../../components/SingleProjectComponents/Subject'
 import SubjectSearch from "../../components/SearchComponents/SubjectSearch";
+import Card from 'react-bootstrap/Card';
+import  ListGroup  from 'react-bootstrap/ListGroup';
+
 import './style.css'
 
 import Image from 'react-bootstrap/Image'
@@ -39,10 +42,14 @@ export default function SingleProject(props) {
       {project && <div className="projectContainer">
         <div className="topOfPage">
           <h3 className="title"> {project.title}</h3>
+          <div className="topTwo">
           <div className="mediaContainer">
-            <Image style={{ width: '25rem' }} src={project.image}></Image>
+            <Image className="projImg" style={{ width: '25rem' }} src={project.image}></Image>
            <img width='178px' ></img>
-            <p className="grade">Recommended Grade Level: {project.grade_lvl}</p>
+          </div>
+          <div classname="topRight">
+          <div  style={{ width: '20rem', height:'17rem' }}>
+          <p className="grade">Recommended Grade Level: {project.grade_lvl}</p>
             <p className="time">Estimated Time to Complete: {project.est_time}</p>
             {project.Curriculums && <p className="subject">Curriculum(s): {project.Curriculums.map(curriculum => (
               <span>{curriculum.name}</span>))}
@@ -50,7 +57,9 @@ export default function SingleProject(props) {
            {project.Subjects && <p className="subject">Subject(s): {project.Subjects.map(subject => (
               <span>{subject.name}</span>))}
             </p>}
-          </div>
+            </div>
+            </div>
+            </div>
         </div>
         <div className="midPage">
           <div className="overviewContainer">
