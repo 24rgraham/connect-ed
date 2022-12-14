@@ -205,18 +205,6 @@ const API = {
     return await res.json();
   },
 
-  getOgProjects: async (token) => {
-    const res = await fetch(`${URL_PREFIX}/api/projects/getprojectsfromtoken`, {
-      method: "GET",
-
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    return await res.json();
-  },
-
-
   // createStarredProjects: (starredObj, token) => {
   //   return fetch(`${URL_PREFIX}/api/status/starred`, {
   //     method: "PUT",
@@ -231,17 +219,6 @@ const API = {
   getOgProjects: async (token) => {
     const res = await fetch(`${URL_PREFIX}/api/projects/getprojectsfromtoken`, {
       method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    return await res.json();
-  },
- 
-  getOgProjects: async (token) => {
-    const res = await fetch(`${URL_PREFIX}/api/projects/getprojectsfromtoken`, {
-      method: "GET",
-
       headers: {
         Authorization: `Bearer ${token}`,
       },
