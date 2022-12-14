@@ -13,6 +13,7 @@ import Projects from "./pages/Projects";
 import NewProject from "./pages/NewProject";
 import Search from "./pages/Search";
 import SearchResults from "./pages/SearchResults";
+import AllProjects from "./pages/AllProjects";
 
 import "./App.css";
 import Headerbootstrap from "./components/Headerbootstrap";
@@ -139,6 +140,8 @@ function App() {
              token={token}/>} />
             <Route path="/search" element={<Search />} />
             <Route path="/results" element={<SearchResults />} />
+            <Route path="/community-projects" element={<AllProjects />} />
+        
           </Routes>
         </main>
       </Router>
