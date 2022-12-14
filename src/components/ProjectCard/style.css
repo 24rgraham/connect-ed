@@ -1,17 +1,33 @@
 /* ProjectCard */
 
-.cardContainer {
-    width: 200px;
+/* .cardContainer {
+    width: 200px; */
     /* max-height: 80%; */
-    background-color: aqua;
+    /* background-color: aqua;
     border: black;
     border-radius: 3px;
     border-style:inset;
-}
+} */
 
-.imageContainer{
+/* .imageContainer{
     align-self: center;
     border-color: black;
     width: 90%;
     background-color: white;
+} */
+.projectCardDiv{
+    margin:8px;
+    margin-right: 8px;
+}
+
+
+
+.cardTitle{
+    font-weight:bold;
+    margin-top: 3px;
+
+}
+
+.gradeCard,.timeCard{
+    font-size: smaller;
 }

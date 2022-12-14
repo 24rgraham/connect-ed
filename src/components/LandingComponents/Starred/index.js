@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import API from '../../../utils/API';
 import ProjectCard from '../../ProjectCard';
 
+import './style.css'
+
 export default function Starred(props) {
     const [starredProjects,setStarredProjects] = useState([])
     useEffect(() => {
@@ -14,7 +16,7 @@ export default function Starred(props) {
     return(
         <>
             {starredProjects[0] && <div className='starred'>
-                <h4>Starred Projects:</h4>
+                <h6>Starred Projects:</h6>
                 {starredProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
             </div>}
             </>
