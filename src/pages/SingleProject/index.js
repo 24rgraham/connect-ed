@@ -74,32 +74,38 @@ export default function SingleProject(props) {
                     </ListGroup.Item>
                     <ListGroup.Item>
                       <p className="time">
+                        <div className="gradeGrid">
                         <label className="contLabel">
                           Estimated Time to Complete:
                         </label>
                         <label className="answers">{project.est_time}</label>
+                        </div>
                       </p>
                     </ListGroup.Item>
                     <ListGroup.Item>
                       {project.Curriculums && (
-                        <p className="subject">
+                        <p>
+                          <div className="gradeGrid">
                           <label className="contLabel">Curriculum Style:</label>
-                          <p className="answers">
+                          <label className="answers">
                             {" "}
                             {project.Curriculums.map((curriculum) => (
                               <span>{curriculum.name}</span>
                             ))}
-                          </p>
+                          </label>
+                          </div>
                         </p>
                       )}
                     </ListGroup.Item>
                     <ListGroup.Item>
                       {project.Subjects && (
-                        <p className="subject">
-                          Subjects:{" "}
-                          {project.Subjects.map((subject) => (
+                        <p>
+                          <div className="gradeGrid">
+                        <label className="contLabel">Subjects:</label>
+                        <label className="answers">  {project.Subjects.map((subject) => (
                             <span>{subject.name}</span>
-                          ))}
+                          ))}</label>
+                          </div>
                         </p>
                       )}
                     </ListGroup.Item>
