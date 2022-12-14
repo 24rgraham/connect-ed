@@ -167,7 +167,6 @@ export default function Search() {
     console.log(curriculum);
 
     if (grades[0]&&time[0]&&subjects[0]&&curriculum[0]){
-      console.log('1');
       
       const searchCriteria = {grade_lvl: grades, est_time: time, subject: subjects, curriculum: curriculum}
       console.log(searchCriteria);
@@ -177,7 +176,6 @@ export default function Search() {
         setResults(res);
       })
     } else if (grades[0]&&time[0]&&subjects[0]){
-      console.log('2');
       
       const searchCriteria = {grade_lvl: grades, est_time: time, subject: subjects}
       API.advancedSearch(searchCriteria).then((res) => {
@@ -185,7 +183,6 @@ export default function Search() {
         setResults(res);
       })
     } else if (grades[0]&&time[0]&&curriculum[0]){
-      console.log('3');
       
       const searchCriteria = {grade_lvl: grades, est_time: time, curriculum: curriculum}
       API.advancedSearch(searchCriteria).then((res) => {
@@ -193,7 +190,6 @@ export default function Search() {
         setResults(res);
       })
     } else if (grades[0]&&subjects[0]&&curriculum[0]){
-      console.log('4');
       
       const searchCriteria = {grade_lvl: grades, subject: subjects, curriculum: curriculum}
       API.advancedSearch(searchCriteria).then((res) => {
@@ -201,7 +197,6 @@ export default function Search() {
         setResults(res);
       })
     } else if (time[0]&&subjects[0]&&curriculum[0]){
-      console.log('5');
       
       const searchCriteria = {est_time: time, subject: subjects, curriculum: curriculum}
       API.advancedSearch(searchCriteria).then((res) => {
@@ -209,7 +204,6 @@ export default function Search() {
         setResults(res);
       })
     } else if (grades[0]&&time[0]){
-      console.log('6');
       
       const searchCriteria = {grade_lvl: grades, est_time: time}
       API.advancedSearch(searchCriteria).then((res) => {
