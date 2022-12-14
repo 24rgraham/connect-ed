@@ -13,9 +13,9 @@ import Image from "react-bootstrap/Image";
 const storedToken = localStorage.getItem("token");
 
 
-export default function SingleProject(props) {
+export default function SingleProject() {
   const params = useParams();
-  const [star, setStar] = useState(false);
+  const [star, setStar] = useState(null);
 
   const [project, setProject] = useState([]);
 
@@ -34,11 +34,40 @@ export default function SingleProject(props) {
       console.log(data);
     })
   }
+
+  function inProgressProject() {
+    const status = {
+      in_progress: true,
+      completed: false,
+    };
+    API.changeStatus(params.id, status, storedToken).then((data) => {
+      console.log(data);
+    })
+  }
   
-  function unstarProject() {
-    setStar(false);
+  function completeProject() {
     const starredItem = {
+      in_progress: false,
+      completed: true,
+    };
+    API.changeStatus(params.id, starredItem, storedToken).then((data) => {
+      console.log(data);
+    })
+  }
+  function saveProject() {
+    const starredItem = {
+      saved_for_later: true,
+    };
+    API.changeStatus(params.id, starredItem, storedToken).then((data) => {
+      console.log(data);
+    })
+  }
+  function unSaveProject() {
+    const starredItem = {
+      in_progress: false,
+      completed: false,
       starred: false,
+      saved_for_later: false,
     };
     API.changeStatus(params.id, starredItem, storedToken).then((data) => {
       console.log(data);
@@ -47,8 +76,12 @@ export default function SingleProject(props) {
 
   return (
     <>
-      <button onClick={starProject}>Star</button>
-      <button onClick={unstarProject}>unStar</button>
+      
+      <button onClick={starProject}>Star This Project</button>
+      <button onClick={inProgressProject}>Begin This Project</button>
+      <button onClick={completeProject}>Move to Completed Projects</button>
+      <button onClick={saveProject}>Save This Project For Later</button>
+      <button onClick={unSaveProject}>Unsave This Project</button>
 
       {project && (
         <div className="projectContainer">
