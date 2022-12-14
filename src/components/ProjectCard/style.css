@@ -1,5 +1,9 @@
 /* ProjectCard */
 
+.oneCardForAll{
+    width: 11 rem;
+    height: 14rem;
+}
 
 .projectCardDiv{
     margin:8px;
@@ -17,3 +21,15 @@
 .gradeCard,.timeCard{
     font-size: smaller;
 }
+
+@media (max-width: 408px) {
+    .oneCardForAll{
+        width: 15rem;
+        height: 19rem;
+    }
+    .img{
+        width: 200px;
+    }
+  
+    
+  }

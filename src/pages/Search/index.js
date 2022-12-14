@@ -287,6 +287,7 @@ export default function Search() {
 
   return (
     <>
+    <div className="searchContainer">
       <Form className="new-project-form" onSubmit={handleSearch}>
         <Row>
           <Col xs="auto">
@@ -680,7 +681,7 @@ export default function Search() {
           Submit
         </Button>
       </Form>
-
+</div>
       {results[0] && (
         <div>
           <h3>

@@ -1,13 +1,36 @@
 /* All Projects */
+
+.communityHeader{
+    background-color: rgb(207, 45, 8);
+    width:95%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    height:4rem;
+} 
+
+
 h5{
-  color:rgba(0, 0, 0, 0.825);
+  color:White;
+  padding-top: 4px;
   margin:8px;
+  margin-left: 18px;
   font-family: 'Gloria Hallelujah', cursive;
   font-weight:bolder;
 }
 
 .containerForAll {
   width: 98%;
+}
+
+.containerAllProj{
+  margin-top:15px;
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  width: 95%;
+  height: auto; 
   background-color: rgb(255, 255, 255);
   margin-top: 3px;
   margin-bottom: 3px;
@@ -17,10 +40,35 @@ h5{
   border-width: 2px;
 }
 
-.containerAllProj{
-  margin-top:15px;
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 75px);
-  width: 95%;
+@media (max-width: 1190px) {
+  .containerAllProj{
+    margin-top:15px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    width: 95%;
+  }
+}
+
+@media (max-width: 700px) {
+  .containerAllProj{
+    margin-top:15px;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    width: 95%;
+  }
+}
+
+@media (max-width: 408px) {
+  .containerAllProj{
+    margin-top:15px;
+    display:grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    width: 95%;
+    margin-left:70px;
+  }
+
+  
 }
