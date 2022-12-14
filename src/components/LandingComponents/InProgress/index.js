@@ -5,12 +5,25 @@ import ProjectCard from '../../ProjectCard';
 export default function InProgress(props) {
     const [inProgressProjects,setInProgressProjects] = useState([])
     useEffect(() => {
-      const storedToken = localStorage.getItem("token");
-        API.getInProgressProjects(storedToken).then((data) => {
-            //   console.log(data[0].Project);
-              setInProgressProjects(data)
+        const storedToken = localStorage.getItem("token");
+        API.getCompletedProjects(storedToken).then((data) => {
+              console.log(data);
+              setCompletedProjects(data)
           });
     },[] )
+    //     const fetchData = async () =>{
+    //         try{
+    //             const storedToken = await localStorage.getItem("token");
+    //             const dataToken =   API.getInProgressProjects(storedToken).then((data) => {
+    //         //   console.log(data[0].Project);
+    //           setInProgressProjects(data)
+    //       });
+    //         } catch(err){
+
+    //         } fetchData(); 
+    //     }     
+       
+    // },[] )
     return(
         <>
             {inProgressProjects[0] && <div className='inProgress'>

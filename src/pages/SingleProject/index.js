@@ -7,6 +7,7 @@ import SubjectSearch from "../../components/SearchComponents/SubjectSearch";
 
 export default function SingleProject(props) {
     const params = useParams()
+    const [star, setStar] = useState(false)
 
   const [project, setProject] = useState([])
 
@@ -17,8 +18,21 @@ export default function SingleProject(props) {
   }, []);
   console.log(project);
 
+  function starredProject(){
+    setStar(true);
+
+    const starredItem = {
+      starred: star
+    }
+    API.createStarredProjects(starredItem, props.token)
+    //call the api
+    //send back project id, userId
+    //need to grab token
+  }
+
   return (
     <>
+    <button onClick={starredProject}>Star</button>
       {project && <div className="projectContainer">
         <div className="topOfPage">
           <h3 className="title"> {project.title}</h3>
