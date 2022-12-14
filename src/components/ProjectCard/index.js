@@ -24,7 +24,7 @@ export default function ProjectCard({projectInfo}) {
 
                 <button onClick={navigateProject} >
 
-                <Card  style={{ width: '11rem', height: '14rem' }}>
+                <Card  className="oneCardForAll" style={{ width: '11rem', height: '14rem' }}>
                     <div className='imageContainer'>
                         <img width='177px' src={projectInfo.image}></img>
                     </div>

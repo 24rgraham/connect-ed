@@ -59,26 +59,22 @@ export default function SingleProject(props) {
                 <Card style={{ height: "16.75rem" }}>
                   <ListGroup variant="flush">
                     <ListGroup.Item>
-                      
-                        <p className="grade">
-                          <div className="gradeGrid">
+                      <p className="grade">
+                        <div className="gradeGrid">
                           <label className="contLabel">
                             Recommended Grade:
-                            
                           </label>
                           <label className="answers">{project.grade_lvl}</label>
-                          </div>
-                          
-                        </p>
-                      
+                        </div>
+                      </p>
                     </ListGroup.Item>
                     <ListGroup.Item>
                       <p className="time">
                         <div className="gradeGrid">
-                        <label className="contLabel">
-                          Estimated Time to Complete:
-                        </label>
-                        <label className="answers">{project.est_time}</label>
+                          <label className="contLabel">
+                            Estimated Time to Complete:
+                          </label>
+                          <label className="answers">{project.est_time}</label>
                         </div>
                       </p>
                     </ListGroup.Item>
@@ -86,13 +82,15 @@ export default function SingleProject(props) {
                       {project.Curriculums && (
                         <p>
                           <div className="gradeGrid">
-                          <label className="contLabel">Curriculum Style:</label>
-                          <label className="answers">
-                            {" "}
-                            {project.Curriculums.map((curriculum) => (
-                              <span>{curriculum.name}</span>
-                            ))}
-                          </label>
+                            <label className="contLabel">
+                              Curriculum Style:
+                            </label>
+                            <label className="answers">
+                              {" "}
+                              {project.Curriculums.map((curriculum) => (
+                                <span>{curriculum.name}</span>
+                              ))}
+                            </label>
                           </div>
                         </p>
                       )}
@@ -101,10 +99,13 @@ export default function SingleProject(props) {
                       {project.Subjects && (
                         <p>
                           <div className="gradeGrid">
-                        <label className="contLabel">Subjects:</label>
-                        <label className="answers">  {project.Subjects.map((subject) => (
-                            <span>{subject.name}</span>
-                          ))}</label>
+                            <label className="contLabel">Subjects:</label>
+                            <label className="answers">
+                              {" "}
+                              {project.Subjects.map((subject) => (
+                                <span>{subject.name}</span>
+                              ))}
+                            </label>
                           </div>
                         </p>
                       )}
@@ -117,9 +118,10 @@ export default function SingleProject(props) {
 
           <div className="midPage">
             <Card>
-              {" "}
-              Overview:
-              <p>{project.overview_desc}</p>
+              <p className="midText">
+                <label className="answers">Overview:</label>
+                <label className="contLabel">{project.overview_desc}</label>
+              </p>
             </Card>
           </div>
 
@@ -127,18 +129,30 @@ export default function SingleProject(props) {
             <div className="btmLeft">
               <Card style={{ height: "24rem" }}>
                 <div className="directionsContainer" scrolling="auto">
+                  <label className="answers">
+                    Step-by-Step Instructions (with timeline breakdown):
+                  </label>
                   <p>{project.directions}</p>
                 </div>
               </Card>
             </div>
 
             <div className="btmRightTxt">
-              <div className="materialsContainer">
-                <p>{project.materials}</p>
-              </div>
-              <div className="resourcesContainer">
-                <p>{project.resources}</p>
-              </div>
+              <Card style={{ height: "24rem" }}>
+                <div className="bottomRightContent">
+                <div className="materialsContainer">
+                <p>
+                <label class>Materials</label>
+                  <p>{project.materials}</p>
+              
+                  </p>
+                </div>
+                <div className="resourcesContainer">
+                  <label className="answers">Additional Resources:</label>
+                  <p>{project.resources}</p>
+                </div>
+                </div>
+              </Card>
             </div>
           </div>
         </div>

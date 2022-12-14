@@ -53,16 +53,12 @@ h3{
     font-size: smaller;
     font-weight: bolder;
 }
-
+.midText{
+    margin-left: 8px;
+}
 .midPage{
     width: 80%;
-    height:70px;
-    background-color: white;
     margin-top:5px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: white;
-    border-radius: 5px;
 }
 
 .bottomOfPage{
@@ -74,22 +70,20 @@ h3{
 
 .btmLeft{
     width:25rem;
-    
-    background-color: white;
     margin-top:5px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: white;
-    border-radius: 5px;
+  
+}
+
+.directionsContainer{
+    margin:8px;
 }
 
 .btmRightTxt{
-    background-color: white;
-    margin-left: 5px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: white;
-    border-radius: 5px;
-    height:25rem;
     margin-top: 5px;
+    margin-left: 5px;
 }
+
+.bottomRightContent{
+    margin: 8px;
+}
+
