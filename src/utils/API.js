@@ -205,27 +205,18 @@ const API = {
     return await res.json();
   },
 
-  getOgProjects: async (token) => {
-    const res = await fetch(`${URL_PREFIX}/api/projects/getprojectsfromtoken`, {
-      method: "GET",
+  changeStatus: async (projectId, statusObj, token) => {
+    const res = await fetch(`${URL_PREFIX}/api/status/${projectId}`, {
+      method: "PUT",
+      body: JSON.stringify(statusObj),
       headers: {
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
     return await res.json();
   },
 
-
-  // createStarredProjects: (starredObj, token) => {
-  //   return fetch(`${URL_PREFIX}/api/status/starred`, {
-  //     method: "PUT",
-  //     body: JSON.stringify(starredObj),
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //   });
-  //   return await res.json();
-  // },
 
   getOgProjects: async (token) => {
     const res = await fetch(`${URL_PREFIX}/api/projects/getprojectsfromtoken`, {
