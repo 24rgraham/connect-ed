@@ -17,7 +17,7 @@ export default function OgProjects(props) {
     return(
         <>
             {ogProjects && <div className='inProgress'>
-                <h6>MY Projects:</h6>
+                <h6>My Original Projects:</h6>
                 <div className='statusCards'>
 
                 {ogProjects.map((projectInfo) => (<ProjectCard key={projectInfo.id} projectInfo={projectInfo}/>))}
