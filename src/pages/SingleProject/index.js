@@ -41,43 +41,56 @@ export default function SingleProject(props) {
     {/* <button onClick={starredProject}>Star</button> */}
       {project && <div className="projectContainer">
         <div className="topOfPage">
-          <h3 className="title"> {project.title}</h3>
-          <div className="topTwo">
-          <div className="mediaContainer">
-            <Image className="projImg" style={{ width: '25rem' }} src={project.image}></Image>
 
-          </div>
-          <div classname="topRight">
-          <div  style={{ width: '20rem' }}>
-          <p className="grade">Recommended Grade Level: {project.grade_lvl}</p>
-            <p className="time">Estimated Time to Complete: {project.est_time}</p>
-            {project.Curriculums && <p className="subject">Curriculum Style: {project.Curriculums.map(curriculum => (
-              <span>{curriculum.name}</span>))}
-            </p>}
-           {project.Subjects && <p className="subject">Subjects: {project.Subjects.map(subject => (
-              <span>{subject.name}</span>))}
-            </p>}
+          <header>
+            <h3 className="title"> {project.title}</h3>
+          </header>
+
+          <div className="topTwo">
+
+            <div className="mediaContainer">
+            <Image className="projImg" style={{ width: '25rem' }} src={project.image}></Image>
             </div>
+
+            <div className="topRight">
+            
+            <div className="topRTxt">
+              <p className="grade">Recommended Grade Level: {project.grade_lvl}</p>
+              <p className="time">Estimated Time to Complete: {project.est_time}</p>
+                {project.Curriculums && <p className="subject">Curriculum Style: {project.Curriculums.map(curriculum => (
+                <span>{curriculum.name}</span>))}
+              </p>}
+                {project.Subjects && <p className="subject">Subjects: {project.Subjects.map(subject => (
+              <span>{subject.name}</span>))}
+                </p>}
+            </div>  
             </div>
             </div>
         </div>
+
         <div className="midPage">
           <div className="overviewContainer">
-            <div className="overview"> Overview: {project.overview_desc}
-              <p></p>
+            <div className="overview"> Overview: 
+                <p>{project.overview_desc}</p>
             </div>
           </div>
         </div>
+
         <div className="bottomOfPage">
-          <div className="directionsContainer">
+          <div className="btmLeft">
+          <div className="directionsContainer" scrolling="auto">
             <p>{project.directions}</p>
           </div>
+          </div>
+
+          <div className="btmRightTxt">       
           <div className="materialsContainer">
             <p>{project.materials}</p>
           </div>
           <div className="resourcesContainer">
             <p>{project.resources}</p>
           </div>
+          </div> 
         </div>
       </div>}
     </>
