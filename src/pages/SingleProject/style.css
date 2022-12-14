@@ -7,9 +7,10 @@ header{
     padding-bottom: 3px;
     margin-bottom: 5px;
     border-radius: 5px;
-    
-}
- h3{
+  
+} 
+
+h3{
     font-family: 'Gloria Hallelujah', cursive;
     font-weight: bolder;
     margin-top:15px;
@@ -18,10 +19,21 @@ header{
     color:white;
 }
 
+.contLabel{
+    font-size: small;
+    font-style: italic;
+}
+
+
 .topTwo{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
     width:80%;
+}
+
+.gradeGrid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .projImg {
@@ -32,39 +44,14 @@ header{
 }
 
 .topRight{
-    background-color: white;
     margin-left: 5px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: white;
-    border-radius: 5px;
+   
 }
 
-.recGradeBox{
-    margin-top:3px;
-    margin-left:5px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.recGradeBox label{
-    font-weight: bold;
-}
-.timeDiv{
-    margin-top:3px;
-    margin-left:5px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.timeDiv label{
-    font-weight: bold;
-}
 
 .answers{
-    font-style: italic;
+    font-size: smaller;
+    font-weight: bolder;
 }
 
 .midPage{
