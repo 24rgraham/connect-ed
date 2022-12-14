@@ -9,12 +9,12 @@ export default function Login(props) {
   const navigate = useNavigate();
     useEffect(()=>{
       if(props.isLoggedIn){
-        navigate("/projects")
+        navigate("/community-projects")
       }
     },[])
   useEffect(() => {
     if (props.isLoggedIn) {
-      navigate("/projects");
+      navigate("/community-projects");
     }
   }, []);
 
@@ -34,6 +34,7 @@ export default function Login(props) {
   return (
     <form className="loginContainer" onSubmit={loginHandle}>
       <div className=" col-4">
+        <div className="loginContents">
         <h1>Login</h1>
         <label className="form-label">Email Address</label>
         <input
@@ -45,7 +46,7 @@ export default function Login(props) {
           value={loginEmail}
           onChange={(e) => setLoginEmail(e.target.value)}
         ></input>
-      </div>
+      
       <div className=" col-4 mb-4">
         <label className="form-label">Password</label>
         <input
@@ -56,6 +57,8 @@ export default function Login(props) {
           value={loginPassword}
           onChange={(e) => setLoginPassword(e.target.value)}
         ></input>
+      </div>
+      </div>
       </div>
       <button type="submit" className="m-3 btn btn-primary">
         Submit

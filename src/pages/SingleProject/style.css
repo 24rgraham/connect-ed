@@ -48,21 +48,16 @@ h3{
    
 }
 
-
 .answers{
     font-size: smaller;
     font-weight: bolder;
 }
-
+.midText{
+    margin-left: 8px;
+}
 .midPage{
     width: 80%;
-    height:70px;
-    background-color: white;
     margin-top:5px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: white;
-    border-radius: 5px;
 }
 
 .bottomOfPage{
@@ -74,22 +69,60 @@ h3{
 
 .btmLeft{
     width:25rem;
-    
-    background-color: white;
     margin-top:5px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: white;
-    border-radius: 5px;
+  
+}
+
+.directionsContainer{
+    margin:8px;
 }
 
 .btmRightTxt{
-    background-color: white;
-    margin-left: 5px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: white;
-    border-radius: 5px;
-    height:25rem;
     margin-top: 5px;
+    margin-left: 5px;
+}
+
+.bottomRightContent{
+    margin: 8px;
+}
+
+
+@media (max-width: 1024px) {
+    .gradeGrid{
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .midPageCard{
+        width: 77.5%;
+        
+    }
+    .midPage{
+        width:70%;
+        margin-top: 35px;
+    }
+    .bottomOfPage{
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gradeGrid{
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .midPageCard{
+        width: 91.5%; 
+        padding-bottom: 12px;
+    }
+    .midPage{
+        width:60%;
+       
+    }
+    .bottomOfPage{
+        margin-top: 5px;
+        width: 60%;
+    }
+    .btmRightTxt{
+       width: 179px;
+    }
 }
