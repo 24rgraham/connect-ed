@@ -31,7 +31,7 @@ export default function SignUp(props) {
       // profile_picture: `https://res.cloudinary.com/dqv6cj4bc/image/upload/v1668535173/${imageData.public_id}`,
     };
     props.handleSignupSubmit(newUser);
-    navigate("/projects");
+    navigate("/community-projects");
   };
 
   // const handleResponse = (res) => {
