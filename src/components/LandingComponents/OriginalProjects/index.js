@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import API from "../../../utils/API";
 import ProjectCard from "../../ProjectCard";
 
-
-import './style.css'
+import "./style.css";
 
 export default function OgProjects(props) {
     const [ogProjects,setOgProjects] = useState([])
