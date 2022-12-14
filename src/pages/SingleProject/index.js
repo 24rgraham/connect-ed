@@ -47,14 +47,20 @@ export default function SingleProject(props) {
 
   return (
     <>
-      <button onClick={starProject}>Star</button>
-      <button onClick={unstarProject}>unStar</button>
+      
 
       {project && (
         <div className="projectContainer">
           <div className="topOfPage">
             <header>
+              
               <h3 className="title"> {project.title}</h3>
+              <p className="starBtn">
+              <button className="starBtnBtn" onClick={starProject}>Star</button>
+              <button className="starBtnBtn" onClick={unstarProject}>unStar</button>
+              </p>
+              
+             
             </header>
 
             <div className="topTwo">
