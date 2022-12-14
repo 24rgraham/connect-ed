@@ -204,7 +204,8 @@ const API = {
     return fetch(`${URL_PREFIX}/api/status/starred`, {
       method: "POST",
       body: JSON.stringify(starredObj),
-  },
+  });
+},
   
   getOgProjects: (token) => {
     return fetch(`${URL_PREFIX}/api/projects/getprojectsfromtoken`, {
