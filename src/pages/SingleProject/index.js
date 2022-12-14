@@ -45,16 +45,16 @@ export default function SingleProject(props) {
           <div className="topTwo">
           <div className="mediaContainer">
             <Image className="projImg" style={{ width: '25rem' }} src={project.image}></Image>
-           <img width='178px' ></img>
+
           </div>
           <div classname="topRight">
-          <div  style={{ width: '20rem', height:'17rem' }}>
+          <div  style={{ width: '20rem' }}>
           <p className="grade">Recommended Grade Level: {project.grade_lvl}</p>
             <p className="time">Estimated Time to Complete: {project.est_time}</p>
-            {project.Curriculums && <p className="subject">Curriculum(s): {project.Curriculums.map(curriculum => (
+            {project.Curriculums && <p className="subject">Curriculum Style: {project.Curriculums.map(curriculum => (
               <span>{curriculum.name}</span>))}
             </p>}
-           {project.Subjects && <p className="subject">Subject(s): {project.Subjects.map(subject => (
+           {project.Subjects && <p className="subject">Subjects: {project.Subjects.map(subject => (
               <span>{subject.name}</span>))}
             </p>}
             </div>
