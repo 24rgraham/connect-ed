@@ -77,7 +77,7 @@ export default function SingleProject(props) {
                         <label className="contLabel">
                           Estimated Time to Complete:
                         </label>
-                        <p className="answers">{project.est_time}</p>
+                        <label className="answers">{project.est_time}</label>
                       </p>
                     </ListGroup.Item>
                     <ListGroup.Item>
