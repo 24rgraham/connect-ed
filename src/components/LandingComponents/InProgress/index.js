@@ -7,7 +7,7 @@ export default function InProgress(props) {
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
         API.getInProgressProjects(storedToken).then((data) => {
-              console.log(data);
+            //   console.log(data);
               setInProgressProjects(data)
           });
     },[] )

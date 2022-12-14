@@ -7,7 +7,7 @@ export default function Starred(props) {
     useEffect(() => {
       const storedToken = localStorage.getItem("token");
         API.getStarredProjects(storedToken).then((data) => {
-              console.log(data);
+            //   console.log(data);
               setStarredProjects(data)
           });
     },[] )
