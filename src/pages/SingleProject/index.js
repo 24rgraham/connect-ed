@@ -56,7 +56,7 @@ export default function SingleProject(props) {
               </div>
 
               <div className="topRight" scrolling="auto">
-                <Card style={{ height: "16.75rem" }}>
+                <Card className="topRightCard"style={{ height: "16.75rem" }}>
                   <ListGroup variant="flush">
                     <ListGroup.Item>
                       <p className="grade">
@@ -117,7 +117,7 @@ export default function SingleProject(props) {
           </div>
 
           <div className="midPage">
-            <Card>
+            <Card className="midPageCard">
               <p className="midText">
                 <label className="answers">Overview:</label>
                 <label className="contLabel">{project.overview_desc}</label>
@@ -132,7 +132,7 @@ export default function SingleProject(props) {
                   <label className="answers">
                     Step-by-Step Instructions (with timeline breakdown):
                   </label>
-                  <p>{project.directions}</p>
+                  <p className="contLabel">{project.directions}</p>
                 </div>
               </Card>
             </div>
@@ -140,17 +140,16 @@ export default function SingleProject(props) {
             <div className="btmRightTxt">
               <Card style={{ height: "24rem" }}>
                 <div className="bottomRightContent">
-                <div className="materialsContainer">
-                <p>
-                <label class>Materials</label>
-                  <p>{project.materials}</p>
-              
-                  </p>
-                </div>
-                <div className="resourcesContainer">
-                  <label className="answers">Additional Resources:</label>
-                  <p>{project.resources}</p>
-                </div>
+                  <div className="materialsContainer">
+                    <p>
+                      <label className="answers">Materials</label>
+                      <p className="contLabel">{project.materials}</p>
+                    </p>
+                  </div>
+                  <div className="resourcesContainer">
+                    <label className="answers">Additional Resources:</label>
+                    <p className="contLabel">{project.resources}</p>
+                  </div>
                 </div>
               </Card>
             </div>
