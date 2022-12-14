@@ -6,7 +6,7 @@
 }
 
 
-.inProgress, .completed, .starred, .saved4Later, .ogProj {
+.inProgress, .completed, .starred, .savedForLater, .ogProj {
     
     width: 100%;
     background-color: rgb(255, 255, 254);

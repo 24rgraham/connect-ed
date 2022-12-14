@@ -55,11 +55,19 @@ export default function SingleProject(props) {
             <div className="topRight">
             
             <div className="topRTxt">
-              <p className="grade">Recommended Grade Level: {project.grade_lvl}</p>
-              <p className="time">Estimated Time to Complete: {project.est_time}</p>
+              <div className="recGradeBox">
+                <p className="grade"><label>Recommended Grade Level: </label>
+                <p className="answers"> {project.grade_lvl}</p></p>
+              </div>
+              <div className="timeDiv">
+                <p className="time"><label>Estimated Time to Complete:</label> {project.est_time}</p>
+              </div>
+
                 {project.Curriculums && <p className="subject">Curriculum Style: {project.Curriculums.map(curriculum => (
                 <span>{curriculum.name}</span>))}
               </p>}
+
+
                 {project.Subjects && <p className="subject">Subjects: {project.Subjects.map(subject => (
               <span>{subject.name}</span>))}
                 </p>}

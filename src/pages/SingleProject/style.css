@@ -40,6 +40,33 @@ header{
     border-radius: 5px;
 }
 
+.recGradeBox{
+    margin-top:3px;
+    margin-left:5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.recGradeBox label{
+    font-weight: bold;
+}
+.timeDiv{
+    margin-top:3px;
+    margin-left:5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.timeDiv label{
+    font-weight: bold;
+}
+
+.answers{
+    font-style: italic;
+}
+
 .midPage{
     width: 80%;
     height:70px;
