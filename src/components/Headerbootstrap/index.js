@@ -36,14 +36,7 @@ export default function Headerbootstrap(props) {
               <i className="fas fa-newspaper fa-fw me-3"></i>
               <span>Search</span>
             </Link>
-            {/* <Link
-              to="/"
-              className="list-group-item list-group-item-action py-2 "
-              aria-current="true"
-            >
-              <i className="fas fa-newspaper fa-fw me-3"></i>
-              <span>My Feed</span>
-            </Link> */}
+        
             <Link
               to="/projects"
               className="list-group-item list-group-item-action py-2 "
@@ -122,7 +115,7 @@ export default function Headerbootstrap(props) {
              /> */}
           </a>
           {/* <!-- Search form --> */}
-          <form className="d-none d-md-flex input-group w-auto my-auto">
+          {/* <form className="d-none d-md-flex input-group w-auto my-auto">
             <input
               autoComplete="off"
               type="search"
@@ -134,7 +127,7 @@ export default function Headerbootstrap(props) {
             <span className="input-group-text border-0">
               <i className="fas fa-search"></i>
             </span>
-          </form>
+          </form> */}
 
           {/* <!-- Right links --> */}
           <ul className="navbar-nav ms-auto d-flex flex-row">

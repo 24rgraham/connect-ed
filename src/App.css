@@ -4,11 +4,11 @@ main {
     padding-left: 5% !important;
     padding-bottom: 10%!important;
     margin-right: 0 !important;
-    background-color: beige;
+    background-color: rgba(220, 188, 73, 0.556);
 }
-    body {
+    /* body {
       background-color: #FBFBFB;
-    }
+    } */
     
     @media (min-width: 1400px) {
         main {
@@ -42,34 +42,34 @@ main {
               -1px -1px 0 #000;
     }
     .letter1 {
-        color: red;
+        color: rgb(233, 45, 45);
     }
     .letter2 {
-        color: orange;
+        color: rgb(247, 165, 42);
     }
     .letter3 {
-        color: yellow;
+        color: rgb(220, 188, 73);
     }
     .letter4 {
-        color: yellowgreen;
+        color: rgb(158, 195, 84);
     }
     .letter5 {
-        color: green;
+        color: rgb(55, 112, 55);
     }
     .letter6 {
-        color: blue;
+        color: rgb(20, 56, 92);
     }
     .letter7 {
-        color: blueviolet;
+        color: rgb(137, 135, 139);
     }
     .letter8 {
         color: black;
     }
     .letter9 {
-        color: violet;
+        color: rgb(159, 225, 209);
     }
     .letter10 {
-        color: red;
+        color: rgba(233, 45, 45, 0.696);
     }
     /* Sidebar */
     .sidebar {

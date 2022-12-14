@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import API from '../../../utils/API';
 import ProjectCard from '../../ProjectCard';
+import './style.css'
 
 export default function Completed(props) {
     const [completedProjects,setCompletedProjects] = useState([])
@@ -14,8 +15,10 @@ export default function Completed(props) {
     return(
         <>
             {completedProjects[0] && <div className='completed'>
-                <h4>Completed Projects:</h4>
-                {completedProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
+                <h6>Completed Projects:</h6>
+                <div className='statusCards'>
+                    {completedProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
+                </div>
             </div>}
             </>
     )
