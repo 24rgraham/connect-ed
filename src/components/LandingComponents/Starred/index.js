@@ -13,7 +13,7 @@ export default function Starred(props) {
     },[] )
     return(
         <>
-            {starredProjects[0] && <div className='inProgress'>
+            {starredProjects[0] && <div className='starred'>
                 <h4>Starred Projects:</h4>
                 {starredProjects.map((projectInfo) => (<ProjectCard key={projectInfo.Project.id} projectInfo={projectInfo.Project}/>))}
             </div>}
