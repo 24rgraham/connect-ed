@@ -200,12 +200,12 @@ const API = {
     }).then((res) => res.json());
   },
 
-  createStarredProjects: (starredObj, token) => {
-    return fetch(`${URL_PREFIX}/api/status/starred`, {
-      method: "POST",
-      body: JSON.stringify(starredObj),
-  });
-},
+  // createStarredProjects: (staObj, token) => {
+  //   return fetch(`${URL_PREFIX}/api/status/${projectId}`, {
+  //     method: "PUT",
+  //     body: JSON.stringify(statusObj),
+  // }).then((res) => res.json());
+  // },
   
   getOgProjects: (token) => {
     return fetch(`${URL_PREFIX}/api/projects/getprojectsfromtoken`, {
