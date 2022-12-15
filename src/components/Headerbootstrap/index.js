@@ -1,8 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-
-
-
+import "./style.css"
 
 export default function Headerbootstrap(props) {
 
@@ -25,31 +23,31 @@ export default function Headerbootstrap(props) {
               to="/community-projects"
               className="list-group-item list-group-item-action py-2 "
             >
-              <i className="fas fa-people-carry fa-fw me-3"></i>
-              <span>All Projects</span>
+              <i className="logo">? </i>
+              <span className="title">All Projects</span>
             </Link>
           <Link
               to="/search"
               className="list-group-item list-group-item-action py-2 "
               aria-current="true"
             >
-              <i className="fas fa-newspaper fa-fw me-3"></i>
-              <span>Search</span>
+              <i className="logo">X </i>
+              <span className="title">Search</span>
             </Link>
         
             <Link
               to="/projects"
               className="list-group-item list-group-item-action py-2 "
             >
-              <i className="fas fa-project-diagram fa-fw me-3"></i>
-              <span>Projects</span>
+              <i className="logo">. </i>
+              <span className="title">Projects</span>
             </Link>
             <Link
               to="/create"
               className="list-group-item list-group-item-action py-2 "
             >
-              <i className="fas fa-project-diagram fa-fw me-3"></i>
-              <span>New Project</span>
+              <i className="logo">@ </i>
+              <span className="title">New Project</span>
             </Link>
             {/* <Link
               to="/calendar"
@@ -62,15 +60,13 @@ export default function Headerbootstrap(props) {
               to="/curriculum"
               className="list-group-item list-group-item-action py-2 "
             >
-              <i className="fas fa-book fa-fw me-3"></i>
-              <span>Curriculum</span>
               </Link>
               <Link onClick={logout}
               to="/login"
               className="list-group-item list-group-item-action py-2 "
             >
-              <i className="fas fa-sign-out-alt fa-fw me-3"></i>
-              <span>Logout</span>
+              <i className="logo">. </i>
+              <span  className="title">Logout</span>
               </Link>
           </div>
         </div>

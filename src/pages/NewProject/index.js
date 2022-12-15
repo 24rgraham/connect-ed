@@ -92,7 +92,7 @@ export default function NewProject({ token }) {
                 Upload Image
               </button>
               <div>
-                <img src={url} />
+                <img className="imagePreview" src={url} />
               </div>
             </div>
           </Form.Group>

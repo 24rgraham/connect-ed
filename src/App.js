@@ -1,8 +1,7 @@
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  useNavigate,
+  Route
 } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import API from "./utils/API";
@@ -14,6 +13,7 @@ import NewProject from "./pages/NewProject";
 import Search from "./pages/Search";
 import SearchResults from "./pages/SearchResults";
 import AllProjects from "./pages/AllProjects";
+// import { useNavigate } from "react-router-dom";
 
 import "./App.css";
 import Headerbootstrap from "./components/Headerbootstrap";
@@ -32,6 +32,7 @@ function App() {
   const [state, setState] = useState("")
   const [language, setLanguage] = useState("")
   const [picture, setPicture] = useState("")
+  // const navigate = useNavigate();
 
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
@@ -48,7 +49,8 @@ function App() {
       });
     } else {
       console.log("no stored token");
-    }
+      // navigate("/login");
+    } 
   }, []);
 
   const handleLoginSubmit = (userObj) => {

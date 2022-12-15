@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'proganda';
+    src: url(/public/Progandaeeducation-P5WB.ttf);
+}
+@font-face {
+    font-family: 'kglego';
+    src: url(/public/KgLegoHouse-BOP5.ttf);
+}
+@font-face {
+    font-family: 'school';
+    src: url(/public/SchoolEducationRegular-Vr3w.ttf);
+}
+
 main {
     height: 100%;
     padding-top: 85px;
