@@ -300,7 +300,7 @@ export default function Search() {
             <Form.Group className="mb-3">
               <Form.Label>Grade Level</Form.Label>
               {["checkbox"].map((type) => (
-                <Row>
+                <Row >
                   <div key={`inline-${type}`} className="mb-3">
                     <Form.Check
                       inline
@@ -337,6 +337,7 @@ export default function Search() {
                       type={type}
                       id={`inline-${type}-5`}
                     />
+                  
                     <Form.Check
                       inline
                       label="4"
@@ -351,6 +352,8 @@ export default function Search() {
                       type={type}
                       id={`inline-${type}-7`}
                     />
+                    </div>
+                  <div key={`inline-${type}`} className="mb-3">
                     <Form.Check
                       inline
                       label="6"
@@ -403,15 +406,16 @@ export default function Search() {
                   </div>
                 </Row>
               ))}
+
+              <Form.Label>Subjects</Form.Label>
               <div>
                 <Badge pill bg="subject">
                   {/* eventual badges for selected subjects */}
                 </Badge>{" "}
               </div>
-
-              <Form.Label>Subjects</Form.Label>
               {["checkbox"].map((type) => (
                 <Row>
+                  <Col>
                   <div key={`inline-${type}`} className="mb-3">
                     <Form.Check
                       inline
@@ -419,99 +423,108 @@ export default function Search() {
                       name="Art"
                       type={type}
                       id={`inline-${type}-15`}
-                    />
+                      />
                     <Form.Check
                       inline
                       label="Maths"
                       name="Maths"
                       type={type}
                       id={`inline-${type}-16`}
-                    />
+                      />
                     <Form.Check
                       inline
                       label="History"
                       name="History"
                       type={type}
                       id={`inline-${type}-17`}
-                    />
+                      />
                     <Form.Check
                       inline
                       label="SEL"
                       name="SEL"
                       type={type}
                       id={`inline-${type}-18`}
-                    />
+                      />
                     <Form.Check
                       inline
                       label="Woodworking"
                       name="Woodworking"
                       type={type}
                       id={`inline-${type}-19`}
-                    />
+                      />
+                      </div>
+                      </Col>
+                      <Col>
+                      <div key={`inline-${type}`} className="mb-3">
                     <Form.Check
                       inline
                       label="Anthropologie"
                       name="Anthropologie"
                       type={type}
                       id={`inline-${type}-20`}
-                    />
+                      />
                     <Form.Check
                       inline
                       label="Science"
                       name="Science"
                       type={type}
                       id={`inline-${type}-21`}
-                    />
+                      />
                     <Form.Check
                       inline
                       label="English"
                       name="English"
                       type={type}
                       id={`inline-${type}-22`}
-                    />
+                      />
                     <Form.Check
                       inline
                       label="Writing"
                       name="Writing"
                       type={type}
                       id={`inline-${type}-23`}
-                    />
+                      />
                     <Form.Check
                       inline
                       label="Spanish"
                       name="Spanish"
                       type={type}
                       id={`inline-${type}-24`}
-                    />
+                      />
+                      </div>
+                      </Col>
+                      <Col>
+                      <div key={`inline-${type}`} className="mb-3">
                     <Form.Check
                       inline
                       label="French"
                       name="French"
                       type={type}
                       id={`inline-${type}-25`}
-                    />
+                      />
                     <Form.Check
                       inline
                       label="Outdoor"
                       name="Outdoor"
                       type={type}
                       id={`inline-${type}-26`}
-                    />
+                      />
                     <Form.Check
                       inline
                       label="Physical Education"
                       name="Physical Education"
                       type={type}
                       id={`inline-${type}-27`}
-                    />
+                      />
                     <Form.Check
                       inline
                       label="Culture"
                       name="Culture"
                       type={type}
                       id={`inline-${type}-28`}
-                    />
-                  </div>
+                      />
+                      </div>
+                      </Col>
                 </Row>
               ))}
               <div>
@@ -522,7 +535,7 @@ export default function Search() {
 
               <Form.Label>Curriculum</Form.Label>
               {["checkbox"].map((type) => (
-                <Row>
+                <Row >
                   <div key={`inline-${type}`} className="mb-3">
                     <Form.Check
                       inline
@@ -618,6 +631,8 @@ export default function Search() {
                       type={type}
                       id={`inline-${type}-41`}
                     />
+                    </div>
+                    <div>
                     <Form.Check
                       inline
                       label="3 Days"
