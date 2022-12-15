@@ -1,11 +1,16 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./style.css"
 
 export default function Headerbootstrap(props) {
   const profilePic = props.picture;
   const firstName = props.first_name;
   const navigate = useNavigate();
   console.log("profilepic:" + profilePic);
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
   const logout = () => {
     props.handleLogout();
@@ -24,31 +29,31 @@ export default function Headerbootstrap(props) {
               to="/community-projects"
               className="list-group-item list-group-item-action py-2 "
             >
-              <i className="fas fa-people-carry fa-fw me-3"></i>
-              <span>All Projects</span>
+              <i className="logo">? </i>
+              <span className="title">All Projects</span>
             </Link>
             <Link
               to="/search"
               className="list-group-item list-group-item-action py-2 "
               aria-current="true"
             >
-              <i className="fas fa-newspaper fa-fw me-3"></i>
-              <span>Search</span>
+              <i className="logo">X </i>
+              <span className="title">Search</span>
             </Link>
 
             <Link
               to="/projects"
               className="list-group-item list-group-item-action py-2 "
             >
-              <i className="fas fa-project-diagram fa-fw me-3"></i>
-              <span>Projects</span>
+              <i className="logo">. </i>
+              <span className="title">Projects</span>
             </Link>
             <Link
               to="/create"
               className="list-group-item list-group-item-action py-2 "
             >
-              <i className="fas fa-project-diagram fa-fw me-3"></i>
-              <span>New Project</span>
+              <i className="logo">@ </i>
+              <span className="title">New Project</span>
             </Link>
             {/* <Link
               to="/calendar"
@@ -57,21 +62,13 @@ export default function Headerbootstrap(props) {
               <i className="fas fa-calendar-alt fa-fw me-3"></i>
               <span>Calendar</span>
             </Link> */}
-            <Link
-              to="/curriculum"
-              className="list-group-item list-group-item-action py-2 "
-            >
-              <i className="fas fa-book fa-fw me-3"></i>
-              <span>Curriculum</span>
-            </Link>
-            <Link
-              onClick={logout}
+              <Link onClick={logout}
               to="/login"
               className="list-group-item list-group-item-action py-2 "
             >
-              <i className="fas fa-sign-out-alt fa-fw me-3"></i>
-              <span>Logout</span>
-            </Link>
+              <i className="logo">. </i>
+              <span  className="title">Logout</span>
+              </Link>
           </div>
         </div>
       </nav>
@@ -257,7 +254,7 @@ export default function Headerbootstrap(props) {
             </li>
             
               <li className="nav-item align-self-center me-3 me-lg-0">
-                <p>Welcome, {firstName}</p>
+                <p className="title">Welcome, {capitalizeFirstLetter(firstName)}</p>
               </li>
             
             {/* <!-- Avatar --> */}

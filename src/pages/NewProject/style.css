@@ -10,6 +10,11 @@
     margin-left: 10%;
 }
 
+.imagePreview {
+    width: 200px;
+    height: 200px;
+}
+
 @media (max-width: 768px) {
     .new-project-form{
         margin-left: 11%;
