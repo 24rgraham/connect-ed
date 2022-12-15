@@ -22,6 +22,8 @@ export default function SingleProject() {
   useEffect(() => {
     API.getProject(params.id).then((data) => {
       setProject(data);
+      console.log(project);
+      
     });
   }, []);
 
@@ -144,7 +146,7 @@ export default function SingleProject() {
                             <label className="answers">
                               {" "}
                               {project.Curriculums.map((curriculum) => (
-                                <span>{curriculum.name}</span>
+                                <span>{curriculum.name} </span>
                               ))}
                             </label>
                           </div>
@@ -159,7 +161,7 @@ export default function SingleProject() {
                             <label className="answers">
                               {" "}
                               {project.Subjects.map((subject) => (
-                                <span>{subject.name}</span>
+                                <span>{subject.name}  </span>
                               ))}
                             </label>
                           </div>
