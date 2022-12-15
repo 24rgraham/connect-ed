@@ -1,17 +1,16 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-
-
-
 export default function Headerbootstrap(props) {
+  const profilePic = props.picture;
+  const firstName = props.first_name;
+  const navigate = useNavigate();
+  console.log("profilepic:" + profilePic);
 
-  const navigate=useNavigate()
-
-  const logout = () =>{
-    props.handleLogout()
-    navigate("/login")
-  }
+  const logout = () => {
+    props.handleLogout();
+    navigate("/login");
+  };
   return (
     <header>
       {/* <!-- Sidebar --> */}
@@ -21,14 +20,14 @@ export default function Headerbootstrap(props) {
       >
         <div className="position-sticky sidebar-item-group">
           <div className="list-group list-group-flush mx-3 mt-4">
-          <Link
+            <Link
               to="/community-projects"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-people-carry fa-fw me-3"></i>
               <span>All Projects</span>
             </Link>
-          <Link
+            <Link
               to="/search"
               className="list-group-item list-group-item-action py-2 "
               aria-current="true"
@@ -36,7 +35,7 @@ export default function Headerbootstrap(props) {
               <i className="fas fa-newspaper fa-fw me-3"></i>
               <span>Search</span>
             </Link>
-        
+
             <Link
               to="/projects"
               className="list-group-item list-group-item-action py-2 "
@@ -64,14 +63,15 @@ export default function Headerbootstrap(props) {
             >
               <i className="fas fa-book fa-fw me-3"></i>
               <span>Curriculum</span>
-              </Link>
-              <Link onClick={logout}
+            </Link>
+            <Link
+              onClick={logout}
               to="/login"
               className="list-group-item list-group-item-action py-2 "
             >
               <i className="fas fa-sign-out-alt fa-fw me-3"></i>
               <span>Logout</span>
-              </Link>
+            </Link>
           </div>
         </div>
       </nav>
@@ -83,7 +83,7 @@ export default function Headerbootstrap(props) {
         className="navbar navbar-expand-lg navbar-light bg-white fixed-top"
       >
         {/* <!-- Container wrapper --> */}
-        <div className="container-fluid">
+        <div className="container-fluid d-flex align-items-center">
           {/* <!-- Toggle button --> */}
           <button
             className="navbar-toggler"
@@ -136,7 +136,7 @@ export default function Headerbootstrap(props) {
           {/* <!-- Right links --> */}
           <ul className="navbar-nav ms-auto d-flex flex-row">
             {/* <!-- Notification dropdown --> */}
-            <li className="nav-item dropdown">
+            {/* <li className="nav-item dropdown">
               <a
                 className="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
                 href="#"
@@ -170,23 +170,26 @@ export default function Headerbootstrap(props) {
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> */}
 
             {/* <!-- Icon --> */}
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link me-3 me-lg-0" href="#">
                 <i className="fas fa-fill-drip"></i>
               </a>
-            </li>
+            </li> */}
             {/* <!-- Icon --> */}
-            <li className="nav-item me-3 me-lg-0">
-              <a className="nav-link" href="#">
+            <li className="nav-item align-self-center me-3 me-lg-0">
+              <a
+                className="nav-link"
+                href="https://github.com/24rgraham/connect-ed"
+              >
                 <i className="fab fa-github"></i>
               </a>
             </li>
 
             {/* <!-- Icon dropdown --> */}
-            <li className="nav-item dropdown">
+            <li className="nav-item align-self-center dropdown">
               <a
                 className="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
                 href="#"
@@ -252,22 +255,25 @@ export default function Headerbootstrap(props) {
                 </li>
               </ul>
             </li>
-
+            
+              <li className="nav-item align-self-center me-3 me-lg-0">
+                <p>Welcome, {firstName}</p>
+              </li>
+            
             {/* <!-- Avatar --> */}
             <li className="nav-item dropdown">
               <a
-                className="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
-                href="#"
+                className="nav-link  dropdown-toggle hidden-arrow d-flex align-items-center"
                 id="navbarDropdownMenuLink"
                 role="button"
                 data-mdb-toggle="dropdown"
                 aria-expanded="false"
               >
                 <img
-                // link to cloudinary so profile pic renders as "src"
-                  src=""
-                  className="rounded-circle"
-                  height="22"
+                  // link to cloudinary so profile pic renders as "src"
+                  src={profilePic}
+                  className="rounded-circle profile-icon"
+                  height="40"
                   alt=""
                   loading="lazy"
                 />
@@ -276,7 +282,7 @@ export default function Headerbootstrap(props) {
                 className="dropdown-menu dropdown-menu-end"
                 aria-labelledby="navbarDropdownMenuLink"
               >
-                <li>
+                {/* <li>
                   <a className="dropdown-item" href="#">
                     My profile
                   </a>
@@ -285,9 +291,9 @@ export default function Headerbootstrap(props) {
                   <a className="dropdown-item" href="#">
                     Settings
                   </a>
-                </li>
+                </li> */}
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" onClick={logout}>
                     Logout
                   </a>
                 </li>

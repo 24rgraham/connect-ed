@@ -62,6 +62,8 @@ function App() {
         setToken(data.token);
         setIsLoggedIn(true);
         setUserEmail(data.user.email);
+        setPicture(data.user.profile_picture)
+        setFirstName(data.user.first_name)
         localStorage.setItem("token", data.token);
       }
     });
@@ -85,6 +87,7 @@ function App() {
         setPicture(data.user.profile_picture);
         localStorage.setItem("token", data.token);
       }
+      console.log(picture)
     });
   };
 
@@ -94,12 +97,15 @@ function App() {
     setToken("");
     setUserId(0);
     setUserEmail("");
+    setPicture("")
   };
 
   return (
     <div>
       <Router>
         <Headerbootstrap
+        first_name={first_name}
+        picture={picture}
           isLoggedIn={isLoggedIn}
           setIsLoggedIn={setIsLoggedIn}
           handleLogout={handleLogout}
