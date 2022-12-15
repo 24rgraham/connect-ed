@@ -138,7 +138,8 @@ function App() {
             />
             <Route
               path="/project/:id"
-              element={<SingleProject token={token} />}
+              element={<SingleProject token={token}
+              userId={userId} />}
             />
             <Route path="/edit-project/:id" element={<EditProject token={token} />} />
             <Route path="/create" element={<NewProject token={token} />} />

@@ -29,9 +29,9 @@ export default function SingleProject(props) {
       }
     });
   }, []);
-console.log(props)
+console.log(params.id)
   const navigateEditPage = () => {
-    navigate(`/project/${props.id}`);
+    navigate(`/edit-project/${params.id}`);
   };
 
   function starProject() {
@@ -226,7 +226,7 @@ console.log(props)
           </div>
           {projectOwner && (
             <button
-            href="/edit-project"
+            onClick={navigateEditPage}
               type="button"
               className="editBtn"
               class="btn btn-primary btn-rounded"

@@ -6,14 +6,26 @@ import Row from "react-bootstrap/Row";
 import Badge from "react-bootstrap/Badge";
 import API from "../../utils/API";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 // will need to import the cloudinary widget
 import "./style.css";
 
 export default function EditProject({ token }) {
+  const params = useParams();
   const navigate = useNavigate();
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState();
   const [url, setUrl] = useState("");
+  const [project, setProject] = useState([]);
+
+
+  useEffect(() => {
+    API.getProject(params.id).then((data) => {
+      setProject(data);
+      setUrl(project.image)
+      console.log(url)
+    });
+  }, []);
 
   const uploadImage = () => {
     const data = new FormData();
@@ -31,10 +43,10 @@ export default function EditProject({ token }) {
       .catch((err) => console.log(err));
   };
 
-  const handleProjectCreate = (event) => {
+  const handleProjectUpdate = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const newProject = {
+    const updatedProject = {
       title: data.get("newTitle"),
       image: `${url}`,
       grade_lvl: data.get("newGradeLevel"),
@@ -42,33 +54,33 @@ export default function EditProject({ token }) {
       overview_desc: data.get("newDesc"),
       directions: data.get("newDirections"),
       materials: data.get("newMaterials"),
-      // resources: data.get("newResources"),
+      resources: data.get("newResources"),
       subjects: data.get("newSubjects"),
       curriculums: data.get("newCurriculums"),
     };
 
-    console.log(newProject);
+    console.log(updatedProject);
 
-    API.createProject(newProject, token)
+    API.editProject(updatedProject, params.id, token)
       .then((res) => {
         console.log("res:" + res);
-        navigate("/projects");
+        navigate(`/project/${params.id}`);
       })
       .catch((err) => {
-        alert("Project creation failed");
+        alert("Project update failed");
         console.log(err);
       });
   };
 
   return (
-    <Form className="new-project-form" onSubmit={handleProjectCreate}>
+    <Form className="new-project-form" onSubmit={handleProjectUpdate}>
       <Row className="mb-3">
         <Col sm={4} className="my-1">
           <Form.Group>
             <Form.Label>Title</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter Title"
+              defaultValue={project.title}
               name="newTitle"
             />
           </Form.Group>
@@ -104,7 +116,7 @@ export default function EditProject({ token }) {
             <Form.Label>Grade Level</Form.Label>
             <Form.Select
               className="mb-3"
-              defaultValue="Choose..."
+              defaultValue={project.grade_lvl}
               name="newGradeLevel"
             >
               <option value="...">Choose...</option>
@@ -130,7 +142,7 @@ export default function EditProject({ token }) {
             </div>
 
             <Form.Label>Subjects</Form.Label>
-            <Form.Select defaultValue="Choose..." name="newSubjects">
+            <Form.Select defaultValue={project.subjects} name="newSubjects">
               <option value="">Choose...</option>
               <option value={1}>Art</option>
               <option value={2}>Math</option>
@@ -155,7 +167,7 @@ export default function EditProject({ token }) {
             </div>
 
             <Form.Label>Curriculum</Form.Label>
-            <Form.Select defaultValue="Choose..." name="newCurriculums">
+            <Form.Select defaultValue={project.curriculums} name="newCurriculums">
               <option value="">Choose...</option>
               <option value={1}>Montessori</option>
               <option value={2}>Waldorf</option>
@@ -170,7 +182,7 @@ export default function EditProject({ token }) {
       <Col sm={2}>
         <Form.Group className="mb-3">
           <Form.Label>Time to Complete</Form.Label>
-          <Form.Select defaultValue="Choose..." name="newEstTime">
+          <Form.Select defaultValue={project.est_time} name="newEstTime">
             <option value="...">Choose...</option>
             <option value={0}>30 min or less</option>
             <option value={1}>30-60 min</option>
@@ -193,7 +205,7 @@ export default function EditProject({ token }) {
           <Form.Control
             as="textarea"
             aria-label="With textarea"
-            placeholder="Write a brief summary of your project here"
+            defaultValue={project.overview_desc}
             name="newDesc"
           />
         </Form.Group>
@@ -204,7 +216,7 @@ export default function EditProject({ token }) {
           <Form.Control
             as="textarea"
             aria-label="With textarea"
-            placeholder="Please include a detailed, step-by-step guide of your project/assignment with time breakdown, and expectations"
+            defaultValue={project.directions}
             name="newDirections"
           />
         </Form.Group>
@@ -215,14 +227,25 @@ export default function EditProject({ token }) {
           <Form.Control
             as="textarea"
             aria-label="With textarea"
-            placeholder="Please list needed materials (with quantity per child) separated by a comma."
+            defaultValue={project.materials}
             name="newMaterials"
+          />
+        </Form.Group>
+      </Col>
+      <Col lg={12}>
+        <Form.Group className="mb-3">
+          <Form.Label>Resources</Form.Label>
+          <Form.Control
+            as="textarea"
+            aria-label="With textarea"
+            defaultValue={project.resources}
+            name="newResources"
           />
         </Form.Group>
       </Col>
 
       <Button variant="primary" type="submit">
-        Submit
+        Save Changes
       </Button>
     </Form>
   );
