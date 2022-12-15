@@ -61,7 +61,7 @@ export default function Login(props) {
       </div>
       </div>
       <button type="submit" className="m-3 btn btn-primary">
-        Submit
+        Login
       </button>
       <a href="/signup" className="m-3 btn btn-primary">
         Signup Instead

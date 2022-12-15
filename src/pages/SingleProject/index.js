@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import { useParams } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 import Subject from "../../components/SingleProjectComponents/Subject";
 import SubjectSearch from "../../components/SearchComponents/SubjectSearch";
 import Card from "react-bootstrap/Card";
@@ -12,18 +12,27 @@ import "./style.css";
 import Image from "react-bootstrap/Image";
 const storedToken = localStorage.getItem("token");
 
-
 export default function SingleProject(props) {
+  const navigate = useNavigate();
   const params = useParams();
-  const [star, setStar] = useState(false);
+  const [star, setStar] = useState(null);
+  const editBtn = document.querySelector("editBtn");
+  const [projectOwner, setProjectOwner] = useState(false);
 
   const [project, setProject] = useState([]);
 
   useEffect(() => {
     API.getProject(params.id).then((data) => {
       setProject(data);
+      if (data.UserId === props.userId) {
+        setProjectOwner(true);
+      }
     });
   }, []);
+console.log(params.id)
+  const navigateEditPage = () => {
+    navigate(`/edit-project/${params.id}`);
+  };
 
   function starProject() {
     setStar(true);
@@ -32,29 +41,79 @@ export default function SingleProject(props) {
     };
     API.changeStatus(params.id, starredItem, storedToken).then((data) => {
       console.log(data);
-    })
+    });
   }
-  
-  function unstarProject() {
-    setStar(false);
+
+  function inProgressProject() {
+    const status = {
+      in_progress: true,
+      completed: false,
+    };
+    API.changeStatus(params.id, status, storedToken).then((data) => {
+      console.log(data);
+    });
+  }
+
+  function completeProject() {
     const starredItem = {
-      starred: false,
+      in_progress: false,
+      completed: true,
     };
     API.changeStatus(params.id, starredItem, storedToken).then((data) => {
       console.log(data);
-    })
+    });
+  }
+  function saveProject() {
+    const starredItem = {
+      saved_for_later: true,
+    };
+    API.changeStatus(params.id, starredItem, storedToken).then((data) => {
+      console.log(data);
+    });
+  }
+  function unSaveProject() {
+    const starredItem = {
+      in_progress: false,
+      completed: false,
+      starred: false,
+      saved_for_later: false,
+    };
+    API.changeStatus(params.id, starredItem, storedToken).then((data) => {
+      console.log(data);
+    });
   }
 
   return (
     <>
-      <button onClick={starProject}>Star</button>
-      <button onClick={unstarProject}>unStar</button>
+      {/* <button onClick={starProject}>Star This Project</button>
+      <button onClick={inProgressProject}>Begin This Project</button>
+      <button onClick={completeProject}>Move to Completed Projects</button>
+      <button onClick={saveProject}>Save This Project For Later</button>
+      <button onClick={unSaveProject}>Unsave This Project</button> */}
 
       {project && (
         <div className="projectContainer">
           <div className="topOfPage">
             <header>
               <h3 className="title"> {project.title}</h3>
+              <p className="starBtn">
+                <button className="starBtnBtn" onClick={starProject}>
+                  Star
+                </button>
+                <button className="starBtnBtn" onClick={inProgressProject}>
+                  Begin This Project
+                </button>
+                <button className="starBtnBtn" onClick={completeProject}>
+                  Move to Completed Projects
+                </button>
+                <button className="starBtnBtn" onClick={saveProject}>
+                  Save This Project For Later
+                </button>
+                <button className="starBtnBtn" onClick={unSaveProject}>
+                  Unsave This Project
+                </button>
+                {/* <button className="starBtnBtn" onClick={unstarProject}>unStar</button> */}
+              </p>
             </header>
 
             <div className="topTwo">
@@ -67,7 +126,7 @@ export default function SingleProject(props) {
               </div>
 
               <div className="topRight" scrolling="auto">
-                <Card className="topRightCard"style={{ height: "16.75rem" }}>
+                <Card className="topRightCard" style={{ height: "16.75rem" }}>
                   <ListGroup variant="flush">
                     <ListGroup.Item>
                       <p className="grade">
@@ -99,7 +158,7 @@ export default function SingleProject(props) {
                             <label className="answers">
                               {" "}
                               {project.Curriculums.map((curriculum) => (
-                                <span>{curriculum.name}</span>
+                                <span>{curriculum.name} </span>
                               ))}
                             </label>
                           </div>
@@ -114,7 +173,7 @@ export default function SingleProject(props) {
                             <label className="answers">
                               {" "}
                               {project.Subjects.map((subject) => (
-                                <span>{subject.name}</span>
+                                <span>{subject.name}  </span>
                               ))}
                             </label>
                           </div>
@@ -165,6 +224,16 @@ export default function SingleProject(props) {
               </Card>
             </div>
           </div>
+          {projectOwner && (
+            <button
+            onClick={navigateEditPage}
+              type="button"
+              className="editBtn"
+              class="btn btn-primary btn-rounded"
+            >
+              Edit
+            </button>
+          )}
         </div>
       )}
     </>

@@ -21,13 +21,13 @@ export default function ProjectCard({ projectInfo }) {
         className="bg-image hover-overlay ripple"
         data-mdb-ripple-color="light"
       >
-        <img src={projectInfo.image} style={{ minHeight:"160px" }} className="img-fluid" />
-        <a href="#!">
+        <img height="300px" src={projectInfo.image} style={{ maxHeight:"160px", width:"250px" }} className="img-fluid" />
+        
           <div
             className="mask"
             style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
           ></div>
-        </a>
+        
       </div>
       <div className="card-body" id="card-body">
         <h5 className="card-title">{projectInfo.title}</h5>
