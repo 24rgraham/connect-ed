@@ -17,6 +17,7 @@ import AllProjects from "./pages/AllProjects";
 
 import "./App.css";
 import Headerbootstrap from "./components/Headerbootstrap";
+import EditProject from "./pages/EditProject";
 
 function App() {
   const [userId, setUserId] = useState(0);
@@ -137,8 +138,10 @@ function App() {
             />
             <Route
               path="/project/:id"
-              element={<SingleProject token={token} />}
+              element={<SingleProject token={token}
+              userId={userId} />}
             />
+            <Route path="/edit-project/:id" element={<EditProject token={token} />} />
             <Route path="/create" element={<NewProject token={token} />} />
             <Route path="/search" element={<Search />} />
             <Route path="/results" element={<SearchResults />} />

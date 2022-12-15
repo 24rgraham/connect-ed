@@ -1,0 +1,17 @@
+/* NewProject */
+
+.new-project-form {
+    width: 70%;
+    background-color: rgb(255, 255, 255);
+    height: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding:5%;
+    margin-left: 10%;
+}
+
+@media (max-width: 768px) {
+    .new-project-form{
+        margin-left: 11%;
+  }
+}
