@@ -16,12 +16,17 @@ const storedToken = localStorage.getItem("token");
 export default function SingleProject() {
   const params = useParams();
   const [star, setStar] = useState(null);
+  const editBtn = document.querySelector("editBtn");
+  const [projectOwner, setProjectOwner] = useState(false);
 
   const [project, setProject] = useState([]);
 
   useEffect(() => {
     API.getProject(params.id).then((data) => {
       setProject(data);
+      if (data.UserId === props.userId) {
+        setProjectOwner(true);
+      }
     });
   }, []);
 
@@ -206,6 +211,16 @@ export default function SingleProject() {
               </Card>
             </div>
           </div>
+          {projectOwner && (
+            <button
+              onClick={{ handleProjectDelete }}
+              type="button"
+              className="editBtn"
+              class="btn btn-danger btn-rounded"
+            >
+              Delete
+            </button>
+          )}
         </div>
       )}
     </>
