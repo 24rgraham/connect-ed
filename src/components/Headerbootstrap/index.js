@@ -8,6 +8,10 @@ export default function Headerbootstrap(props) {
   const navigate = useNavigate();
   console.log("profilepic:" + profilePic);
 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   const logout = () => {
     props.handleLogout();
     navigate("/login");
@@ -250,7 +254,7 @@ export default function Headerbootstrap(props) {
             </li>
             
               <li className="nav-item align-self-center me-3 me-lg-0">
-                <p>Welcome, {firstName}</p>
+                <p className="title">Welcome, {capitalizeFirstLetter(firstName)}</p>
               </li>
             
             {/* <!-- Avatar --> */}
