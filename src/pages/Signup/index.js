@@ -16,13 +16,14 @@ export default function SignUp(props) {
   const navigate = useNavigate();
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
-  
+
   const uploadAvatar = () => {
+    console.log(url)
     const data = new FormData();
     data.append("file", image);
     data.append("upload_preset", "connect_ed");
     data.append("cloud_name", "dqv6cj4bc");
-    fetch("https://api.cloudinary.com/dqv6cj4bc/image/upload", {
+    fetch("https://api.cloudinary.com/v1_1/dqv6cj4bc/image/upload", {
       method: "post",
       body: data,
     })
@@ -45,7 +46,7 @@ export default function SignUp(props) {
       city: data.get("city"),
       state: data.get("state"),
       language: data.get("language"),
-      profile_picture: `${url}`
+      profile_picture: `${url}`,
     };
     props.handleSignupSubmit(newUser);
     navigate("/community-projects");
@@ -98,7 +99,7 @@ export default function SignUp(props) {
           ></input>
         </Col>
       </Row>
-      <Row >
+      <Row>
         <Col className="col-md-6">
           <label htmlFor="inputAddress" className="form-label">
             School
@@ -113,7 +114,7 @@ export default function SignUp(props) {
           ></input>
         </Col>
       </Row>
-      <Row >
+      <Row>
         <Col className="col-md-3">
           <label htmlFor="inputCity" className="form-label">
             City
@@ -193,60 +194,60 @@ export default function SignUp(props) {
           </select>
         </Col>
       </Row>
-      <Row >
+      <Row>
         <Col className="col-md-3">
-        <label htmlFor="inputPassword" className="form-label">
-          Password
-        </label>
-        <input
-          type="password"
-          className="form-control"
-          id="inputPassword"
-          name="password"
-          // onChange={(e) => setPassword(e.target.value)}
+          <label htmlFor="inputPassword" className="form-label">
+            Password
+          </label>
+          <input
+            type="password"
+            className="form-control"
+            id="inputPassword"
+            name="password"
+            // onChange={(e) => setPassword(e.target.value)}
           ></input>
-          </Col>
-      <Col className="col-md-3 mb-3">
-        <label htmlFor="inputLanguage" className="form-label">
-          Language
-        </label>
-        {/* select language */}
-        <select
-          id="inputLanguage"
-          className="form-select"
-          // defaultValue={"Choose..."}
-          name="language"
-          // onChange={(e) => setLanguage(e.target.value)}
-        >
-          <option value="">Choose...</option>
-          <option value="EN">English</option>
-          <option value="ES">Spanish</option>
-          <option value="ZH">Chinese(Mandarin)</option>
-          <option value="TL">Tagalog</option>
-          <option value="VI">Vietnamese</option>
-          <option value="FR">French</option>
-        </select>
-      </Col>
+        </Col>
+        <Col className="col-md-3 mb-3">
+          <label htmlFor="inputLanguage" className="form-label">
+            Language
+          </label>
+          {/* select language */}
+          <select
+            id="inputLanguage"
+            className="form-select"
+            // defaultValue={"Choose..."}
+            name="language"
+            // onChange={(e) => setLanguage(e.target.value)}
+          >
+            <option value="">Choose...</option>
+            <option value="EN">English</option>
+            <option value="ES">Spanish</option>
+            <option value="ZH">Chinese(Mandarin)</option>
+            <option value="TL">Tagalog</option>
+            <option value="VI">Vietnamese</option>
+            <option value="FR">French</option>
+          </select>
+        </Col>
       </Row>
       <Row className="col-12 mb-3">
         <label className="form-label">Profile Picture</label>
         <div>
-              <input
-                type="file"
-                name="file"
-                onChange={(e) => setImage(e.target.files[0])}
-              ></input>
-              <button
-                className="btn btn-secondary"
-                type="button"
-                onClick={uploadAvatar}
-              >
-                Upload Image
-              </button>
-              <div>
-                <img src={url} />
-              </div>
-            </div>
+          <input
+            type="file"
+            name="file"
+            onChange={(e) => setImage(e.target.files[0])}
+          ></input>
+          <button
+            className="btn btn-secondary"
+            type="button"
+            onClick={uploadAvatar}
+          >
+            Upload Image
+          </button>
+          <div className="avatar">
+            <img src={url} />
+          </div>
+        </div>
       </Row>
       <Row xs="auto">
         <Button variant="primary" type="submit" className="btn btn-primary">
