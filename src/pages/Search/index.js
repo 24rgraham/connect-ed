@@ -321,84 +321,84 @@ export default function Search() {
                       label="1"
                       name="1"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-3`}
                     />
                     <Form.Check
                       inline
                       label="2"
                       name="2"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-4`}
                     />
                     <Form.Check
                       inline
                       label="3"
                       name="3"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-5`}
                     />
                     <Form.Check
                       inline
                       label="4"
                       name="4"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-6`}
                     />
                     <Form.Check
                       inline
                       label="5"
                       name="5"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-7`}
                     />
                     <Form.Check
                       inline
                       label="6"
                       name="6"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-8`}
                     />
                     <Form.Check
                       inline
                       label="7"
                       name="7"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-9`}
                     />
                     <Form.Check
                       inline
                       label="8"
                       name="8"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-10`}
                     />
                     <Form.Check
                       inline
                       label="9"
                       name="9"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-11`}
                     />
                     <Form.Check
                       inline
                       label="10"
                       name="10"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-12`}
                     />
                     <Form.Check
                       inline
                       label="11"
                       name="11"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-13`}
                     />
                     <Form.Check
                       inline
                       label="12"
                       name="12"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-14`}
                     />
                   </div>
                 </Row>
@@ -418,98 +418,98 @@ export default function Search() {
                       label="Art"
                       name="Art"
                       type={type}
-                      id={`inline-${type}-1`}
+                      id={`inline-${type}-15`}
                     />
                     <Form.Check
                       inline
                       label="Maths"
                       name="Maths"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-16`}
                     />
                     <Form.Check
                       inline
                       label="History"
                       name="History"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-17`}
                     />
                     <Form.Check
                       inline
                       label="SEL"
                       name="SEL"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-18`}
                     />
                     <Form.Check
                       inline
                       label="Woodworking"
                       name="Woodworking"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-19`}
                     />
                     <Form.Check
                       inline
                       label="Anthropologie"
                       name="Anthropologie"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-20`}
                     />
                     <Form.Check
                       inline
                       label="Science"
                       name="Science"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-21`}
                     />
                     <Form.Check
                       inline
                       label="English"
                       name="English"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-22`}
                     />
                     <Form.Check
                       inline
                       label="Writing"
                       name="Writing"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-23`}
                     />
                     <Form.Check
                       inline
                       label="Spanish"
                       name="Spanish"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-24`}
                     />
                     <Form.Check
                       inline
                       label="French"
                       name="French"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-25`}
                     />
                     <Form.Check
                       inline
                       label="Outdoor"
                       name="Outdoor"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-26`}
                     />
                     <Form.Check
                       inline
                       label="Physical Education"
                       name="Physical Education"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-27`}
                     />
                     <Form.Check
                       inline
                       label="Culture"
                       name="Culture"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-28`}
                     />
                   </div>
                 </Row>
@@ -529,42 +529,42 @@ export default function Search() {
                       label="Montessori"
                       name="Montessori"
                       type={type}
-                      id={`inline-${type}-1`}
+                      id={`inline-${type}-29`}
                     />
                     <Form.Check
                       inline
                       label="Waldorf"
                       name="Waldorf"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-30`}
                     />
                     <Form.Check
                       inline
                       label="Reggio Emilia"
                       name="Reggio Emilia"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-31`}
                     />
                     <Form.Check
                       inline
                       label="Standard"
                       name="Standard"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-32`}
                     />
                     <Form.Check
                       inline
                       label="PBL"
                       name="PBL"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-34`}
                     />
                     <Form.Check
                       inline
                       label="B.E.E.T.L.E.S (Outdoor Ed.)"
                       name="B.E.E.T.L.E.S (Outdoor Ed.)"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-35`}
                     />
                   </div>
                 </Row>
@@ -581,70 +581,70 @@ export default function Search() {
                       label="30 min or less"
                       name="t0"
                       type={type}
-                      id={`inline-${type}-1`}
+                      id={`inline-${type}-36`}
                     />
                     <Form.Check
                       inline
                       label="30-60 min"
                       name="t1"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-37`}
                     />
                     <Form.Check
                       inline
                       label="1-2 hours"
                       name="t2"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-38`}
                     />
                     <Form.Check
                       inline
                       label="Half a Day"
                       name="t3"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-39`}
                     />
                     <Form.Check
                       inline
                       label="1 Day"
                       name="t4"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-40`}
                     />
                     <Form.Check
                       inline
                       label="2 Days"
                       name="t5"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-41`}
                     />
                     <Form.Check
                       inline
                       label="3 Days"
                       name="t6"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-42`}
                     />
                     <Form.Check
                       inline
                       label="4 Days"
                       name="t7"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-43`}
                     />
                     <Form.Check
                       inline
                       label="1 Week"
                       name="t8"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-44`}
                     />
                     <Form.Check
                       inline
                       label="2 Weeks"
                       name="t9"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-45`}
                     />
                     <Form.Check
                       inline
@@ -658,7 +658,7 @@ export default function Search() {
                       label="1 Month"
                       name="t11"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-46`}
                     />
                   </div>
                 </Row>

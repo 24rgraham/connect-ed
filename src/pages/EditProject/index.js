@@ -203,91 +203,91 @@ export default function EditProject({ token }) {
                       label="Maths"
                       name="Maths"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-3`}
                     />
                     <Form.Check
                       inline
                       label="History"
                       name="History"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-4`}
                     />
                     <Form.Check
                       inline
                       label="SEL"
                       name="SEL"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-5`}
                     />
                     <Form.Check
                       inline
                       label="Woodworking"
                       name="Woodworking"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-6`}
                     />
                     <Form.Check
                       inline
                       label="Anthropologie"
                       name="Anthropologie"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-7`}
                     />
                     <Form.Check
                       inline
                       label="Science"
                       name="Science"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-8`}
                     />
                     <Form.Check
                       inline
                       label="English"
                       name="English"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-9`}
                     />
                     <Form.Check
                       inline
                       label="Writing"
                       name="Writing"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-10`}
                     />
                     <Form.Check
                       inline
                       label="Spanish"
                       name="Spanish"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-11`}
                     />
                     <Form.Check
                       inline
                       label="French"
                       name="French"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-12`}
                     />
                     <Form.Check
                       inline
                       label="Outdoor"
                       name="Outdoor"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-13`}
                     />
                     <Form.Check
                       inline
                       label="Physical Education"
                       name="Physical Education"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-14`}
                     />
                     <Form.Check
                       inline
                       label="Culture"
                       name="Culture"
                       type={type}
-                      id={`inline-${type}-2`}
+                      id={`inline-${type}-15`}
                     />
                   </div>
                 </Row>
