@@ -4,8 +4,11 @@ main {
     padding-left: 5% !important;
     padding-bottom: 10%!important;
     margin-right: 0 !important;
+    /* background-color: white; */
+    /* background-color: rgba(252, 246, 231); */
     background-color: rgba(247, 202, 79, 0.87);
 }
+
 
 .card-body {
     padding-top: 2% !important;
@@ -80,6 +83,17 @@ main {
         color: rgba(233, 45, 45, 0.696);
     }
     /* Sidebar */
+    #main-navbar {
+        background-image: linear-gradient(to right,white, rgb(96, 196, 232));
+
+    }
+    #sidebarMenu {
+        background-image: linear-gradient(rgb(225, 236, 244), rgb(96, 196, 232));
+    }
+
+    #sidebarMenu .list-group-item {
+        background:none !important;
+    }
     .sidebar {
       position: fixed;
       top: 0;
@@ -104,4 +118,11 @@ main {
       padding-top: 0.5rem;
       overflow-x: hidden;
       overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    }
+    header p {
+        margin: 0 !important;
+    }
+
+    .profile-icon {
+        background: none!;
     }
