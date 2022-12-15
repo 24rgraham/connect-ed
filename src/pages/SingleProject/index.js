@@ -96,7 +96,7 @@ export default function SingleProject(props) {
           <div className="topOfPage">
             <header>
               <h3 className="title"> {project.title}</h3>
-              <p className="starBtn">
+              <div className="starBtn">
                 <button className="starBtnBtn" onClick={starProject}>
                   Star
                 </button>
@@ -111,10 +111,10 @@ export default function SingleProject(props) {
                   Unsave
                 </button>
                 <button className="compBtnBtn" onClick={completeProject}>
-                  Completed
+                  Finished
                 </button>
                 {/* <button className="starBtnBtn" onClick={unstarProject}>unStar</button> */}
-              </p>
+              </div>
             </header>
 
             <div className="topTwo">
@@ -230,7 +230,7 @@ export default function SingleProject(props) {
               onClick={navigateEditPage}
               type="button"
               className="editBtn"
-              class="btn btn-primary btn-rounded"
+              class="btn btn-primary btn-rounded mt-2"
             >
               Edit
             </button>

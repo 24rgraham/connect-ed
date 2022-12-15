@@ -4,7 +4,7 @@
     max-width: 1000px;
 }
 header{
-    background-color: rgb(48, 42, 75);
+    background-color: rgb(15, 50, 57);
     width:80%;
     padding-top: 3px;
     padding-bottom: 3px;
@@ -25,46 +25,73 @@ h3{
 }
 
 .starBtn{
-    margin-top:15px;
-    margin-left:25px;    
+    /* margin-top:15px; */
+    margin-left:-auto; 
+    font-size: small;
+    padding: auto;
+    color:aliceblue;
+    
+   
 }
+
+button{
+    color: rgb(15, 50, 57);
+    font-weight: bolder;
+}
+
+
 
 .starBtnBtn{
     background-color: rgb(101, 207, 219);
-    border-radius: 50px;
-    border-style: dotted;
-    border-color: aliceblue;
+    border-radius: 0 0 35px 35px;
+    width:70px;
+    height:40px;
+    /* border-style: dotted;
+    border-color: aliceblue; */
+    border-style: none;
     margin: 2px;
     
 }
 
 .unsaveBtnBtn{
     background-color: rgb(219, 50, 41);
-    border-radius: 50px;
-    border-style: dotted;
-    border-color: aliceblue;
+    border-radius: 0 0 35px 35px;
+    width:70px;
+    height:40px;
+    /* border-style: dotted;
+    border-color: aliceblue; */
+    border-style: none;
     margin: 2px;
 }
 .progBtnBtn{
     background-color: rgb(219, 183, 41);
-    border-radius: 50px;
-    border-style: dotted;
-    border-color: aliceblue;
+    border-radius: 0 0 35px 35px;
+    width:70px;
+    height:40px;
+    /* border-style: dotted;
+    border-color: aliceblue; */
+    border-style: none;
     margin: 2px;
 }
 
 .saveBtnBtn{
     background-color: rgb(75, 119, 52);
-    border-radius: 50px;
-    border-style: dotted;
-    border-color: aliceblue;
+    border-radius: 0 0 35px 35px;
+    width:70px;
+    height:40px;
+    /* border-style: dotted;
+    border-color: aliceblue; */
+    border-style: none;
     margin: 2px;
 }
 .compBtnBtn{
     background-color: rgb(125, 213, 78);
-    border-radius: 50px;
-    border-style: dotted;
-    border-color: aliceblue;
+    border-radius: 0 0 40px 40px;
+    width:70px;
+    height:40px;
+    /* border-style: dotted;
+    border-color: aliceblue; */
+    border-style: none;
     margin: 2px;
 }
 
@@ -176,6 +203,20 @@ h3{
 
 @media (max-width: 770px) {
     /* tablet */
+    header{
+        background-color: rgb(48, 42, 75);
+        width:80%;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        display:flex;
+        justify-content: space-between;
+      
+    } 
+    .starBtn{
+        margin-top:3px;  
+    }
     .projImg{
         height: 28rem;
     }
@@ -189,31 +230,21 @@ h3{
     }
     
     .midPageCard{
-        margin-top: -59px;
+        margin-top: 4px;
         width: 90%; 
         padding-bottom: 12px;
     }
     .midPage{
-        width:60%;
+        width:88.86%;
        
     }
     .bottomOfPage{
-        margin-top: 5px;
+        margin-top: 3px;
         width: 60%;
     }
-   
-    header{
-        background-color: rgb(48, 42, 75);
-        width:80%;
-        padding-top: 3px;
-        padding-bottom: 3px;
-        margin-bottom: 5px;
-        border-radius: 5px;
-        display:flex;
-        justify-content: space-between;
-      
-    } 
-    .starBtn{
-        margin-top:15px;  
+    .btmRightTxt{
+        margin-top: 8px;
+        margin-right:10px;
     }
+   
 }
