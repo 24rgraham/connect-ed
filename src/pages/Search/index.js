@@ -167,103 +167,115 @@ export default function Search() {
     console.log(curriculum);
 
     if (grades[0]&&time[0]&&subjects[0]&&curriculum[0]){
-      
       const searchCriteria = {grade_lvl: grades, est_time: time, subject: subjects, curriculum: curriculum}
       console.log(searchCriteria);
-      
       API.advancedSearch(searchCriteria).then((res) => {
         console.log(res);
         setResults(res);
       })
+      return
     } else if (grades[0]&&time[0]&&subjects[0]){
-      
       const searchCriteria = {grade_lvl: grades, est_time: time, subject: subjects}
       API.advancedSearch(searchCriteria).then((res) => {
         console.log(res);
         setResults(res);
       })
+      return
     } else if (grades[0]&&time[0]&&curriculum[0]){
-      
       const searchCriteria = {grade_lvl: grades, est_time: time, curriculum: curriculum}
       API.advancedSearch(searchCriteria).then((res) => {
         console.log(res);
         setResults(res);
       })
+      return
     } else if (grades[0]&&subjects[0]&&curriculum[0]){
-      
       const searchCriteria = {grade_lvl: grades, subject: subjects, curriculum: curriculum}
       API.advancedSearch(searchCriteria).then((res) => {
         console.log(res);
         setResults(res);
       })
+      return
     } else if (time[0]&&subjects[0]&&curriculum[0]){
-      
       const searchCriteria = {est_time: time, subject: subjects, curriculum: curriculum}
       API.advancedSearch(searchCriteria).then((res) => {
         console.log(res);
         setResults(res);
       })
+      return
     } else if (grades[0]&&time[0]){
-      
+      console.log('yes12');
       const searchCriteria = {grade_lvl: grades, est_time: time}
+      console.log(searchCriteria);
       API.advancedSearch(searchCriteria).then((res) => {
         console.log(res);
         setResults(res);
       })
+      return
     } if (grades[0]&&curriculum[0]){
       const searchCriteria = {grade_lvl: grades, curriculum: curriculum}
       API.advancedSearch(searchCriteria).then((res) => {
         console.log(res);
         setResults(res);
       })
+      return
     } else if (subjects[0]&&curriculum[0]){
       const searchCriteria = {subject: subjects, curriculum: curriculum}
       API.advancedSearch(searchCriteria).then((res) => {
         console.log(res);
         setResults(res);
       })
+      return
     } else if (grades[0]&&subjects[0]){
       const searchCriteria = {grade_lvl: grades, subject: subjects}
       API.advancedSearch(searchCriteria).then((res) => {
         console.log(res);
         setResults(res);
       })
+      return
     } else if (time[0]&&subjects[0]){
       const searchCriteria = {est_time: time, subject: subjects}
       API.advancedSearch(searchCriteria).then((res) => {
         console.log(res);
         setResults(res);
       })
+      return
     } else if (time[0]&&curriculum[0]){
       const searchCriteria = {est_time: time, curriculum: curriculum}
       API.advancedSearch(searchCriteria).then((res) => {
         console.log(res);
         setResults(res);
       })
+      return
     } else if (grades[0]){
+      console.log('boom');
+      
       const searchCriteria = {grade_lvl: grades}
       API.advancedSearch(searchCriteria).then((res) => {
         console.log(res);
         setResults(res);
       })
+      return
     } else if (time[0]){
       const searchCriteria = {est_time: time}
       API.advancedSearch(searchCriteria).then((res) => {
         console.log(res);
         setResults(res);
       })
+      return
     } else if (subjects[0]){
       const searchCriteria = {subject: subjects}
       API.advancedSearch(searchCriteria).then((res) => {
         console.log(res);
         setResults(res);
       })
+      return
     } else if (curriculum[0]){
       const searchCriteria = {curriculum: curriculum}
       API.advancedSearch(searchCriteria).then((res) => {
         console.log(res);
         setResults(res);
       })
+      return
     } else {
       const searchCriteria = {}
       API.advancedSearch(searchCriteria).then((res) => {
