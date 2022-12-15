@@ -13,6 +13,10 @@ label {
    
 }
 
+.avatar {
+    width: 200px;
+    height: 200px;
+}
 
 @media (max-width: 768px) {
     .signupContainer{
