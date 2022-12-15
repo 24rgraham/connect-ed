@@ -1,5 +1,8 @@
 /* Single Project */
 
+.projectContainer{
+    max-width: 1000px;
+}
 header{
     background-color: rgb(48, 42, 75);
     width:80%;
@@ -23,7 +26,7 @@ h3{
 
 .starBtn{
     margin-top:15px;
-    margin-left: 250px;
+    margin-left:25px;    
 }
 
 .starBtnBtn{
@@ -33,6 +36,36 @@ h3{
     border-color: aliceblue;
     margin: 2px;
     
+}
+
+.unsaveBtnBtn{
+    background-color: rgb(219, 50, 41);
+    border-radius: 50px;
+    border-style: dotted;
+    border-color: aliceblue;
+    margin: 2px;
+}
+.progBtnBtn{
+    background-color: rgb(219, 183, 41);
+    border-radius: 50px;
+    border-style: dotted;
+    border-color: aliceblue;
+    margin: 2px;
+}
+
+.saveBtnBtn{
+    background-color: rgb(75, 119, 52);
+    border-radius: 50px;
+    border-style: dotted;
+    border-color: aliceblue;
+    margin: 2px;
+}
+.compBtnBtn{
+    background-color: rgb(125, 213, 78);
+    border-radius: 50px;
+    border-style: dotted;
+    border-color: aliceblue;
+    margin: 2px;
 }
 
 .contLabel{
@@ -104,30 +137,60 @@ h3{
 
 
 @media (max-width: 1024px) {
+    .projectContainer{
+        max-width: 100rem;
+    }
+    .topRightCard{
+
+        min-height: 30rem;
+    }
     .gradeGrid{
         display:grid;
         grid-template-columns: repeat(1, 1fr);
     }
     .midPageCard{
-        width: 77.5%;
+        margin-top: 30px;
         
     }
     .midPage{
-        width:70%;
-        margin-top: 35px;
+        margin-top: 7px;
     }
     .bottomOfPage{
-        margin-top: 25px;
-    }
-}
-
-@media (max-width: 768px) {
-    .gradeGrid{
         display:grid;
         grid-template-columns: repeat(1, 1fr);
     }
+  
+    .btmLeft{
+        width:36.5rem;
+        margin-top:5px; 
+        margin-bottom: auto;
+        height: fit-content;
+
+    }
+
+    .btmRightTxt{
+        margin-top: 10px;
+        /* padding-left: -15px; */
+    }
+}
+
+@media (max-width: 770px) {
+    /* tablet */
+    .projImg{
+        height: 28rem;
+    }
+    .gradeGrid{
+        display:flexbox;
+        word-wrap: break-word;
+        /* grid-template-columns: repeat(1, 1fr); */
+    }
+    .subjectAnswer{
+       word-wrap: break-word; 
+    }
+    
     .midPageCard{
-        width: 91.5%; 
+        margin-top: -59px;
+        width: 90%; 
         padding-bottom: 12px;
     }
     .midPage{
@@ -138,7 +201,19 @@ h3{
         margin-top: 5px;
         width: 60%;
     }
-    .btmRightTxt{
-       width: 179px;
+   
+    header{
+        background-color: rgb(48, 42, 75);
+        width:80%;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        display:flex;
+        justify-content: space-between;
+      
+    } 
+    .starBtn{
+        margin-top:15px;  
     }
 }
