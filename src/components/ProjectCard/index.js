@@ -14,7 +14,7 @@ export default function ProjectCard({ projectInfo }) {
   const navigateProject = () => {
     navigate(`/project/${projectInfo.id}`);
   };
-
+  const times = ["30 min or less","30-60 min","1-2 hours","Half a Day","1 Day","2 Days","3 Days","4 Days","1 Week","2 Weeks","3 Weeks","1 Month"]
   return (
     <div className="card" style={{ width: "15rem", margin: "2rem" }} onClick={navigateProject}>
       <div
@@ -32,7 +32,7 @@ export default function ProjectCard({ projectInfo }) {
       <div className="card-body" id="card-body">
         <h5 className="card-title">{projectInfo.title}</h5>
         <p className="card-text">Grade Level: {projectInfo.grade_lvl}</p>
-        <p className="card-text">Estimated Time: {projectInfo.est_time}</p>
+        <p className="card-text">Estimated Time: {times[projectInfo.est_time]}</p>
         {/* <a href="#!" className="btn btn-primary">Button</a> */}
       </div>
     </div>

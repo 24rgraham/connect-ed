@@ -46,6 +46,52 @@ export default function EditProject({ token }) {
   const handleProjectUpdate = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+
+    const subjects = []
+    if (data.get('Art')) {
+      subjects.push('1')
+    }
+    if (data.get('Maths')) {
+      subjects.push('2')
+    }
+    if (data.get('History')) {
+      subjects.push('3')
+    }
+    if (data.get('SEL')) {
+      subjects.push('4')
+    }
+    if (data.get('Woodworking')) {
+      subjects.push('5')
+    }
+    if (data.get('Anthropologie')) {
+      subjects.push('6')
+    }
+    if (data.get('Science')) {
+      subjects.push('7')
+    }
+    if (data.get('English')) {
+      subjects.push('8')
+    }
+    if (data.get('Writing')) {
+      subjects.push('9')
+    }
+    if (data.get('Spanish')) {
+      subjects.push('10')
+    }
+    if (data.get('French')) {
+      subjects.push('11')
+    }
+    if (data.get('Outdoor')) {
+      subjects.push('12')
+    }
+    if (data.get('Physical Education')) {
+      subjects.push('13')
+    }
+    if (data.get('Culture')) {
+      subjects.push('14')
+    }
+    console.log(subjects);
+
     const updatedProject = {
       title: data.get("newTitle"),
       image: `${url}`,
@@ -55,7 +101,7 @@ export default function EditProject({ token }) {
       directions: data.get("newDirections"),
       materials: data.get("newMaterials"),
       resources: data.get("newResources"),
-      subjects: data.get("newSubjects"),
+      subjects: subjects, 
       curriculums: data.get("newCurriculums"),
     };
 
@@ -120,8 +166,8 @@ export default function EditProject({ token }) {
               name="newGradeLevel"
             >
               <option value="...">Choose...</option>
-              <option value={13}>Pre-K</option>
-              <option value={0}>K</option>
+              <option value="Pre-K">Pre-K</option>
+              <option value="k">K</option>
               <option value={1}>1</option>
               <option value={2}>2</option>
               <option value={3}>3</option>
@@ -142,7 +188,111 @@ export default function EditProject({ token }) {
             </div>
 
             <Form.Label>Subjects</Form.Label>
-            <Form.Select defaultValue={project.subjects} name="newSubjects">
+            {["checkbox"].map((type) => (
+                <Row>
+                  <div key={`inline-${type}`} className="mb-3">
+                    <Form.Check
+                      inline
+                      label="Art"
+                      name="Art"
+                      type={type}
+                      id={`inline-${type}-1`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Maths"
+                      name="Maths"
+                      type={type}
+                      id={`inline-${type}-3`}
+                    />
+                    <Form.Check
+                      inline
+                      label="History"
+                      name="History"
+                      type={type}
+                      id={`inline-${type}-4`}
+                    />
+                    <Form.Check
+                      inline
+                      label="SEL"
+                      name="SEL"
+                      type={type}
+                      id={`inline-${type}-5`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Woodworking"
+                      name="Woodworking"
+                      type={type}
+                      id={`inline-${type}-6`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Anthropologie"
+                      name="Anthropologie"
+                      type={type}
+                      id={`inline-${type}-7`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Science"
+                      name="Science"
+                      type={type}
+                      id={`inline-${type}-8`}
+                    />
+                    <Form.Check
+                      inline
+                      label="English"
+                      name="English"
+                      type={type}
+                      id={`inline-${type}-9`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Writing"
+                      name="Writing"
+                      type={type}
+                      id={`inline-${type}-10`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Spanish"
+                      name="Spanish"
+                      type={type}
+                      id={`inline-${type}-11`}
+                    />
+                    <Form.Check
+                      inline
+                      label="French"
+                      name="French"
+                      type={type}
+                      id={`inline-${type}-12`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Outdoor"
+                      name="Outdoor"
+                      type={type}
+                      id={`inline-${type}-13`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Physical Education"
+                      name="Physical Education"
+                      type={type}
+                      id={`inline-${type}-14`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Culture"
+                      name="Culture"
+                      type={type}
+                      id={`inline-${type}-15`}
+                    />
+                  </div>
+                </Row>
+              ))}
+            {/* <Form.Select defaultValue={project.subjects} name="newSubjects">
               <option value="">Choose...</option>
               <option value={1}>Art</option>
               <option value={2}>Math</option>
@@ -159,7 +309,7 @@ export default function EditProject({ token }) {
               <option value={13}>Physical Education</option>
               <option value={14}>Cultural Holidays</option>
               <option value={15}>Culture</option>
-            </Form.Select>
+            </Form.Select> */}
             <div>
               <Badge pill bg="curriculum">
                 {/* eventual badges for selected curriculums */}
