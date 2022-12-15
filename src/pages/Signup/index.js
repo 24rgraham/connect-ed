@@ -23,7 +23,7 @@ export default function SignUp(props) {
     data.append("file", image);
     data.append("upload_preset", "connect_ed");
     data.append("cloud_name", "dqv6cj4bc");
-    fetch("https://api.cloudinary.com/v1_1/dqv6cj4bc/image/upload/w_1000,c_fill,ar_1:1,g_face,r_max,b_rgb:ffffff/", {
+    fetch("https://api.cloudinary.com/v1_1/dqv6cj4bc/image/upload", {
       method: "post",
       body: data,
     })

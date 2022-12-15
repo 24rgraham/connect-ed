@@ -18,7 +18,7 @@ export default function SingleProject(props) {
   const [star, setStar] = useState(null);
   const editBtn = document.querySelector("editBtn");
   const [projectOwner, setProjectOwner] = useState(false);
-
+  const times = ["30 min or less","30-60 min","1-2 hours","Half a Day","1 Day","2 Days","3 Days","4 Days","1 Week","2 Weeks","3 Weeks","1 Month"]
   const [project, setProject] = useState([]);
 
   useEffect(() => {
@@ -100,17 +100,18 @@ export default function SingleProject(props) {
                 <button className="starBtnBtn" onClick={starProject}>
                   Star
                 </button>
-                <button className="starBtnBtn" onClick={inProgressProject}>
-                  Begin This Project
+                <button className="progBtnBtn" onClick={inProgressProject}>
+                  Start
                 </button>
-                <button className="starBtnBtn" onClick={completeProject}>
-                  Move to Completed Projects
+                
+                <button className="saveBtnBtn" onClick={saveProject}>
+                  Save
                 </button>
-                <button className="starBtnBtn" onClick={saveProject}>
-                  Save This Project For Later
+                <button className="unsaveBtnBtn" onClick={unSaveProject}>
+                  Unsave
                 </button>
-                <button className="starBtnBtn" onClick={unSaveProject}>
-                  Unsave This Project
+                <button className="compBtnBtn" onClick={completeProject}>
+                  Completed
                 </button>
                 {/* <button className="starBtnBtn" onClick={unstarProject}>unStar</button> */}
               </p>
@@ -120,13 +121,13 @@ export default function SingleProject(props) {
               <div className="mediaContainer">
                 <Image
                   className="projImg"
-                  style={{ width: "25rem" }}
+                  style={{ width: "25rem", maxHeight:"17.3rem" }}
                   src={project.image}
                 ></Image>
               </div>
 
               <div className="topRight" scrolling="auto">
-                <Card className="topRightCard" style={{ height: "16.75rem" }}>
+                <Card className="topRightCard" style={{ minHeight: "16.75rem" }}>
                   <ListGroup variant="flush">
                     <ListGroup.Item>
                       <p className="grade">
@@ -144,7 +145,7 @@ export default function SingleProject(props) {
                           <label className="contLabel">
                             Estimated Time to Complete:
                           </label>
-                          <label className="answers">{project.est_time}</label>
+                          <label className="answers">{times[project.est_time]}</label>
                         </div>
                       </p>
                     </ListGroup.Item>
@@ -158,7 +159,7 @@ export default function SingleProject(props) {
                             <label className="answers">
                               {" "}
                               {project.Curriculums.map((curriculum) => (
-                                <span>{curriculum.name}</span>
+                                <span>{curriculum.name} </span>
                               ))}
                             </label>
                           </div>
@@ -170,10 +171,10 @@ export default function SingleProject(props) {
                         <p>
                           <div className="gradeGrid">
                             <label className="contLabel">Subjects:</label>
-                            <label className="answers">
+                            <label className="answers subjectAnswer">
                               {" "}
                               {project.Subjects.map((subject) => (
-                                <span>{subject.name}</span>
+                                <span>{subject.name}  </span>
                               ))}
                             </label>
                           </div>
@@ -197,7 +198,7 @@ export default function SingleProject(props) {
 
           <div className="bottomOfPage">
             <div className="btmLeft">
-              <Card style={{ height: "24rem" }}>
+              <Card style={{ height: "12rem" }}>
                 <div className="directionsContainer" scrolling="auto">
                   <label className="answers">
                     Step-by-Step Instructions (with timeline breakdown):
@@ -208,7 +209,7 @@ export default function SingleProject(props) {
             </div>
 
             <div className="btmRightTxt">
-              <Card style={{ height: "24rem" }}>
+              <Card className="materialsCard" style={{ minHeight: "12rem"}}>
                 <div className="bottomRightContent">
                   <div className="materialsContainer">
                     <p>
