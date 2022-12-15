@@ -4,8 +4,10 @@ main {
     padding-left: 5% !important;
     padding-bottom: 10%!important;
     margin-right: 0 !important;
-    background-color: rgba(247, 202, 79, 0.87);
+    background-color: rgba(252, 246, 189);
+    /* background-color: rgba(247, 202, 79, 0.87); */
 }
+
 
 .card-body {
     padding-top: 2% !important;
@@ -80,8 +82,19 @@ main {
         color: rgba(233, 45, 45, 0.696);
     }
     /* Sidebar */
+    #main-navbar {
+        background-color:rgb(143, 184, 222) !important;
+    }
+    #sidebarMenu {
+        background-image: linear-gradient(rgb(143, 184, 222), rgb(57, 190, 238));
+    }
+
+    #sidebarMenu .list-group-item {
+        background:none !important;
+    }
     .sidebar {
       position: fixed;
+      background-color: aquamarine !important;
       top: 0;
       bottom: 0;
       left: 0;

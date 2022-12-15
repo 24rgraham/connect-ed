@@ -24,6 +24,7 @@ export default function EditProject({ token }) {
       setProject(data);
       setUrl(project.image)
       console.log(url)
+      
     });
   }, []);
 

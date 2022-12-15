@@ -19,7 +19,7 @@ export default function Headerbootstrap(props) {
         id="sidebarMenu"
         className="collapse d-lg-block sidebar collapse bg-white"
       >
-        <div className="position-sticky">
+        <div className="position-sticky sidebar-item-group">
           <div className="list-group list-group-flush mx-3 mt-4">
           <Link
               to="/community-projects"
