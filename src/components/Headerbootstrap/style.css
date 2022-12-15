@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'education';
+    src: url(/public/Education-zwG1.ttf);
+}
+
+.logo {
+    font-family: 'education';
+    font-size: 26px;
+    margin-right: 10px;
+}
+
+.title {
+    font-family: 'proganda';
+    font-size: 17px;
+}
+
+@font-face {
+    font-family: 'proganda';
+    src: url(/public/Progandaeeducation-P5WB.ttf);
+}

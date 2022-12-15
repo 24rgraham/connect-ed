@@ -1,36 +1,36 @@
 /* ProjectCard */
 
-.oneCardForAll{
-    width: 11 rem;
-    height: 14rem;
+.oneCardForAll {
+  width: 11 rem;
+  height: 14rem;
 }
 
-.projectCardDiv{
-    margin:8px;
-    margin-left: 18px;
+.projectCardDiv {
+  margin: 8px;
+  margin-left: 18px;
 }
 
-
-
-.cardTitle{
-    font-weight:bold;
-    margin-top: 3px;
-    color: black;
-
+.cardTitle {
+  font-weight: bold;
+  margin-top: 3px;
+  color: black;
 }
 
-.gradeCard,.timeCard{
-    font-size: smaller;
+.gradeCard,
+.timeCard {
+  font-size: smaller;
 }
 
 @media (max-width: 408px) {
-    .oneCardForAll{
-        width: 15rem;
-        height: 19rem;
-    }
-    .img{
-        width: 200px;
-    }
-  
-    
+  .oneCardForAll {
+    width: 15rem;
+    height: 19rem;
   }
+  .img {
+    width: 200px;
+  }
+}
+
+.card:hover {
+    cursor: pointer;
+}
