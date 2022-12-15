@@ -253,9 +253,9 @@ export default function Headerbootstrap(props) {
               </ul>
             </li>
             
-              <li className="nav-item align-self-center me-3 me-lg-0">
+              {firstName&&<li className="nav-item align-self-center me-3 me-lg-0">
                 <p className="title">Welcome, {capitalizeFirstLetter(firstName)}</p>
-              </li>
+              </li>}
             
             {/* <!-- Avatar --> */}
             <li className="nav-item dropdown">
