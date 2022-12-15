@@ -158,7 +158,7 @@ console.log(params.id)
                             <label className="answers">
                               {" "}
                               {project.Curriculums.map((curriculum) => (
-                                <span>{curriculum.name}</span>
+                                <span>{curriculum.name} </span>
                               ))}
                             </label>
                           </div>
@@ -173,7 +173,7 @@ console.log(params.id)
                             <label className="answers">
                               {" "}
                               {project.Subjects.map((subject) => (
-                                <span>{subject.name}</span>
+                                <span>{subject.name}  </span>
                               ))}
                             </label>
                           </div>
