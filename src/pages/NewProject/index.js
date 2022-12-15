@@ -34,6 +34,52 @@ export default function NewProject({ token }) {
   const handleProjectCreate = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+
+    const subjects = []
+    if (data.get('Art')){
+      subjects.push('1')
+    }
+    if (data.get('Maths')){
+      subjects.push('2')
+    }
+    if (data.get('History')){
+      subjects.push('3')
+    }
+    if (data.get('SEL')){
+      subjects.push('4')
+    }
+    if (data.get('Woodworking')){
+      subjects.push('5')
+    }
+    if (data.get('Anthropologie')){
+      subjects.push('6')
+    }
+    if (data.get('Science')){
+      subjects.push('7')
+    }
+    if (data.get('English')){
+      subjects.push('8')
+    }
+    if (data.get('Writing')){
+      subjects.push('9')
+    }
+    if (data.get('Spanish')){
+      subjects.push('10')
+    }
+    if (data.get('French')){
+      subjects.push('11')
+    }
+    if (data.get('Outdoor')){
+      subjects.push('12')
+    }
+    if (data.get('Physical Education')){
+      subjects.push('13')
+    }
+    if (data.get('Culture')){
+      subjects.push('14')
+    }
+    console.log(subjects);
+
     const newProject = {
       title: data.get("newTitle"),
       image: `${url}`,
@@ -43,8 +89,9 @@ export default function NewProject({ token }) {
       directions: data.get("newDirections"),
       materials: data.get("newMaterials"),
       // resources: data.get("newResources"),
-      subjects: data.get("newSubjects"),
-      curriculums: data.get("newCurriculums"),
+      curriculums: [data.get("newCurriculums")],
+      subjects: subjects,
+      
     };
 
     console.log(newProject);
@@ -108,8 +155,8 @@ export default function NewProject({ token }) {
               name="newGradeLevel"
             >
               <option value="...">Choose...</option>
-              <option value={13}>Pre-K</option>
-              <option value={0}>K</option>
+              <option value="Pre-K">Pre-K</option>
+              <option value="K">K</option>
               <option value={1}>1</option>
               <option value={2}>2</option>
               <option value={3}>3</option>
@@ -130,7 +177,7 @@ export default function NewProject({ token }) {
             </div>
 
             <Form.Label>Subjects</Form.Label>
-            {/* {["checkbox"].map((type) => (
+            {["checkbox"].map((type) => (
                 <Row>
                   <div key={`inline-${type}`} className="mb-3">
                     <Form.Check
@@ -233,8 +280,8 @@ export default function NewProject({ token }) {
                     />
                   </div>
                 </Row>
-              ))} */}
-            <Form.Select defaultValue="Choose..." name="newSubjects">
+              ))}
+            {/* <Form.Select defaultValue="Choose..." name="newSubjects">
               <option value="">Choose...</option>
               <option value={1}>Art</option>
               <option value={2}>Math</option>
@@ -251,7 +298,7 @@ export default function NewProject({ token }) {
               <option value={13}>Physical Education</option>
               <option value={14}>Cultural Holidays</option>
               <option value={15}>Culture</option>
-            </Form.Select>
+            </Form.Select> */}
             <div>
               <Badge pill bg="curriculum">
                 {/* eventual badges for selected curriculums */}
@@ -261,12 +308,12 @@ export default function NewProject({ token }) {
             <Form.Label>Curriculum</Form.Label>
             <Form.Select defaultValue="Choose..." name="newCurriculums">
               <option value="">Choose...</option>
-              <option value={1}>Montessori</option>
-              <option value={2}>Waldorf</option>
-              <option value={3}>Standard</option>
-              <option value={4}>PBL</option>
-              <option value={5}>Reggio Emilia</option>
-              <option value={6}>B.E.E.T.L.E.S (Outdoor Ed.) </option>
+              <option value="1">Montessori</option>
+              <option value="2">Waldorf</option>
+              <option value="3">Standard</option>
+              <option value="4">PBL</option>
+              <option value="5">Reggio Emilia</option>
+              <option value="6">B.E.E.T.L.E.S (Outdoor Ed.) </option>
             </Form.Select>
           </Form.Group>
         </Col>
