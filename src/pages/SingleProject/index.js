@@ -18,7 +18,7 @@ export default function SingleProject(props) {
   const [star, setStar] = useState(null);
   const editBtn = document.querySelector("editBtn");
   const [projectOwner, setProjectOwner] = useState(false);
-
+  const times = ["30 min or less","30-60 min","1-2 hours","Half a Day","1 Day","2 Days","3 Days","4 Days","1 Week","2 Weeks","3 Weeks","1 Month"]
   const [project, setProject] = useState([]);
 
   useEffect(() => {
@@ -145,7 +145,7 @@ console.log(params.id)
                           <label className="contLabel">
                             Estimated Time to Complete:
                           </label>
-                          <label className="answers">{project.est_time}</label>
+                          <label className="answers">{times[project.est_time]}</label>
                         </div>
                       </p>
                     </ListGroup.Item>
